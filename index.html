@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zoe Goudas</title>
+<meta name="description" content="Zoe Goudas, biomedical engineering. Projects in assistive technology and medical simulation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 18C12 12 13 6 16 3c3 3 4 9 0 15z' fill='%235B4B9A'/%3E%3Cpath d='M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z' fill='%237D6CC0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F4F8;
+    --sheet: #FFFFFF;
+    --ink: #1F1A3A;
+    --muted: #5E5873;
+    --iris: #5B4B9A;
+    --iris-soft: #E7E2F4;
+    --stem: #3F6B4E;
+    --rule: #D8D3E6;
+    --pollen: #E2B53E;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 17px/1.6 "Figtree", system-ui, sans-serif;
+  }
+  a { color: var(--iris); text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 2px solid var(--iris); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  header.top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 0;
+  }
+  .mark { font-family: "Young Serif", serif; font-size: 20px; color: var(--ink); text-decoration: none; }
+  nav a { margin-left: 22px; color: var(--muted); text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--iris); }
+
+  /* Hero */
+  .hero {
+    display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px;
+    padding: 48px 0 24px; border-bottom: 1px solid var(--rule);
+  }
+  .hero h1 {
+    font-family: "Young Serif", serif; font-weight: 400;
+    font-size: clamp(56px, 10vw, 112px); line-height: .95; letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .hero p.lede { font-size: 21px; max-width: 30ch; color: var(--muted); margin: 0 0 32px; }
+  .hero .links a { margin-right: 18px; font-weight: 600; }
+  .iris { width: 100%; max-width: 300px; justify-self: end; margin-bottom: -1px; }
+  .iris .line { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .iris .petal { fill: var(--iris-soft); }
+  .iris .fall { fill: #CFC6EC; }
+  .iris .leaf { fill: #DCE8DF; }
+  .iris .beard { stroke: var(--pollen); stroke-width: 3; stroke-linecap: round; fill: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .iris .line { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 2.4s ease-out forwards; }
+    .iris .petal, .iris .fall, .iris .leaf, .iris .beard { opacity: 0; animation: bloom 1s ease-out 1.6s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes bloom { to { opacity: 1; } }
+  }
+
+  section { padding: 72px 0 24px; }
+  h2 {
+    font-family: "Young Serif", serif; font-weight: 400;
+    font-size: 36px; margin: 0 0 32px;
+  }
+
+  /* Project sheets: pressed-specimen layout */
+  .sheet {
+    position: relative;
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    padding: 32px;
+    margin-bottom: 40px;
+    display: grid; grid-template-columns: 1.7fr 1fr; gap: 32px; align-items: start;
+  }
+  .sheet .photo { grid-column: 1 / -1; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--rule); }
+  .group { font-family: "Young Serif", serif; font-weight: 400; font-size: 22px; color: var(--muted); margin: 56px 0 20px; }
+  .group:first-of-type { margin-top: 0; }
+  .sheet h4 { font-family: "Young Serif", serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0 0 12px; }
+  .sheet p { margin: 0 0 14px; max-width: 60ch; }
+  .label {
+    border: 1px solid var(--ink);
+    padding: 12px 16px;
+    font-size: 14px;
+    background: var(--sheet);
+  }
+  .label dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 0; }
+  .label dt { color: var(--muted); }
+  .label dd { margin: 0; }
+  .status { display: inline-block; font-size: 13px; font-weight: 600; color: var(--stem); margin-bottom: 10px; }
+  .status::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--stem); margin-right: 8px; vertical-align: 1px; }
+
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .about p { margin: 0 0 16px; max-width: 60ch; }
+  .about ul { list-style: none; padding: 0; margin: 0; }
+  .about li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .about li:first-child { border-top: 1px solid var(--rule); }
+
+  .contact p { font-size: 20px; margin: 0 0 8px; }
+
+  footer { padding: 48px 0; color: var(--muted); font-size: 14px; }
+
+  /* Fill-in markers: delete the class once the text is real */
+  .todo { background: #FFF3C4; outline: 1px dashed var(--pollen); }
+
+  @media (max-width: 760px) {
+    nav a { margin-left: 14px; }
+    .hero { grid-template-columns: 1fr; padding-top: 24px; }
+    .iris { justify-self: start; max-width: 200px; order: -1; }
+    .sheet { grid-template-columns: 1fr; padding: 20px; }
+    .about { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="mark" href="#">Zoe Goudas</a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Zoe<br>Goudas</h1>
+      <p class="lede">Biomedical engineering student building medical devices that people actually use.</p>
+      <div class="links">
+        <a href="resume.pdf">Resume</a>
+        <a href="#projects">See projects</a>
+      </div>
+    </div>
+    <svg class="iris" viewBox="0 0 240 420" role="img" aria-label="Line drawing of an iris">
+      <!-- leaves -->
+      <path class="leaf" d="M118 420 C100 340 78 280 62 210 C88 270 110 330 124 420 Z"/>
+      <path class="leaf" d="M124 420 C140 350 160 300 184 250 C166 310 146 360 130 420 Z"/>
+      <path class="line" d="M118 420 C100 340 78 280 62 210 C88 270 110 330 124 420"/>
+      <path class="line" d="M124 420 C140 350 160 300 184 250 C166 310 146 360 130 420"/>
+      <!-- stem -->
+      <path class="line" d="M121 420 L121 220"/>
+      <!-- standards -->
+      <path class="petal" d="M120 150 C95 110 100 60 120 40 C140 60 145 110 120 150 Z"/>
+      <path class="petal" d="M118 150 C85 130 70 90 78 62 C100 72 115 110 118 150 Z"/>
+      <path class="petal" d="M122 150 C155 130 170 90 162 62 C140 72 125 110 122 150 Z"/>
+      <path class="line" d="M120 150 C95 110 100 60 120 40 C140 60 145 110 120 150"/>
+      <path class="line" d="M118 150 C85 130 70 90 78 62 C100 72 115 110 118 150"/>
+      <path class="line" d="M122 150 C155 130 170 90 162 62 C140 72 125 110 122 150"/>
+      <!-- falls -->
+      <path class="fall" d="M118 154 C80 150 45 172 38 212 C72 210 102 188 118 154 Z"/>
+      <path class="fall" d="M122 154 C160 150 195 172 202 212 C168 210 138 188 122 154 Z"/>
+      <path class="fall" d="M120 156 C102 180 106 212 120 236 C134 212 138 180 120 156 Z"/>
+      <path class="line" d="M118 154 C80 150 45 172 38 212 C72 210 102 188 118 154"/>
+      <path class="line" d="M122 154 C160 150 195 172 202 212 C168 210 138 188 122 154"/>
+      <path class="line" d="M120 156 C102 180 106 212 120 236 C134 212 138 180 120 156"/>
+      <!-- beards -->
+      <path class="beard" d="M108 166 L84 182"/>
+      <path class="beard" d="M132 166 L156 182"/>
+      <path class="beard" d="M120 170 L120 196"/>
+    </svg>
+  </div>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <!-- PROJECT: copy from <article> to </article> to add another -->
+    <article class="sheet">
+      <!-- Replace the div with: <img class="photo" src="images/speech-device.jpg" alt="Describe the photo"> -->
+      <div class="photo">Add a photo</div>
+      <div>
+        <span class="status">In progress</span>
+        <h3>Speech feedback device for deaf learners</h3>
+        <p>A wearable that gives deaf and hard-of-hearing learners real-time feedback on their speech, so they can practice without relying on hearing their own voice.</p>
+        <p class="todo">What you built, how it works, and what you've tested so far.</p>
+        <div class="label">
+          <dl>
+            <dt>Field</dt><dd>Assistive technology</dd>
+            <dt>Year</dt><dd>2026</dd>
+            <dt>Role</dt><dd class="todo">Your role</dd>
+            <dt>Tools</dt><dd class="todo">Hardware, software, methods</dd>
+          </dl>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="photo">Add a photo</div>
+      <div>
+        <h3>Obstetric simulator</h3>
+        <p>A training simulator that lets students practice obstetric procedures before working with patients.</p>
+        <p class="todo">What you built, how it works, and what came out of it.</p>
+        <div class="label">
+          <dl>
+            <dt>Field</dt><dd>Medical simulation</dd>
+            <dt>Year</dt><dd class="todo">Year</dd>
+            <dt>Role</dt><dd class="todo">Your role</dd>
+            <dt>Tools</dt><dd class="todo">Hardware, software, methods</dd>
+          </dl>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <p>I'm a biomedical engineering student focused on medical devices and biomaterials. I like projects where the engineering has to work for a real person, not just on the bench.</p>
+        <p>Outside of school I grow flowering plants and put together bouquets, a habit I picked up from my aunt, a florist in Europe.</p>
+      </div>
+      <ul>
+        <li>Medical devices</li>
+        <li>Biomaterials</li>
+        <li>Assistive technology</li>
+        <li>Medical simulation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p><a class="todo" href="mailto:you@example.com">you@example.com</a></p>
+    <p><a class="todo" href="https://www.linkedin.com/in/your-profile">LinkedIn</a></p>
+    <p><a href="resume.pdf">Resume (PDF)</a></p>
+  </section>
+
+  <footer>Zoe Goudas</footer>
+</div>
+</body>
+</html>
