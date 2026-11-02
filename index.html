@@ -86,6 +86,11 @@
   .more[open] .close-l { display: inline; }
   .more-body { padding-top: 12px; }
   .more-body p:last-child { margin-bottom: 0; }
+  .sheet.solo { grid-template-columns: 1fr; }
+  .aside { display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .aside .files { flex-direction: column; align-items: stretch; margin: 0; }
+  .aside .files a { display: flex; border-radius: 6px; padding: 9px 12px; }
+  .aside .files .ext { margin-left: auto; }
   .files { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
   .files a { display: inline-flex; align-items: baseline; gap: 6px; padding: 5px 12px; border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); color: var(--ink); text-decoration: none; font-size: 14px; line-height: 1.3; }
   .files a b { font-weight: 600; color: var(--iris); }
@@ -208,16 +213,17 @@
           </div>
         </details>
       </div>
-      <div class="label">
-        <dl>
-          <dt>Dates</dt><dd>Aug 2026 to present</dd>
-          <dt>Type</dt><dd>Senior design capstone</dd>
-          <dt>Partner</dt><dd>Rutgers-Newark Midwifery Nursing</dd>
-        </dl>
+      <div class="aside">
+        <div class="label">
+          <dl>
+            <dt>Type</dt><dd>Senior design capstone</dd>
+            <dt>Partner</dt><dd>Rutgers-Newark Midwifery Nursing</dd>
+          </dl>
+        </div>
       </div>
     </article>
 
-    <article class="sheet" id="speech-feedback-device-for-deaf-learners">
+    <article class="sheet solo" id="speech-feedback-device-for-deaf-learners">
       <div>
         <span class="status">In progress</span>
         <h4>Speech feedback device for deaf learners</h4>
@@ -228,11 +234,6 @@
           <p>The design pairs throat and nasal accelerometers and surface EMG sensors under the jaw with a phone app. A small processor on the collar streams the signals over Bluetooth, and the app scores each attempt on pitch, voicing and nasality against a target, then shows the learner what to change.</p>
           </div>
         </details>
-      </div>
-      <div class="label">
-        <dl>
-          <dt>Dates</dt><dd>2026 to present</dd>
-        </dl>
       </div>
     </article>
 
@@ -246,14 +247,11 @@
           <p>We designed three blinded, statistically powered studies, each with clear acceptance criteria for management: Instron tensile testing for mechanical integrity, ELISA for collagen and elastin content, and an in vitro fibroblast repopulation assay with DAPI/phalloidin staining and DNA quantification to confirm decellularization.</p>
           </div>
         </details>
+      </div>
+      <div class="aside">
         <ul class="files">
           <li><a href="allograft-evidence-plan.pdf" target="_blank" rel="noopener"><b>Slides</b> Evidence generation plan <span class="ext">PDF</span></a></li>
         </ul>
-      </div>
-      <div class="label">
-        <dl>
-          <dt>Dates</dt><dd>Jan to Apr 2026</dd>
-        </dl>
       </div>
     </article>
 
@@ -266,14 +264,11 @@
           <p>A proposed sprayable hydrogel carrying engineered <i>E. coli</i> that release IL-10 locally to treat ulcerative colitis. Working from the literature, my team designed test methods for porosity, diffusivity, biocompatibility and mucosal adhesion.</p>
           </div>
         </details>
+      </div>
+      <div class="aside">
         <ul class="files">
           <li><a href="hydrogel-final-presentation.pdf" target="_blank" rel="noopener"><b>Slides</b> Final presentation <span class="ext">PDF</span></a></li>
         </ul>
-      </div>
-      <div class="label">
-        <dl>
-          <dt>Dates</dt><dd>Jan to Apr 2026</dd>
-        </dl>
       </div>
     </article>
 
@@ -286,14 +281,11 @@
           <p>A prototype app that predicts a person's risk of heat illness from the environment, symptoms and sleep they log. It started during a dorm heat wave, and interviews with other students shaped its alerts and coaching.</p>
           </div>
         </details>
+      </div>
+      <div class="aside">
         <ul class="files">
           <li><a href="https://cool-coach-core.base44.app" target="_blank" rel="noopener"><b>App</b> Try the prototype</a></li>
         </ul>
-      </div>
-      <div class="label">
-        <dl>
-          <dt>Dates</dt><dd>Jan to Apr 2026</dd>
-        </dl>
       </div>
     </article>
 
@@ -309,14 +301,11 @@
           <p>70 Hz cut mean germination time by about 20% (21.6 vs. 27 hours, p = 0.010), 2000 Hz delayed it (30.6 hours, p = 0.006), and 300 Hz had no significant effect. Written up as an IB Extended Essay.</p>
           </div>
         </details>
+      </div>
+      <div class="aside">
         <ul class="files">
           <li><a href="extended-essay-radish.pdf" target="_blank" rel="noopener"><b>Paper</b> IB Extended Essay <span class="ext">PDF</span></a></li>
         </ul>
-      </div>
-      <div class="label">
-        <dl>
-          <dt>Dates</dt><dd>Jan to May 2024</dd>
-        </dl>
       </div>
     </article>
 
@@ -331,10 +320,10 @@
           </div>
         </details>
       </div>
-      <div class="label">
-        <dl>
-          <dt>Dates</dt><dd>Jan to Apr 2023</dd>
-        </dl>
+      <div class="aside">
+        <ul class="files">
+          <li><a href="celegans-jssf-poster.pdf" target="_blank" rel="noopener"><b>Poster</b> Jersey Shore Science Fair poster <span class="ext">PDF</span></a></li>
+        </ul>
       </div>
     </article>
   </section>
