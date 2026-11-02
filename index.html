@@ -87,6 +87,16 @@
   .more-body { padding-top: 12px; }
   .more-body p:last-child { margin-bottom: 0; }
   .sheet.solo { grid-template-columns: 1fr; }
+  .sheet.card { display: block; padding: 0; transition: border-color .15s; }
+  .sheet.card:hover { border-color: var(--iris); }
+  .card-link { display: block; padding: 28px 32px; color: inherit; text-decoration: none; }
+  .card-link .photo { display: block; margin-bottom: 20px; }
+  .card-link h4 { margin-bottom: 8px; }
+  .card-link .sum { color: var(--muted); margin: 0 0 14px; max-width: 62ch; }
+  .card-link .go { display: inline-flex; align-items: center; gap: 8px; color: var(--iris); font-weight: 600; font-size: 15px; }
+  .card-link .go::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .15s; }
+  .card-link:hover .go::after { transform: translateX(3px) rotate(-45deg); }
+  .card-link:hover h4 { color: var(--iris); }
   .aside { display: grid; gap: 12px; align-content: start; min-width: 0; }
   .aside .files { flex-direction: column; align-items: stretch; margin: 0; }
   .aside .files a { display: flex; border-radius: 6px; padding: 9px 12px; }
@@ -201,130 +211,64 @@
 
     <h3 class="group">Rutgers University</h3>
 
-    <article class="sheet" id="low-cost-obstetric-simulator">
-      <div>
+    <article class="sheet card" id="low-cost-obstetric-simulator">
+      <a class="card-link" href="obstetric-simulator.html">
         <span class="status">In progress</span>
         <h4>Low-cost obstetric simulator</h4>
-        <details class="more">
-          <summary><span class="open-l">Read more</span><span class="close-l">Show less</span></summary>
-          <div class="more-body">
-          <p>For our senior design capstone, my team is redesigning the obstetric training simulator used by the Rutgers-Newark Midwifery Nursing program. Our goal is an affordable, versatile simulator that lets students train in a wider range of birthing positions and emergency scenarios.</p>
-          <p>We're interviewing instructors and students now to define the design requirements. Next, we'll design the mother and fetus in CAD, 3D print molds and cast the simulator in silicone.</p>
-          </div>
-        </details>
-      </div>
-      <div class="aside">
-        <div class="label">
-          <dl>
-            <dt>Type</dt><dd>Senior design capstone</dd>
-            <dt>Partner</dt><dd>Rutgers-Newark Midwifery Nursing</dd>
-          </dl>
-        </div>
-      </div>
+        <p class="sum">Designing an affordable obstetric training simulator with the Rutgers-Newark Midwifery Nursing program.</p>
+        <span class="go">View project</span>
+      </a>
     </article>
 
-    <article class="sheet solo" id="speech-feedback-device-for-deaf-learners">
-      <div>
+    <article class="sheet card" id="speech-feedback-device-for-deaf-learners">
+      <a class="card-link" href="speech-feedback-device.html">
         <span class="status">In progress</span>
         <h4>Speech feedback device for deaf learners</h4>
-        <details class="more">
-          <summary><span class="open-l">Read more</span><span class="close-l">Show less</span></summary>
-          <div class="more-body">
-          <p>A wearable collar that gives deaf and hard-of-hearing learners feedback on their speech. Their voices work, but they can't hear their own mistakes to fix them. The device stands in for that missing feedback by sensing how the throat and mouth move, not just how the speech sounds.</p>
-          <p>The design pairs throat and nasal accelerometers and surface EMG sensors under the jaw with a phone app. A small processor on the collar streams the signals over Bluetooth, and the app scores each attempt on pitch, voicing and nasality against a target, then shows the learner what to change.</p>
-          </div>
-        </details>
-      </div>
+        <p class="sum">A wearable collar that shows deaf and hard-of-hearing learners what their voice and mouth are doing as they practice speech.</p>
+        <span class="go">View project</span>
+      </a>
     </article>
 
-    <article class="sheet" id="acellular-allograft-tissue-engineering">
-      <div>
+    <article class="sheet card" id="acellular-allograft-tissue-engineering">
+      <a class="card-link" href="acellular-allograft.html">
         <h4>Acellular allograft tissue engineering</h4>
-        <details class="more">
-          <summary><span class="open-l">Read more</span><span class="close-l">Show less</span></summary>
-          <div class="more-body">
-          <p>An evidence-generation plan for a hypothetical acellular dermal allograft on backorder: could a modified tissue process raise production without hurting quality?</p>
-          <p>We designed three blinded, statistically powered studies, each with clear acceptance criteria for management: Instron tensile testing for mechanical integrity, ELISA for collagen and elastin content, and an in vitro fibroblast repopulation assay with DAPI/phalloidin staining and DNA quantification to confirm decellularization.</p>
-          </div>
-        </details>
-      </div>
-      <div class="aside">
-        <ul class="files">
-          <li><a href="allograft-evidence-plan.pdf" target="_blank" rel="noopener"><b>Slides</b> Evidence generation plan <span class="ext">PDF</span></a></li>
-        </ul>
-      </div>
+        <p class="sum">An evidence generation plan for changing how a backordered skin graft is processed, without losing quality.</p>
+        <span class="go">View project</span>
+      </a>
     </article>
 
-    <article class="sheet" id="probiotic-hydrogel-for-ulcerative-colitis">
-      <div>
+    <article class="sheet card" id="probiotic-hydrogel-for-ulcerative-colitis">
+      <a class="card-link" href="probiotic-hydrogel.html">
         <h4>Probiotic hydrogel for ulcerative colitis</h4>
-        <details class="more">
-          <summary><span class="open-l">Read more</span><span class="close-l">Show less</span></summary>
-          <div class="more-body">
-          <p>A proposed sprayable hydrogel carrying engineered <i>E. coli</i> that release IL-10 locally to treat ulcerative colitis. Working from the literature, my team designed test methods for porosity, diffusivity, biocompatibility and mucosal adhesion.</p>
-          </div>
-        </details>
-      </div>
-      <div class="aside">
-        <ul class="files">
-          <li><a href="hydrogel-final-presentation.pdf" target="_blank" rel="noopener"><b>Slides</b> Final presentation <span class="ext">PDF</span></a></li>
-        </ul>
-      </div>
+        <p class="sum">A proposed sprayable hydrogel that delivers an anti-inflammatory protein right where ulcerative colitis does damage.</p>
+        <span class="go">View project</span>
+      </a>
     </article>
 
-    <article class="sheet" id="adaptive-heat-risk-coach">
-      <div>
+    <article class="sheet card" id="adaptive-heat-risk-coach">
+      <a class="card-link" href="heat-risk-coach.html">
         <h4>Adaptive heat risk coach</h4>
-        <details class="more">
-          <summary><span class="open-l">Read more</span><span class="close-l">Show less</span></summary>
-          <div class="more-body">
-          <p>A prototype app that predicts a person's risk of heat illness from the environment, symptoms and sleep they log. It started during a dorm heat wave, and interviews with other students shaped its alerts and coaching.</p>
-          </div>
-        </details>
-      </div>
-      <div class="aside">
-        <ul class="files">
-          <li><a href="https://cool-coach-core.base44.app" target="_blank" rel="noopener"><b>App</b> Try the prototype</a></li>
-        </ul>
-      </div>
+        <p class="sum">An AI app prototype that learns how a person reacts to heat and coaches them before symptoms get worse.</p>
+        <span class="go">View project</span>
+      </a>
     </article>
 
     <h3 class="group">Biotechnology HS</h3>
 
-    <article class="sheet" id="sound-frequency-and-radish-seed-germination">
-      <div>
+    <article class="sheet card" id="sound-frequency-and-radish-seed-germination">
+      <a class="card-link" href="radish-germination.html">
         <h4>Sound frequency and radish seed germination</h4>
-        <details class="more">
-          <summary><span class="open-l">Read more</span><span class="close-l">Show less</span></summary>
-          <div class="more-body">
-          <p>An independent experiment on whether audible sound changes germination time in radish (<i>Raphanus sativus</i>). I played 70 Hz, 300 Hz and 2000 Hz sine tones on a 6-hour cycle against a silent control, holding light, temperature and volume constant, and tracked radicle emergence every 6 hours.</p>
-          <p>70 Hz cut mean germination time by about 20% (21.6 vs. 27 hours, p = 0.010), 2000 Hz delayed it (30.6 hours, p = 0.006), and 300 Hz had no significant effect. Written up as an IB Extended Essay.</p>
-          </div>
-        </details>
-      </div>
-      <div class="aside">
-        <ul class="files">
-          <li><a href="extended-essay-radish.pdf" target="_blank" rel="noopener"><b>Paper</b> IB Extended Essay <span class="ext">PDF</span></a></li>
-        </ul>
-      </div>
+        <p class="sum">Testing whether specific sound frequencies change how fast radish seeds germinate.</p>
+        <span class="go">View project</span>
+      </a>
     </article>
 
-    <article class="sheet" id="background-noise-and-c-elegans-chemotaxis">
-      <div>
+    <article class="sheet card" id="background-noise-and-c-elegans-chemotaxis">
+      <a class="card-link" href="celegans-chemotaxis.html">
         <h4>Background noise and <i>C. elegans</i> chemotaxis</h4>
-        <details class="more">
-          <summary><span class="open-l">Read more</span><span class="close-l">Show less</span></summary>
-          <div class="more-body">
-          <p>Tested how brown, pink, white and blue noise affect <i>C. elegans</i> chemotaxis toward NaCl. I cultured worms on <i>E. coli</i>-seeded NGM plates, ran chemotaxis assays under five sound conditions and compared chemotaxis indices with a one-way ANOVA.</p>
-          <p>No condition differed significantly (p = 0.708), though the data hinted at a link between a noise's frequency profile and the worms' preference. Presented at two regional science fairs and placed 2nd at the Jersey Shore Science Fair.</p>
-          </div>
-        </details>
-      </div>
-      <div class="aside">
-        <ul class="files">
-          <li><a href="celegans-jssf-poster.pdf" target="_blank" rel="noopener"><b>Poster</b> Jersey Shore Science Fair poster <span class="ext">PDF</span></a></li>
-        </ul>
-      </div>
+        <p class="sum">Testing whether different &quot;colors&quot; of background noise change how C. elegans worms move toward salt.</p>
+        <span class="go">View project</span>
+      </a>
     </article>
   </section>
 
