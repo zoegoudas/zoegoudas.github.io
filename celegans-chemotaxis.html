@@ -253,7 +253,19 @@
       <article class="pbody">
       <section>
         <h2>The question</h2>
-        <p>Many people play brown, pink, white or blue noise to study or sleep. These noises spread sound energy across frequencies differently: brown noise is weighted toward low frequencies and blue noise toward high ones.</p>
+        <p>Many people play brown, pink, white or blue noise to study or sleep, but don't know what the “colors” of noise mean. Each color is defined by its energy and power distribution across the audible frequency spectrum. Each assumes a signal with components at all frequencies, with a power spectral density per unit of bandwidth proportional to 1/f<sup>β</sup>.</p>
+        <p>Brown noise has β = 2, and its power spectral density is plotted as a linear function of frequency that decreases by 6.02 dB per octave. This produces an audio signal that emphasizes low frequencies and heavily attenuates higher ones.</p>
+        <p>Pink noise has β = 1, and its PSD decreases by 3.01 dB/octave. Similarly to brown noise, it highlights lower frequencies and reduces higher ones, but more gently.</p>
+        <p>White noise has β = 0, which produces a flat power spectrum. Every audible frequency is played at the same intensity.</p>
+        <p>Blue noise has β = −1, and its PSD increases by 3.01 dB/octave. Blue noise is the opposite of pink noise: high frequencies are more prominent while low frequencies are cut off.</p>
+        <figure>
+          <img src="noise-spectra.jpg" alt="Power spectral density of each noise color, relative to its level at 1 kHz" loading="lazy">
+          <figcaption>Power spectral density of each noise color, relative to its level at 1 kHz</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <p>Looking at the above graphs of each noise's power spectral density, it is evident that the distributions of sound frequencies are loosely analogous to frequencies in the visible color spectrum, which is how they earn their names (with the exception of brown/Brownian noise). For example, if the sound wave pattern of blue noise (high frequencies) were translated into light waves, it would be blue, and if white noise (all frequencies) were translated, it would be white light (all frequencies).</p>
         <p><i>C. elegans</i> is a common model organism because it shares many genes with humans. I tested whether these noises change its chemotaxis, the way it moves toward or away from a chemical, in this case salt (NaCl). I hypothesized that brown noise would have the greatest effect and that the worms would move toward the salt.</p>
       </section>
 
