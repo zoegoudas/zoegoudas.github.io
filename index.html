@@ -11,15 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #F5F4F8;
-    --sheet: #FFFFFF;
+    --paper: #D7CDBD;
+    --sheet: #E9E2D7;
     --ink: #1F1A3A;
-    --muted: #5E5873;
-    --iris: #5B4B9A;
+    --muted: #4F4A60;
+    --iris: #4B3C88;
     --petal: #E7E2F4;
     --petal-deep: #CFC6EC;
-    --stem: #3F6B4E;
-    --rule: #D8D3E6;
+    --stem: #2E5A3C;
+    --rule: #BCAF9E;
     --pollen: #E2B53E;
   }
   * { box-sizing: border-box; }
@@ -54,12 +54,12 @@
   .hero p.lede { font-size: 21px; max-width: 30ch; color: var(--muted); margin: 0 0 8px; }
   .hero .links a { margin-right: 18px; font-weight: 600; }
   .iris { width: 100%; max-width: 300px; justify-self: end; margin-bottom: -1px; }
-  .hero.pic { position: relative; display: block; min-height: clamp(340px, 40vw, 480px); margin-top: 32px; padding: clamp(32px, 5vw, 56px); border: 0; border-radius: 6px; overflow: hidden; background: #D8CDBF; }
+  .hero.pic { position: relative; display: block; min-height: clamp(340px, 40vw, 480px); margin-top: 32px; padding: clamp(32px, 5vw, 56px); border: 0; border-radius: 6px; overflow: hidden; background: var(--paper); }
   .hero.pic .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
   .hero.pic .hero-text { position: relative; z-index: 1; max-width: 48%; }
   .hero.pic h1 { color: #2A2340; }
   .hero.pic .lede { color: #4A4458; margin-bottom: 0; }
-  .hero.pic::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(216,205,191,.85) 0%, rgba(216,205,191,.6) 38%, rgba(216,205,191,0) 58%); }
+  .hero.pic::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(215,205,189,.85) 0%, rgba(215,205,189,.6) 38%, rgba(215,205,189,0) 58%); }
   .hero.pic .hero-text { z-index: 2; }
   @media (max-width: 1050px) {
     .hero.pic { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 0; margin-top: 16px; background: transparent; }

@@ -11,15 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #F5F4F8;
-    --sheet: #FFFFFF;
+    --paper: #D7CDBD;
+    --sheet: #E9E2D7;
     --ink: #1F1A3A;
-    --muted: #5E5873;
-    --iris: #5B4B9A;
+    --muted: #4F4A60;
+    --iris: #4B3C88;
     --petal: #E7E2F4;
     --petal-deep: #CFC6EC;
-    --stem: #3F6B4E;
-    --rule: #D8D3E6;
+    --stem: #2E5A3C;
+    --rule: #BCAF9E;
     --pollen: #E2B53E;
   }
   * { box-sizing: border-box; }
@@ -54,6 +54,19 @@
   .hero p.lede { font-size: 21px; max-width: 30ch; color: var(--muted); margin: 0 0 8px; }
   .hero .links a { margin-right: 18px; font-weight: 600; }
   .iris { width: 100%; max-width: 300px; justify-self: end; margin-bottom: -1px; }
+  .hero.pic { position: relative; display: block; min-height: clamp(340px, 40vw, 480px); margin-top: 32px; padding: clamp(32px, 5vw, 56px); border: 0; border-radius: 6px; overflow: hidden; background: var(--paper); }
+  .hero.pic .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+  .hero.pic .hero-text { position: relative; z-index: 1; max-width: 48%; }
+  .hero.pic h1 { color: #2A2340; }
+  .hero.pic .lede { color: #4A4458; margin-bottom: 0; }
+  .hero.pic::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(215,205,189,.85) 0%, rgba(215,205,189,.6) 38%, rgba(215,205,189,0) 58%); }
+  .hero.pic .hero-text { z-index: 2; }
+  @media (max-width: 1050px) {
+    .hero.pic { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 0; margin-top: 16px; background: transparent; }
+    .hero.pic::before { display: none; }
+    .hero.pic .hero-text { max-width: none; padding: 8px 0 20px; }
+    .hero.pic .hero-img { position: static; order: 2; aspect-ratio: 16 / 9; height: auto; object-position: 85% center; border-radius: 6px; }
+  }
   .iris .line { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .iris .thin { stroke-width: 1; }
   .iris .petal { fill: var(--petal); }
@@ -178,6 +191,11 @@
   .doc span { display: flex; align-items: baseline; gap: 6px; padding: 10px 12px; font-size: 14px; line-height: 1.35; }
   .doc b { color: var(--iris); font-weight: 600; }
   .doc .ext { margin-left: auto; font-size: 11px; color: var(--muted); letter-spacing: .04em; }
+  .pgal { columns: 2 220px; column-gap: 16px; }
+  .pgal figure { margin: 0 0 16px; break-inside: avoid; }
+  .pgal a { display: block; }
+  .pgal img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .pgal figcaption { font-size: 14px; color: var(--muted); margin-top: 6px; }
   .pnav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid var(--rule); margin-top: 64px; padding-top: 8px; }
   .pnav a { display: block; padding: 16px 0; color: var(--ink); text-decoration: none; font-family: "Young Serif", serif; font-size: 18px; line-height: 1.3; }
   .pnav a:hover { color: var(--iris); }
@@ -214,6 +232,16 @@
       </section>
 
       <section>
+        <h2>The simulator we're redesigning</h2>
+        <p>These photos show the midwifery program's current simulator: a pelvis model hung from a wooden stand, a newborn model, a placenta with an umbilical cord, and a separate pad for practicing perineal repair.</p>
+        <p>This is the setup our new design is meant to improve on.</p>
+        <figure>
+          <img src="ob-setup.jpg" alt="The full setup: pelvis model on its stand, newborn, placenta and cord" loading="lazy">
+          <figcaption>The full setup: pelvis model on its stand, newborn, placenta and cord</figcaption>
+        </figure>
+      </section>
+
+      <section>
         <h2>Defining the requirements</h2>
         <p>We started by interviewing midwifery instructors and students about how they train now and what they need. The requirements so far cover three areas:</p>
         <p><i>Realistic materials.</i> The mother and fetus need to feel and move like real tissue.</p>
@@ -224,6 +252,16 @@
       <section>
         <h2>Next steps</h2>
         <p>Before building the full-size simulator, we plan to make scaled-down prototypes to test silicone materials and the casting process.</p>
+      </section>
+
+      <section>
+        <h2>Photos</h2>
+        <div class="pgal">
+          <figure><a href="ob-pelvis.jpg" target="_blank" rel="noopener"><img src="ob-pelvis.jpg" alt="The pelvis model, seen from below" loading="lazy"></a><figcaption>The pelvis model, seen from below</figcaption></figure>
+          <figure><a href="ob-newborn.jpg" target="_blank" rel="noopener"><img src="ob-newborn.jpg" alt="Newborn model" loading="lazy"></a><figcaption>Newborn model</figcaption></figure>
+          <figure><a href="ob-placenta.jpg" target="_blank" rel="noopener"><img src="ob-placenta.jpg" alt="Placenta and umbilical cord models" loading="lazy"></a><figcaption>Placenta and umbilical cord models</figcaption></figure>
+          <figure><a href="ob-perineal-pad.jpg" target="_blank" rel="noopener"><img src="ob-perineal-pad.jpg" alt="Pad for practicing perineal repair" loading="lazy"></a><figcaption>Pad for practicing perineal repair</figcaption></figure>
+        </div>
       </section>
       </article>
       <aside class="pside">
