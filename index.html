@@ -54,6 +54,19 @@
   .hero p.lede { font-size: 21px; max-width: 30ch; color: var(--muted); margin: 0 0 8px; }
   .hero .links a { margin-right: 18px; font-weight: 600; }
   .iris { width: 100%; max-width: 300px; justify-self: end; margin-bottom: -1px; }
+  .hero.pic { position: relative; display: block; min-height: clamp(340px, 40vw, 480px); margin-top: 32px; padding: clamp(32px, 5vw, 56px); border: 0; border-radius: 6px; overflow: hidden; background: #D8CDBF; }
+  .hero.pic .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+  .hero.pic .hero-text { position: relative; z-index: 1; max-width: 48%; }
+  .hero.pic h1 { color: #2A2340; }
+  .hero.pic .lede { color: #4A4458; margin-bottom: 0; }
+  .hero.pic::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(216,205,191,.85) 0%, rgba(216,205,191,.6) 38%, rgba(216,205,191,0) 58%); }
+  .hero.pic .hero-text { z-index: 2; }
+  @media (max-width: 1050px) {
+    .hero.pic { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 0; margin-top: 16px; background: transparent; }
+    .hero.pic::before { display: none; }
+    .hero.pic .hero-text { max-width: none; padding: 8px 0 20px; }
+    .hero.pic .hero-img { position: static; order: 2; aspect-ratio: 16 / 9; height: auto; object-position: 85% center; border-radius: 6px; }
+  }
   .iris .line { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .iris .thin { stroke-width: 1; }
   .iris .petal { fill: var(--petal); }
@@ -177,33 +190,12 @@
   </nav>
   <main>
 
-  <div class="hero">
-    <div>
+  <div class="hero pic">
+    <div class="hero-text">
       <h1>Zoe<br>Goudas</h1>
       <p class="lede">Senior biomedical engineering student at Rutgers Honors College, working on biomaterials, medical devices and drug delivery.</p>
     </div>
-    <svg class="iris" viewBox="0 0 240 420" role="img" aria-label="Line drawing of an iris">
-<path class="leaf" d="M118 420 C100 340 78 280 62 210 C88 270 110 330 124 420 Z"/>
-<path class="leaf" d="M124 420 C140 350 160 300 184 250 C166 310 146 360 130 420 Z"/>
-<path class="line" d="M118 420 C100 340 78 280 62 210 C88 270 110 330 124 420"/>
-<path class="line" d="M124 420 C140 350 160 300 184 250 C166 310 146 360 130 420"/>
-<path class="line" d="M121 420 L121 220"/>
-<path class="petal" d="M120 150 C95 110 100 60 120 40 C140 60 145 110 120 150 Z"/>
-<path class="petal" d="M118 150 C85 130 70 90 78 62 C100 72 115 110 118 150 Z"/>
-<path class="petal" d="M122 150 C155 130 170 90 162 62 C140 72 125 110 122 150 Z"/>
-<path class="line" d="M120 150 C95 110 100 60 120 40 C140 60 145 110 120 150"/>
-<path class="line" d="M118 150 C85 130 70 90 78 62 C100 72 115 110 118 150"/>
-<path class="line" d="M122 150 C155 130 170 90 162 62 C140 72 125 110 122 150"/>
-<path class="fall" d="M118 154 C80 150 45 172 38 212 C72 210 102 188 118 154 Z"/>
-<path class="fall" d="M122 154 C160 150 195 172 202 212 C168 210 138 188 122 154 Z"/>
-<path class="fall" d="M120 156 C102 180 106 212 120 236 C134 212 138 180 120 156 Z"/>
-<path class="line" d="M118 154 C80 150 45 172 38 212 C72 210 102 188 118 154"/>
-<path class="line" d="M122 154 C160 150 195 172 202 212 C168 210 138 188 122 154"/>
-<path class="line" d="M120 156 C102 180 106 212 120 236 C134 212 138 180 120 156"/>
-<path class="beard" d="M108 166 L84 182"/>
-<path class="beard" d="M132 166 L156 182"/>
-<path class="beard" d="M120 170 L120 196"/>
-    </svg>
+    <img class="hero-img" src="morning-glory.jpg" srcset="morning-glory-1000.jpg 1000w, morning-glory.jpg 2000w" sizes="(max-width: 760px) 100vw, 900px" alt="">
   </div>
 
   <section id="projects">
