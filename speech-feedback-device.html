@@ -253,24 +253,21 @@
     <div class="pgrid">
       <article class="pbody">
       <section>
-        <h2>Why feedback matters</h2>
+        <h2>Background</h2>
         <p>Speaking relies on a feedback loop: we hear our own voice and correct it as we notice errors. Deaf speakers have no access to this feedback loop, so they can't hear their own mistakes to fix them.</p>
         <p>Common results are pitch that is too high or unstable, too much nasality, voicing errors like b versus p, and dropped sounds that aren't visible on the lips, such as k and g.</p>
       </section>
 
       <section>
-        <h2>What existing tools miss</h2>
+        <h2>Existing Tools</h2>
         <p>Most speech-training apps listen through a microphone. A microphone can tell a learner that a sound was wrong, but not what the mouth did wrong, so the learner is left guessing how to fix it.</p>
         <p>This device senses the source of the problem directly: how the vocal folds, nose, jaw, and lips are moving.</p>
       </section>
 
       <section>
-        <h2>The design</h2>
-        <p><i>Throat accelerometer.</i> Placed on the neck near the voice box, it picks up vocal fold vibration directly. That gives a clean pitch signal and shows when the voice is on or off.</p>
-        <p><i>Nasal accelerometer.</i> A small sensor near the nose. Comparing its signal with the throat sensor shows how much sound is going through the nose.</p>
-        <p><i>Surface EMG.</i> Electrodes under the jaw and on the neck measure muscle activity as the learner speaks.</p>
-        <p><i>Small processor.</i> A microcontroller on the collar reads every sensor and sends the data to a phone over Bluetooth Low Energy, so there are no cables.</p>
-        <p><i>Phone app.</i> The app combines the collar data with the phone's microphone and camera, compares each attempt to a target, and shows the learner what to change.</p>
+        <h2>Design</h2>
+        <p>An accelerometer on the neck near the voice box picks up vocal fold vibration directly, which gives a clean pitch signal and shows when the voice is on or off. A second accelerometer near the nose is compared with the throat sensor to show how much sound is going through the nose. Surface EMG electrodes under the jaw and on the neck measure muscle activity during speech.</p>
+        <p>A microcontroller on the collar reads every sensor and sends the data to a phone over Bluetooth Low Energy, so there are no cables. The phone app combines the collar data with the phone's microphone and camera, compares each attempt to a target, and shows the learner what to change.</p>
       </section>
       </article>
       <aside class="pside">
