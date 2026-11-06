@@ -293,14 +293,14 @@
       </section>
 
       <section>
-        <h2>What This Means for the Device</h2>
+        <h2>Relevance to Project</h2>
         <p>A deaf child never gets the auditory half of this loop, so auditory targets are never learned and feedforward commands never get tuned. The device has to provide a substitute error signal through a different sense. The somatosensory channel, what speech feels like, still works, so the device can link correct productions to how they feel and help build targets that last without it. DIVA also supports giving a lot of feedback early and less as the learner improves.</p>
         <p>People who lose their hearing later in life start with normal speech, but without feedback it drifts over time. For them, the device would be for maintenance rather than teaching.</p>
         <p>Timing matters too. Delays of only 50 to 200 ms disrupt fluent speakers, so live feedback in the middle of a word would need to arrive in under 50 ms. Most parameters will get summary feedback after each attempt instead, with live feedback only for the pitch line. Since pitch and timing may use different control paths, they can be trained as separate exercises.</p>
       </section>
 
       <section>
-        <h2>Speech in Deaf Learners</h2>
+        <h2>Common Speech Errors</h2>
         <p>The voice box and articulators work, but the speaker can't hear errors to correct them. How much this affects speech depends on the degree of hearing loss, the age it began, and whether the person uses a cochlear implant.</p>
         <p>Vowels drift toward “uh,” so beat, bit, and bat sound alike, and sounds like “eye” and “oy” lose their glide. Consonants that aren't visible on the lips (k, g, ng, h) are dropped or replaced, while visible ones (p, b, m, f, v, w) are usually clearer. High-frequency sounds like s, sh, f, and th are distorted or missing because they fall where hearing loss is worst, above about 4 kHz. Final consonants get dropped, so “cat” becomes “ca,” and voicing and placement errors like b/p, d/t, t/k, and d/g are common.</p>
         <p>The voice itself can be too high, unstable, or monotone, so questions and statements sound the same. Nasality and loudness are hard to control, and the voice can sound strained. Speech also tends to be slow, with every syllable stressed equally, and poor breath control causes pauses in odd places.</p>
@@ -308,14 +308,14 @@
       </section>
 
       <section>
-        <h2>Existing Tools</h2>
+        <h2>Existing Devices</h2>
         <p>Most speech-training apps use the phone's microphone. A microphone is cheap and good at pitch, loudness, rhythm, and s/sh quality, but it picks up background noise and other voices, and it can't see the tongue, lips, or soft palate. It can tell a learner that a sound was wrong, but not what the mouth did wrong, so they're left guessing how to fix it.</p>
         <p>Delsys has used surface EMG (sEMG) sensors on the face and neck to pick up the electrical signals of speech muscles and turn them into synthesized speech for people who can move their mouths but can't produce a voice [4]. Earlier sEMG work recognized words and phrases with about 90% accuracy, and stressed words show a clear jump in signal strength, especially from the neck sensors. It works like an upgraded electrolarynx, the handheld buzzer pressed against the neck that gives people with damaged vocal folds a new sound source.</p>
         <p>Delsys targets people who can't voice, while deaf learners can voice but can't hear their errors. Still, the same sensor placements can track the jaw, tongue base, and lips for feedback, and like the Delsys system, this device will need a model tuned to each user.</p>
       </section>
 
       <section>
-        <h2>Sensing Each Error</h2>
+        <h2>Sensor Selection</h2>
         <p>Each common error in deaf speech needs a sensor that can actually detect it:</p>
         <div class="tbl"><table>
           <thead><tr><th>Common error</th><th>Sensor</th><th>Feedback</th></tr></thead>
@@ -335,7 +335,7 @@
       </section>
 
       <section>
-        <h2>Collar Design</h2>
+        <h2>Wearable Collar</h2>
         <p>The collar has four parts.</p>
         <p>A throat accelerometer sits just to the side of the thyroid cartilage or just above the sternal notch and measures vocal fold vibration directly. Because it picks up the raw buzz before the mouth shapes it, it gives a clean pitch signal (80 to 400 Hz) and a simple on/off voicing signal for pairs like b and p. It doesn't pick up background noise or other people's voices. It needs a bone-conduction voice pickup or a wide-bandwidth MEMS accelerometer sampled at 4 kHz or more, since generic IMU accelerometers are too slow, and a 50 to 70 Hz high-pass filter to remove swallowing and movement artifacts.</p>
         <p>Two to four sEMG channels under the chin and on the front of the neck, roughly where Delsys placed them, sense the muscles that move the jaw, tongue base, and lips. This is the cheapest wearable way to get any tongue information. It needs a biopotential front end (an ADS1299-class chip), sampling at about 1 to 2 kHz per channel, and a 20 to 450 Hz band-pass filter with a 60 Hz notch. The signals vary a lot between people and sensor placements, so each user needs their own model and a quick calibration every session.</p>
@@ -356,7 +356,7 @@
       </section>
 
       <section>
-        <h2>Next Steps</h2>
+        <h2>Plan</h2>
         <p>I'm starting with pitch, voicing, and nasality from the microphone and two accelerometers, plus lip shape from the phone camera. This covers many of the intelligibility problems in deaf speech with cheap, reliable sensors and avoids the hardest sensing problem, the tongue. Once the basic loop works, I'll add sEMG.</p>
       </section>
 
