@@ -216,8 +216,17 @@
   .pbody section + section { margin-top: 44px; }
   .pbody h2 { font-size: 28px; margin: 0 0 14px; }
   .pbody p { margin: 0 0 14px; line-height: 1.7; }
+  /* images: float right at 45% width and let the text wrap around them */
+  .pbody section { display: flow-root; }
   .pbody figure { margin: 24px 0 0; }
-  .pbody figure img { display: block; width: auto; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+  .pbody figure a { display: block; }
+  .pbody figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+  .pbody figure.wrap { float: right; width: 45%; margin: 6px 0 14px 28px; }
+  .pbody figure.wide { width: 80%; margin: 20px auto 0; }
+  @media (max-width: 640px) {
+    .pbody figure.wrap { float: none; width: 100%; margin: 4px 0 18px; }
+    .pbody figure.wide { width: 100%; }
+  }
   .pbody figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
   /* tables (write each row on its own line, starting with |) */
   .pbody .tbl { overflow-x: auto; margin: 6px 0 18px; }
@@ -234,7 +243,7 @@
   .doc span { display: flex; align-items: baseline; gap: 6px; padding: 10px 12px; font-size: 14px; line-height: 1.35; }
   .doc b { color: var(--iris); font-weight: 600; }
   .doc .ext { margin-left: auto; font-size: 11px; color: var(--muted); letter-spacing: .04em; }
-  .pgal { columns: 2 220px; column-gap: 16px; }
+  .pgal { columns: 3 190px; column-gap: 16px; }  /* photo gallery: three smaller columns */
   .pgal figure { margin: 0 0 16px; break-inside: avoid; }
   .pgal a { display: block; }
   .pgal img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
@@ -291,26 +300,26 @@
 
       <section>
         <h2>Current Simulator</h2>
+        <figure class="wrap">
+          <a href="ob-setup.jpg" target="_blank" rel="noopener"><img src="ob-setup.jpg" alt="The full setup: pelvis model on its stand, newborn, placenta and cord" loading="lazy"></a>
+          <figcaption>The full setup: pelvis model on its stand, newborn, placenta and cord</figcaption>
+        </figure>
         <p>The program’s preferred model is the MODEL-med Sophie and Her Mum, a low-fidelity simulator for cephalic, breech, and shoulder dystocia deliveries, with optional placenta, postpartum uterus, and postpartum hemorrhage add on packages [8].</p>
         <p>These photos show how instructors improvise the positions the simulator does not support: a pelvis model suspended from a wooden stand, a separate newborn, and a placenta with umbilical cord.</p>
         <p>This is the setup our new design is meant to improve on.</p>
-        <figure>
-          <img src="ob-setup.jpg" alt="The full setup: pelvis model on its stand, newborn, placenta and cord" loading="lazy">
-          <figcaption>The full setup: pelvis model on its stand, newborn, placenta and cord</figcaption>
-        </figure>
       </section>
 
       <section>
         <h2>Problems</h2>
+        <figure class="wrap">
+          <a href="ob-amniotomy.jpg" target="_blank" rel="noopener"><img src="ob-amniotomy.jpg" alt="Amniotomy: an amnihook passed through the cervix ruptures the amniotic sac" loading="lazy"></a>
+          <figcaption>Amniotomy: an amnihook passed through the cervix ruptures the amniotic sac</figcaption>
+        </figure>
         <p>We identified these by interviewing instructors and observing a demonstration.</p>
         <p><i>Positioning.</i> The simulator only supports the supine and hands-and-knees birthing positions. The hands-and-knees configuration requires mounting it beneath a plate on a custom frame, with stirrups from a separate vendor supporting the legs. The assembly is unstable and awkward to put together, and additional assistants are needed to hold it steady. Other delivery positions cannot be simulated.</p>
         <p><i>Cost and supply chain.</i> The unit costs $16,527 and is manufactured in Australia, so replacement parts and support are slow to arrive. The stirrups used for the hands-and-knees configuration are handmade by a nonprofit, Breech Without Borders.</p>
         <p><i>Maintenance.</i> The simulator must be fully dried and powdered between sessions, or trapped moisture can cause mold growth and the material can adhere to itself. Instructors reported that the seam where the polymer body meets the metal backing plate is difficult to access in order to dry and powder thoroughly.</p>
         <p><i>Anatomical fidelity.</i> The umbilical cord and placenta in the add-on package do not model anatomy authentically. The simulator also has no amniotic sac, so students cannot practice amniotomy, the artificial rupture of membranes with an amnihook to induce or advance labor [9]. The amnihook is a dedicated instrument, and without a sac inside the simulated uterus to practice on, the closest students can get is popping a water balloon.</p>
-        <figure>
-          <img src="ob-amniotomy.jpg" alt="Amniotomy: an amnihook passed through the cervix ruptures the amniotic sac" loading="lazy">
-          <figcaption>Amniotomy: an amnihook passed through the cervix ruptures the amniotic sac</figcaption>
-        </figure>
       </section>
 
       <section>
@@ -322,16 +331,16 @@
         <p>We derived these requirements from the problems above and from interviews with instructors and students.</p>
         <p><i>Tissue response.</i> The maternal and fetal components should mimic the mechanical properties of skin, particularly in the birth canal and vulva. These regions have to stretch for the fetus to pass, so a skin-like material serves both function and realism. This is also why instructors prefer the low-fidelity simulator over the high-fidelity model they own. The low-fidelity materials feel like real skin, while the high-fidelity model is built mostly from hard plastic to accommodate its mechanical components.</p>
         <p><i>Maternal positions.</i> The simulator should support these positions: supine, hands-and-knees, side-lying, and standing. A frame will hold the simulator stable in each position and allow it to be repositioned between them, so that one instructor and one assistant can run a lesson.</p>
-        <figure>
-          <img src="ob-positions.jpg" alt="The four birthing positions the new simulator should support" loading="lazy">
+        <figure class="wide">
+          <a href="ob-positions.jpg" target="_blank" rel="noopener"><img src="ob-positions.jpg" alt="The four birthing positions the new simulator should support" loading="lazy"></a>
           <figcaption>The four birthing positions the new simulator should support</figcaption>
         </figure>
       </section>
 
       <section>
         <p><i>Fetal presentations.</i> The fetus and pelvis should accommodate the occiput anterior and occiput posterior positions as well as frank and complete breech presentations. They should also support the shoulder dystocia scenario the current simulator already covers.</p>
-        <figure>
-          <img src="ob-presentations.jpg" alt="The fetal presentations the new simulator should support, shown from the side" loading="lazy">
+        <figure class="wide">
+          <a href="ob-presentations.jpg" target="_blank" rel="noopener"><img src="ob-presentations.jpg" alt="The fetal presentations the new simulator should support, shown from the side" loading="lazy"></a>
           <figcaption>The fetal presentations the new simulator should support, shown from the side</figcaption>
         </figure>
       </section>

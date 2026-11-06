@@ -216,8 +216,17 @@
   .pbody section + section { margin-top: 44px; }
   .pbody h2 { font-size: 28px; margin: 0 0 14px; }
   .pbody p { margin: 0 0 14px; line-height: 1.7; }
+  /* images: float right at 45% width and let the text wrap around them */
+  .pbody section { display: flow-root; }
   .pbody figure { margin: 24px 0 0; }
-  .pbody figure img { display: block; width: auto; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+  .pbody figure a { display: block; }
+  .pbody figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+  .pbody figure.wrap { float: right; width: 45%; margin: 6px 0 14px 28px; }
+  .pbody figure.wide { width: 80%; margin: 20px auto 0; }
+  @media (max-width: 640px) {
+    .pbody figure.wrap { float: none; width: 100%; margin: 4px 0 18px; }
+    .pbody figure.wide { width: 100%; }
+  }
   .pbody figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
   /* tables (write each row on its own line, starting with |) */
   .pbody .tbl { overflow-x: auto; margin: 6px 0 18px; }
@@ -234,7 +243,7 @@
   .doc span { display: flex; align-items: baseline; gap: 6px; padding: 10px 12px; font-size: 14px; line-height: 1.35; }
   .doc b { color: var(--iris); font-weight: 600; }
   .doc .ext { margin-left: auto; font-size: 11px; color: var(--muted); letter-spacing: .04em; }
-  .pgal { columns: 2 220px; column-gap: 16px; }
+  .pgal { columns: 3 190px; column-gap: 16px; }  /* photo gallery: three smaller columns */
   .pgal figure { margin: 0 0 16px; break-inside: avoid; }
   .pgal a { display: block; }
   .pgal img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }

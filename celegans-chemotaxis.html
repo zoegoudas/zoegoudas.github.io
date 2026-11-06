@@ -216,8 +216,17 @@
   .pbody section + section { margin-top: 44px; }
   .pbody h2 { font-size: 28px; margin: 0 0 14px; }
   .pbody p { margin: 0 0 14px; line-height: 1.7; }
+  /* images: float right at 45% width and let the text wrap around them */
+  .pbody section { display: flow-root; }
   .pbody figure { margin: 24px 0 0; }
-  .pbody figure img { display: block; width: auto; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+  .pbody figure a { display: block; }
+  .pbody figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+  .pbody figure.wrap { float: right; width: 45%; margin: 6px 0 14px 28px; }
+  .pbody figure.wide { width: 80%; margin: 20px auto 0; }
+  @media (max-width: 640px) {
+    .pbody figure.wrap { float: none; width: 100%; margin: 4px 0 18px; }
+    .pbody figure.wide { width: 100%; }
+  }
   .pbody figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
   /* tables (write each row on its own line, starting with |) */
   .pbody .tbl { overflow-x: auto; margin: 6px 0 18px; }
@@ -234,7 +243,7 @@
   .doc span { display: flex; align-items: baseline; gap: 6px; padding: 10px 12px; font-size: 14px; line-height: 1.35; }
   .doc b { color: var(--iris); font-weight: 600; }
   .doc .ext { margin-left: auto; font-size: 11px; color: var(--muted); letter-spacing: .04em; }
-  .pgal { columns: 2 220px; column-gap: 16px; }
+  .pgal { columns: 3 190px; column-gap: 16px; }  /* photo gallery: three smaller columns */
   .pgal figure { margin: 0 0 16px; break-inside: avoid; }
   .pgal a { display: block; }
   .pgal img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
@@ -272,15 +281,15 @@
       <article class="pbody">
       <section>
         <h2>Background</h2>
+        <figure class="wrap">
+          <a href="noise-spectra.jpg" target="_blank" rel="noopener"><img src="noise-spectra.jpg" alt="Power spectral density of each noise color, relative to its level at 1 kHz" loading="lazy"></a>
+          <figcaption>Power spectral density of each noise color, relative to its level at 1 kHz</figcaption>
+        </figure>
         <p>Many people play brown, pink, white or blue noise to study or sleep, but don't know what the “colors” of noise mean. Each color is defined by its energy and power distribution across the audible frequency spectrum. Each assumes a signal with components at all frequencies, with a power spectral density per unit of bandwidth proportional to 1/f<sup>β</sup>.</p>
         <p>Brown noise has β = 2, and its power spectral density is plotted as a linear function of frequency that decreases by 6.02 dB per octave. This produces an audio signal that emphasizes low frequencies and heavily attenuates higher ones.</p>
         <p>Pink noise has β = 1, and its PSD decreases by 3.01 dB/octave. Similarly to brown noise, it highlights lower frequencies and reduces higher ones, but more gently.</p>
         <p>White noise has β = 0, which produces a flat power spectrum. Every audible frequency is played at the same intensity.</p>
         <p>Blue noise has β = −1, and its PSD increases by 3.01 dB/octave. Blue noise is the opposite of pink noise: high frequencies are more prominent while low frequencies are cut off.</p>
-        <figure>
-          <img src="noise-spectra.jpg" alt="Power spectral density of each noise color, relative to its level at 1 kHz" loading="lazy">
-          <figcaption>Power spectral density of each noise color, relative to its level at 1 kHz</figcaption>
-        </figure>
       </section>
 
       <section>
@@ -290,22 +299,22 @@
 
       <section>
         <h2>Methods</h2>
-        <p>I cultured worms on NGM agar plates seeded with <i>E. coli</i> OP50, then washed them and placed them at the center of assay plates divided into four sections, with salt at two test sites and water at two control sites.</p>
-        <p>Each plate sat on a speaker for 60 minutes under one of five conditions: silence, brown, pink, white or blue noise, with five replicate plates per condition. I counted the worms at each site, calculated a chemotaxis index for each plate, and compared the conditions with a one-way ANOVA.</p>
-        <figure>
-          <img src="celegans-microscope.jpg" alt="Worms under the dissecting microscope: the starting point of a control plate, and test sites on white and brown noise plates" loading="lazy">
+        <figure class="wrap">
+          <a href="celegans-microscope.jpg" target="_blank" rel="noopener"><img src="celegans-microscope.jpg" alt="Worms under the dissecting microscope: the starting point of a control plate, and test sites on white and brown noise plates" loading="lazy"></a>
           <figcaption>Worms under the dissecting microscope: the starting point of a control plate, and test sites on white and brown noise plates</figcaption>
         </figure>
+        <p>I cultured worms on NGM agar plates seeded with <i>E. coli</i> OP50, then washed them and placed them at the center of assay plates divided into four sections, with salt at two test sites and water at two control sites.</p>
+        <p>Each plate sat on a speaker for 60 minutes under one of five conditions: silence, brown, pink, white or blue noise, with five replicate plates per condition. I counted the worms at each site, calculated a chemotaxis index for each plate, and compared the conditions with a one-way ANOVA.</p>
       </section>
 
       <section>
         <h2>Results</h2>
-        <p>There was no significant difference between the conditions (p = 0.708), so the hypothesis wasn't supported. Every mean chemotaxis index was close to zero, meaning the worms split fairly evenly between salt and water.</p>
-        <p>There was a pattern, though. Brown and pink noise, which emphasize lower frequencies, had positive mean indexes. Blue and white noise had slightly negative ones. This fits an earlier study where <i>C. elegans</i> responded most strongly at 23 Hz, the lowest frequency tested.</p>
-        <figure>
-          <img src="celegans-chart.jpg" alt="Mean chemotaxis index for each condition, with standard deviation error bars" loading="lazy">
+        <figure class="wrap">
+          <a href="celegans-chart.jpg" target="_blank" rel="noopener"><img src="celegans-chart.jpg" alt="Mean chemotaxis index for each condition, with standard deviation error bars" loading="lazy"></a>
           <figcaption>Mean chemotaxis index for each condition, with standard deviation error bars</figcaption>
         </figure>
+        <p>There was no significant difference between the conditions (p = 0.708), so the hypothesis wasn't supported. Every mean chemotaxis index was close to zero, meaning the worms split fairly evenly between salt and water.</p>
+        <p>There was a pattern, though. Brown and pink noise, which emphasize lower frequencies, had positive mean indexes. Blue and white noise had slightly negative ones. This fits an earlier study where <i>C. elegans</i> responded most strongly at 23 Hz, the lowest frequency tested.</p>
       </section>
 
       <section>
