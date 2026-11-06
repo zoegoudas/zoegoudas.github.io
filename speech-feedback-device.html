@@ -191,7 +191,7 @@
   }
 </style>
 <style>
-  .pagewrap { max-width: 1120px; }
+  .pagewrap { max-width: 780px; }  /* one centered column, so text never stretches across the whole screen */
   .ptop { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
   .ptop a { color: var(--muted); text-decoration: none; font-weight: 500; }
   .ptop a:hover { color: var(--iris); }
@@ -201,17 +201,20 @@
   .kicker { font-family: "Young Serif", serif; color: var(--muted); font-size: 18px; margin: 0 0 10px; }
   .phead h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance; }
   .phead .lede { font-size: 20px; color: var(--muted); margin: 6px 0 0; max-width: 58ch; }
-  .pgrid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; border-top: 1px solid var(--rule); padding-top: 40px; }
+  /* date under the title, with the "In progress" tag to its right */
+  .pdate { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0 0 14px; font-size: 16px; color: var(--muted); }
+  .pdate .status { margin: 0; padding: 3px 10px; border-radius: 999px; background: #E7F0EA; }
+  .pgrid { border-top: 1px solid var(--rule); padding-top: 40px; }
   .pbody section { padding: 0; }
   .pbody section + section { margin-top: 44px; }
   .pbody h2 { font-size: 28px; margin: 0 0 14px; }
-  .pbody p { max-width: 66ch; margin: 0 0 14px; line-height: 1.7; }
+  .pbody p { margin: 0 0 14px; line-height: 1.7; }
   .pbody figure { margin: 24px 0 0; }
   .pbody figure img { display: block; width: auto; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
   .pbody figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
-  .pside { position: sticky; top: 24px; display: grid; gap: 14px; }
-  .docs-h { font-size: 20px; margin: 8px 0 0; }
-  .docs { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .pbody .refs p { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0 0 8px; overflow-wrap: anywhere; }
+  .pbody .refs a { color: var(--muted); }
+  .docs { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
   .doc { display: block; border: 1px solid var(--rule); border-radius: 6px; background: var(--sheet); color: var(--ink); text-decoration: none; overflow: hidden; transition: border-color .15s; }
   .doc:hover { border-color: var(--iris); }
   .doc img { display: block; width: 100%; height: auto; max-height: 240px; object-fit: cover; object-position: top; border-bottom: 1px solid var(--rule); background: #fff; }
@@ -229,9 +232,7 @@
   .pnav small { display: block; font-family: "Figtree", system-ui, sans-serif; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
   .pnav .next { text-align: right; }
   @media (max-width: 900px) {
-    .pgrid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-    .pside { position: static; order: -1; }
-    .docs { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .docs { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
 </style>
 </head>
@@ -246,7 +247,7 @@
     <div class="phead">
       <p class="kicker">Rutgers University</p>
       <h1>Speech feedback device for deaf learners</h1>
-      <span class="status">In progress</span>
+      <p class="pdate"><span>Oct 2026 – Present</span><span class="status">In progress</span></p>
       <p class="lede">A wearable collar that provides deaf and hard of hearing learners with tactile feedback to show them what their voice and mouth are doing as they practice speech.</p>
     </div>
 
@@ -270,14 +271,6 @@
         <p>A microcontroller on the collar reads every sensor and sends the data to a phone over Bluetooth Low Energy, so there are no cables. The phone app combines the collar data with the phone's microphone and camera, compares each attempt to a target, and shows the learner what to change.</p>
       </section>
       </article>
-      <aside class="pside">
-        <div class="label">
-          <dl>
-            <dt>Area</dt><dd>Assistive technology</dd>
-            <dt>Stage</dt><dd>Design</dd>
-          </dl>
-        </div>
-      </aside>
     </div>
 
     <nav class="pnav" aria-label="More projects">

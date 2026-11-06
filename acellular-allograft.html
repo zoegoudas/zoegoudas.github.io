@@ -191,7 +191,7 @@
   }
 </style>
 <style>
-  .pagewrap { max-width: 1120px; }
+  .pagewrap { max-width: 780px; }  /* one centered column, so text never stretches across the whole screen */
   .ptop { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
   .ptop a { color: var(--muted); text-decoration: none; font-weight: 500; }
   .ptop a:hover { color: var(--iris); }
@@ -201,17 +201,20 @@
   .kicker { font-family: "Young Serif", serif; color: var(--muted); font-size: 18px; margin: 0 0 10px; }
   .phead h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance; }
   .phead .lede { font-size: 20px; color: var(--muted); margin: 6px 0 0; max-width: 58ch; }
-  .pgrid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; border-top: 1px solid var(--rule); padding-top: 40px; }
+  /* date under the title, with the "In progress" tag to its right */
+  .pdate { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0 0 14px; font-size: 16px; color: var(--muted); }
+  .pdate .status { margin: 0; padding: 3px 10px; border-radius: 999px; background: #E7F0EA; }
+  .pgrid { border-top: 1px solid var(--rule); padding-top: 40px; }
   .pbody section { padding: 0; }
   .pbody section + section { margin-top: 44px; }
   .pbody h2 { font-size: 28px; margin: 0 0 14px; }
-  .pbody p { max-width: 66ch; margin: 0 0 14px; line-height: 1.7; }
+  .pbody p { margin: 0 0 14px; line-height: 1.7; }
   .pbody figure { margin: 24px 0 0; }
   .pbody figure img { display: block; width: auto; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
   .pbody figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
-  .pside { position: sticky; top: 24px; display: grid; gap: 14px; }
-  .docs-h { font-size: 20px; margin: 8px 0 0; }
-  .docs { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .pbody .refs p { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0 0 8px; overflow-wrap: anywhere; }
+  .pbody .refs a { color: var(--muted); }
+  .docs { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
   .doc { display: block; border: 1px solid var(--rule); border-radius: 6px; background: var(--sheet); color: var(--ink); text-decoration: none; overflow: hidden; transition: border-color .15s; }
   .doc:hover { border-color: var(--iris); }
   .doc img { display: block; width: 100%; height: auto; max-height: 240px; object-fit: cover; object-position: top; border-bottom: 1px solid var(--rule); background: #fff; }
@@ -229,9 +232,7 @@
   .pnav small { display: block; font-family: "Figtree", system-ui, sans-serif; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
   .pnav .next { text-align: right; }
   @media (max-width: 900px) {
-    .pgrid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-    .pside { position: static; order: -1; }
-    .docs { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .docs { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
 </style>
 </head>
@@ -246,6 +247,7 @@
     <div class="phead">
       <p class="kicker">Rutgers University</p>
       <h1>Acellular allograft tissue engineering</h1>
+      <p class="pdate"><span>Jan – Apr 2026</span></p>
       <p class="lede">An evidence generation plan for modifying how a backordered skin graft is processed, without losing quality.</p>
     </div>
 
@@ -285,21 +287,14 @@
         <h2>Decision Criteria</h2>
         <p>Each study defines in advance what counts as acceptable, ambiguous or unacceptable. If there's no significant difference between the groups, the change can go ahead. A small but significant drop, such as less than 20% in collagen or elastin, sends the change to further testing, like cyclic fatigue testing or SEM imaging, before a decision. A large loss, such as more than a 20% drop in collagen or elastin, or a graft that fails the DNA threshold, means the change is rejected.</p>
       </section>
-      </article>
-      <aside class="pside">
-        <div class="label">
-          <dl>
-            <dt>Type</dt><dd>Course project</dd>
-            <dt>Course</dt><dd>BME Measurement &amp; Analysis</dd>
-            <dt>Team</dt><dd>5 students</dd>
-            <dt>Format</dt><dd>Proposal: studies designed, not run</dd>
-          </dl>
-        </div>
-        <h2 class="docs-h">Files</h2>
+
+      <section class="pfiles">
+        <h2>Files</h2>
         <ul class="docs">
           <li><a class="doc" href="allograft-evidence-plan.pdf" target="_blank" rel="noopener"><img src="thumb-allograft.jpg" alt="" loading="lazy"><span><b>Slides</b> Evidence generation plan<span class="ext">PDF</span></span></a></li>
         </ul>
-      </aside>
+      </section>
+      </article>
     </div>
 
     <nav class="pnav" aria-label="More projects">
