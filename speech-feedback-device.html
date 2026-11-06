@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Speech feedback device for deaf learners | Zoe Goudas</title>
-<meta name="description" content="A wearable collar that provides deaf and hard of hearing learners with tactile feedback to show them what their voice and mouth are doing as they practice speech.">
+<meta name="description" content="A wearable collar and phone app that sense how a deaf learner is producing speech and give visual or vibrotactile feedback in place of the hearing they're missing.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 18C12 12 13 6 16 3c3 3 4 9 0 15z' fill='%235B4B9A'/%3E%3Cpath d='M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z' fill='%237D6CC0'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -191,19 +191,26 @@
   }
 </style>
 <style>
-  .pagewrap { max-width: 780px; }  /* one centered column, so text never stretches across the whole screen */
+  .pagewrap { max-width: 960px; }  /* one centered column, so text never stretches across the whole screen */
   .ptop { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
   .ptop a { color: var(--muted); text-decoration: none; font-weight: 500; }
   .ptop a:hover { color: var(--iris); }
   .ptop .home { display: inline-flex; align-items: center; gap: 8px; font-family: "Young Serif", serif; font-size: 20px; color: var(--ink); font-weight: 400; }
   .ptop .home svg { width: 22px; height: 22px; }
-  .phead { padding: 48px 0 36px; max-width: 780px; }
+  .phead { padding: 48px 0 36px; }
   .kicker { font-family: "Young Serif", serif; color: var(--muted); font-size: 18px; margin: 0 0 10px; }
   .phead h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance; }
-  .phead .lede { font-size: 20px; color: var(--muted); margin: 6px 0 0; max-width: 58ch; }
+  .phead .lede { font-size: 20px; color: var(--muted); margin: 6px 0 0; max-width: 62ch; }
   /* date under the title, with the "In progress" tag to its right */
-  .pdate { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0 0 14px; font-size: 16px; color: var(--muted); }
+  /* title on the left; date and "In progress" stacked on the right, under "All projects" */
+  .ptitle { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 14px; }
+  .ptitle h1 { margin: 0; }
+  .pdate { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex: none; padding-bottom: 6px; font-size: 16px; color: var(--muted); white-space: nowrap; }
   .pdate .status { margin: 0; padding: 3px 10px; border-radius: 999px; background: #E7F0EA; }
+  @media (max-width: 640px) {
+    .ptitle { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .pdate { flex-direction: row; align-items: center; padding: 0; }
+  }
   .pgrid { border-top: 1px solid var(--rule); padding-top: 40px; }
   .pbody section { padding: 0; }
   .pbody section + section { margin-top: 44px; }
@@ -212,6 +219,12 @@
   .pbody figure { margin: 24px 0 0; }
   .pbody figure img { display: block; width: auto; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
   .pbody figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+  /* tables (write each row on its own line, starting with |) */
+  .pbody .tbl { overflow-x: auto; margin: 6px 0 18px; }
+  .pbody table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; background: var(--sheet); border: 1px solid var(--rule); }
+  .pbody th, .pbody td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--rule); }
+  .pbody th { font-weight: 600; color: var(--ink); background: #EEEAF6; }
+  .pbody tr:last-child td { border-bottom: 0; }
   .pbody .refs p { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0 0 8px; overflow-wrap: anywhere; }
   .pbody .refs a { color: var(--muted); }
   .docs { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
@@ -245,30 +258,111 @@
 
   <main>
     <div class="phead">
-      <p class="kicker">Rutgers University</p>
-      <h1>Speech feedback device for deaf learners</h1>
-      <p class="pdate"><span>Oct 2026 – Present</span><span class="status">In progress</span></p>
-      <p class="lede">A wearable collar that provides deaf and hard of hearing learners with tactile feedback to show them what their voice and mouth are doing as they practice speech.</p>
+      <div class="ptitle">
+        <div>
+          <p class="kicker">Rutgers University</p>
+          <h1>Speech feedback device for deaf learners</h1>
+        </div>
+        <div class="pdate"><span>Oct 2026 – Present</span><span class="status">In progress</span></div>
+      </div>
+      <p class="lede">A wearable collar and phone app that sense how a deaf learner is producing speech and give visual or vibrotactile feedback in place of the hearing they're missing.</p>
     </div>
 
     <div class="pgrid">
       <article class="pbody">
       <section>
+        <h2>Overview</h2>
+        <p>Hearing your own voice is how you learn to speak and how you keep speaking clearly. Deaf learners don't get that feedback, so they can't tell when a sound comes out wrong. My goal is a wearable collar and phone app that sense how the learner is producing speech (voice, nasality, lips, and later the tongue) and give visual or vibrotactile feedback instead, so they can learn and maintain intelligible speech.</p>
+      </section>
+
+      <section>
         <h2>Background</h2>
-        <p>Speaking relies on a feedback loop: we hear our own voice and correct it as we notice errors. Deaf speakers have no access to this feedback loop, so they can't hear their own mistakes to fix them.</p>
-        <p>Common results are pitch that is too high or unstable, too much nasality, voicing errors like b versus p, and dropped sounds that aren't visible on the lips, such as k and g.</p>
+        <p>Speech starts as a buzzing tone from the vocal folds, called the source. The throat, mouth, tongue, and lips then shape that tone into words, called the filter.</p>
+        <p>The brain controls speech with two systems. The feedforward system sends learned motor commands and predicts what they should sound like. The feedback system compares that prediction with what you actually hear, and any mismatch becomes an error signal that corrects the next commands [1].</p>
+        <p>One way to test this loop is delayed auditory feedback, where you hear your own voice through headphones a few milliseconds late. Fluent speakers slow down or start to stutter, while people who stutter often become more fluent. In one study, researchers recorded directly from the brain surface of 15 epilepsy surgery patients as they read words and sentences aloud with their voice delayed by 0, 50, 100, or 200 ms [2]. Speech got longer as the delay increased, especially for sentences. Auditory areas responded after speech began and responded more with longer delays, which looks like error detection. Motor areas became active before speech began and were affected by the delay only during sentences. The authors concluded that the superior temporal gyrus, the supramarginal gyrus, and especially the dorsal precentral gyrus handle auditory feedback, and that timing errors may be handled by a different network than pitch errors.</p>
+        <p>The DIVA model (Directions Into Velocities of Articulators) is a neural network model of how the brain learns and controls speech [3]. It keeps two kinds of targets for each sound: auditory targets for what it should sound like, and somatosensory targets for what the mouth and throat should feel like. Babies learn by babbling, which links movements to how they sound and feel, and then by imitating the speech they hear. Early attempts depend heavily on feedback, and each correction gets folded into the feedforward command, so with practice feedback is only needed for unexpected errors.</p>
+      </section>
+
+      <section>
+        <h2>What This Means for the Device</h2>
+        <p>A deaf child never gets the auditory half of this loop, so auditory targets are never learned and feedforward commands never get tuned. The device has to provide a substitute error signal through a different sense. The somatosensory channel, what speech feels like, still works, so the device can link correct productions to how they feel and help build targets that last without it. DIVA also supports giving a lot of feedback early and less as the learner improves.</p>
+        <p>People who lose their hearing later in life start with normal speech, but without feedback it drifts over time. For them, the device would be for maintenance rather than teaching.</p>
+        <p>Timing matters too. Delays of only 50 to 200 ms disrupt fluent speakers, so live feedback in the middle of a word would need to arrive in under 50 ms. Most parameters will get summary feedback after each attempt instead, with live feedback only for the pitch line. Since pitch and timing may use different control paths, they can be trained as separate exercises.</p>
+      </section>
+
+      <section>
+        <h2>Speech in Deaf Learners</h2>
+        <p>The voice box and articulators work, but the speaker can't hear errors to correct them. How much this affects speech depends on the degree of hearing loss, the age it began, and whether the person uses a cochlear implant.</p>
+        <p>Vowels drift toward “uh,” so beat, bit, and bat sound alike, and sounds like “eye” and “oy” lose their glide. Consonants that aren't visible on the lips (k, g, ng, h) are dropped or replaced, while visible ones (p, b, m, f, v, w) are usually clearer. High-frequency sounds like s, sh, f, and th are distorted or missing because they fall where hearing loss is worst, above about 4 kHz. Final consonants get dropped, so “cat” becomes “ca,” and voicing and placement errors like b/p, d/t, t/k, and d/g are common.</p>
+        <p>The voice itself can be too high, unstable, or monotone, so questions and statements sound the same. Nasality and loudness are hard to control, and the voice can sound strained. Speech also tends to be slow, with every syllable stressed equally, and poor breath control causes pauses in odd places.</p>
+        <p>In classic studies, unfamiliar listeners understood the speech of profoundly deaf children only about 20% of the time, though cochlear implants have improved this for many. Controlling speech consciously is also tiring, and many Deaf people prefer sign language, so speech training is a personal choice.</p>
       </section>
 
       <section>
         <h2>Existing Tools</h2>
-        <p>Most speech-training apps listen through a microphone. A microphone can tell a learner that a sound was wrong, but not what the mouth did wrong, so the learner is left guessing how to fix it.</p>
-        <p>This device senses the source of the problem directly: how the vocal folds, nose, jaw, and lips are moving.</p>
+        <p>Most speech-training apps use the phone's microphone. A microphone is cheap and good at pitch, loudness, rhythm, and s/sh quality, but it picks up background noise and other voices, and it can't see the tongue, lips, or soft palate. It can tell a learner that a sound was wrong, but not what the mouth did wrong, so they're left guessing how to fix it.</p>
+        <p>Delsys has used surface EMG (sEMG) sensors on the face and neck to pick up the electrical signals of speech muscles and turn them into synthesized speech for people who can move their mouths but can't produce a voice [4]. Earlier sEMG work recognized words and phrases with about 90% accuracy, and stressed words show a clear jump in signal strength, especially from the neck sensors. It works like an upgraded electrolarynx, the handheld buzzer pressed against the neck that gives people with damaged vocal folds a new sound source.</p>
+        <p>Delsys targets people who can't voice, while deaf learners can voice but can't hear their errors. Still, the same sensor placements can track the jaw, tongue base, and lips for feedback, and like the Delsys system, this device will need a model tuned to each user.</p>
       </section>
 
       <section>
-        <h2>Design</h2>
-        <p>An accelerometer on the neck near the voice box picks up vocal fold vibration directly, which gives a clean pitch signal and shows when the voice is on or off. A second accelerometer near the nose is compared with the throat sensor to show how much sound is going through the nose. Surface EMG electrodes under the jaw and on the neck measure muscle activity during speech.</p>
-        <p>A microcontroller on the collar reads every sensor and sends the data to a phone over Bluetooth Low Energy, so there are no cables. The phone app combines the collar data with the phone's microphone and camera, compares each attempt to a target, and shows the learner what to change.</p>
+        <h2>Sensing Each Error</h2>
+        <p>Each common error in deaf speech needs a sensor that can actually detect it:</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Common error</th><th>Sensor</th><th>Feedback</th></tr></thead>
+          <tbody>
+            <tr><td>Pitch too high or unstable</td><td>Throat accelerometer or microphone</td><td>Live pitch line against a target range</td></tr>
+            <tr><td>Too much nasality</td><td>Nose and throat accelerometers (energy ratio)</td><td>Nasality meter</td></tr>
+            <tr><td>Voicing errors (b/p, d/t)</td><td>Throat accelerometer (voicing onset timing)</td><td>Voiced/unvoiced indicator</td></tr>
+            <tr><td>Lip and jaw shape</td><td>Front camera with face landmarks</td><td>Overlay of target vs. actual lip shape</td></tr>
+            <tr><td>Tongue placement (t, k, s, sh)</td><td>sEMG under the jaw, or electropalatography</td><td>Tongue-position map</td></tr>
+            <tr><td>Breathiness and loudness</td><td>Microphone plus chest strap or airflow sensor</td><td>Effort and breath gauge</td></tr>
+            <tr><td>Rhythm and stress</td><td>Microphone and sEMG envelope</td><td>Syllable timing bars</td></tr>
+            <tr><td>Vowels sound alike</td><td>Microphone (formants F1/F2) plus sEMG under the chin</td><td>Vowel chart showing attempt vs. target</td></tr>
+            <tr><td>s/sh distorted or missing</td><td>Microphone (energy above 4 kHz)</td><td>Hiss-strength meter</td></tr>
+          </tbody>
+        </table></div>
+        <p>The tongue is the hardest part. It's hidden from the camera, and sEMG under the chin only gives a rough signal. Electropalatography (a thin, retainer-style sensor plate on the roof of the mouth) and ultrasound are accurate, but they're clinical and expensive. This matters because tongue errors cause vowel neutralization and k/g errors, which make up a large share of intelligibility loss.</p>
+      </section>
+
+      <section>
+        <h2>Collar Design</h2>
+        <p>The collar has four parts.</p>
+        <p>A throat accelerometer sits just to the side of the thyroid cartilage or just above the sternal notch and measures vocal fold vibration directly. Because it picks up the raw buzz before the mouth shapes it, it gives a clean pitch signal (80 to 400 Hz) and a simple on/off voicing signal for pairs like b and p. It doesn't pick up background noise or other people's voices. It needs a bone-conduction voice pickup or a wide-bandwidth MEMS accelerometer sampled at 4 kHz or more, since generic IMU accelerometers are too slow, and a 50 to 70 Hz high-pass filter to remove swallowing and movement artifacts.</p>
+        <p>Two to four sEMG channels under the chin and on the front of the neck, roughly where Delsys placed them, sense the muscles that move the jaw, tongue base, and lips. This is the cheapest wearable way to get any tongue information. It needs a biopotential front end (an ADS1299-class chip), sampling at about 1 to 2 kHz per channel, and a 20 to 450 Hz band-pass filter with a 60 Hz notch. The signals vary a lot between people and sensor placements, so each user needs their own model and a quick calibration every session.</p>
+        <p>A small nasal accelerometer clips to the side of the nose. When sound goes through the nose, its signal rises relative to the throat sensor. This nasal-to-throat ratio is a well-established, cheap measure of nasality, and it cancels out overall loudness. It's calibrated each session with a known nasal sound (“mmm”) and a known oral sound (“aaa”).</p>
+        <p>A microcontroller with Bluetooth Low Energy, such as the nRF52840 or ESP32-S3, samples every sensor on one clock and sends the data to the phone, so there are no cables. It calculates features like pitch, voicing, the nasality ratio, and sEMG envelopes on the collar, since streaming raw data (about 250 kbps) is tight over Bluetooth. End-to-end latency is about 20 to 50 ms, which is fine for feedback after each attempt but borderline for live feedback in the middle of a word.</p>
+      </section>
+
+      <section>
+        <h2>Phone App</h2>
+        <p>The phone's microphone tracks pitch, loudness, rhythm, and s/sh quality and cross-checks the throat accelerometer. The moment voicing starts, seen by both, is also used to keep the collar and phone in sync. The front camera tracks face landmarks for lip rounding, lip closure, and jaw opening.</p>
+        <p>To score an attempt, the app compares it with a target recording of the sound produced correctly, either by a speech-language pathologist or by the user on a good attempt. It compares pitch contour, voicing timing, nasality ratio, lip landmarks, and sEMG envelopes, using dynamic time warping to line up attempts that vary in speed. The app shows only one or two measures at a time, like a pitch line, nasality meter, or lip overlay, and saves each session's scores to track progress.</p>
+      </section>
+
+      <section>
+        <h2>Feedback</h2>
+        <p>Visual feedback is the most informative, but the user has to watch a screen, which is fine while learning. Vibrotactile feedback uses small motors on the wrist or collar that buzz when pitch drifts out of range or nasality is too high. It doesn't need a screen, so it can work during practice or even while talking with other people.</p>
+        <p>Motor-learning research shows that live feedback helps someone find a target, while summary feedback after each attempt, given less often, leads to better retention. The app will start with live feedback for single sounds and words, switch to summary feedback for sentences and conversations, and give feedback less often as scores improve.</p>
+      </section>
+
+      <section>
+        <h2>Next Steps</h2>
+        <p>I'm starting with pitch, voicing, and nasality from the microphone and two accelerometers, plus lip shape from the phone camera. This covers many of the intelligibility problems in deaf speech with cheap, reliable sensors and avoids the hardest sensing problem, the tongue. Once the basic loop works, I'll add sEMG.</p>
+      </section>
+
+      <section>
+        <h2>Challenges</h2>
+        <p>“Correct” speech varies from person to person, so targets need to be set relative to each user. Sensor readings shift if the collar sits slightly differently, so it needs a quick calibration every time it's worn. Showing too many meters at once overwhelms the learner, so the app has to stay simple.</p>
+        <p>The real measure of success is how well listeners understand the user, not sensor scores, so speech-language pathologists and deaf users need to be involved early. The target user isn't defined yet, and age, degree of hearing loss, cochlear implant use, and learning versus maintenance all change the design. Speech practice is slow and tiring, so exercises need to feel like a game or show visible progress. To be usable at home, the device also has to cost far less than clinical tools like electropalatography and ultrasound.</p>
+      </section>
+
+      <section class="refs">
+        <h2>References</h2>
+        <p>[1] Callan A, Callan DE. Understanding how the human brain tracks emitted speech sounds to execute fluent speech production. PLoS Biol. 2022;20(2):e3001533. <a href="https://doi.org/10.1371/journal.pbio.3001533" target="_blank" rel="noopener">https://doi.org/10.1371/journal.pbio.3001533</a></p>
+        <p>[2] Ozker M, Doyle W, Devinsky O, Flinker A. A cortical network processes auditory error signals during human speech production to maintain fluency. PLoS Biol. 2022;20(2):e3001493. <a href="https://doi.org/10.1371/journal.pbio.3001493" target="_blank" rel="noopener">https://doi.org/10.1371/journal.pbio.3001493</a></p>
+        <p>[3] Tourville JA, Guenther FH. The DIVA model: A neural theory of speech acquisition and production. Lang Cogn Process. 2011;26(7):952-981. <a href="https://doi.org/10.1080/01690960903498424" target="_blank" rel="noopener">https://doi.org/10.1080/01690960903498424</a></p>
+        <p>[4] Delsys. EMG Voice: How electromyography is giving a voice to those who cannot speak. <a href="https://delsys.com/emg-voice-how-electromyography-is-giving-a-voice-to-those-who-cannot-speak/" target="_blank" rel="noopener">https://delsys.com/emg-voice-how-electromyography-is-giving-a-voice-to-those-who-cannot-speak/</a></p>
       </section>
       </article>
     </div>
