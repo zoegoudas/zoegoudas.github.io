@@ -79,7 +79,11 @@
   .hero.pic .hero-text { z-index: 2; }
   @media (max-width: 760px) {
     .hero.art { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 24px; }
-    .hero.art .hero-art { justify-self: center; max-width: 240px; order: -1; }
+    /* phones: name first, then the painting, then About */
+    .hero.art .hero-main { display: contents; }
+    .hero.art .name { order: 1; margin-bottom: 0; }
+    .hero.art .hero-art { justify-self: center; max-width: 240px; order: 2; }
+    .hero.art .about-top { order: 3; }
   }
   @media (max-width: 1050px) {
     .hero.pic { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 0; margin-top: 16px; background: transparent; }
@@ -311,7 +315,7 @@
 
       <section>
         <h2>Problems</h2>
-        <p>We identified these by interviewing instructors and observing a demonstration.</p>
+        <p>Identified by interviewing program instructors and observing a demonstration.</p>
         <p><i>Positioning.</i> The simulator only supports the supine and hands-and-knees birthing positions. The hands-and-knees configuration requires mounting it beneath a plate on a custom frame, with stirrups from a separate vendor supporting the legs. The assembly is unstable and awkward to put together, and additional assistants are needed to hold it steady. Other delivery positions cannot be simulated.</p>
         <p><i>Cost and supply chain.</i> The unit costs $16,527 and is manufactured in Australia, so replacement parts and support are slow to arrive. The stirrups used for the hands-and-knees configuration are handmade by a nonprofit, Breech Without Borders.</p>
         <p><i>Maintenance.</i> The simulator must be fully dried and powdered between sessions, or trapped moisture can cause mold growth and the material can adhere to itself. Instructors reported that the seam where the polymer body meets the metal backing plate is difficult to access in order to dry and powder thoroughly.</p>
