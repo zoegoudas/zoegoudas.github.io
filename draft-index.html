@@ -70,10 +70,9 @@
   .about-top .about { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .about-top .about ul { display: flex; flex-wrap: wrap; gap: 8px; }
   .about-top .about li, .about-top .about li:first-child { border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; font-size: 14px; background: var(--sheet); }
-  /* The painting stretches to the height of the name + About text and scales to fit, right-aligned */
-  .hero.art { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); align-items: stretch; }
-  .hero-art-wrap { position: relative; min-height: 260px; }
-  .hero.art .hero-art { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; object-position: right top; }
+  /* desktop: the painting at its original size, top right */
+  .hero-art-wrap { justify-self: end; width: 100%; max-width: 340px; }
+  .hero.art .hero-art { display: block; width: 100%; height: auto; }
   .hero-credit { font-size: 13px; color: var(--muted); }
   .hero.pic { position: relative; display: block; min-height: clamp(340px, 40vw, 480px); margin-top: 32px; padding: clamp(32px, 5vw, 56px); border: 0; border-radius: 6px; overflow: hidden; background: #D8CDBF; }
   .hero.pic .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
@@ -89,7 +88,7 @@
     .hero.art .name { order: 1; margin-bottom: 0; }
     /* phones: the painting sits at the top right, fades to the left and down into About, with her name over it */
     .hero.art { padding-top: 0; }
-    .hero-art-wrap { overflow: hidden; min-height: 0; }
+    .hero-art-wrap { overflow: hidden; min-height: 0; max-width: none; }
     .hero.art .hero-art { position: absolute; inset: auto; height: auto; max-width: none; object-fit: fill; }
     .hero-art-wrap::after { content: ""; position: absolute; inset: 0; }
     .hero.art { display: block; position: relative; padding-top: 0; }
