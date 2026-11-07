@@ -41,11 +41,11 @@
   [id] { scroll-margin-top: 24px; }
 
   /* Table of contents: a progress rail that fills as you scroll */
-  .toc { order: 2; position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto; padding: 56px 0 32px; scrollbar-width: none; }
+  .toc { order: 2; position: sticky; top: 0; align-self: start; max-height: calc(100vh - 16px); overflow-y: auto; padding: 0 0 32px; scrollbar-width: none; }
   .toc::-webkit-scrollbar { display: none; }
   .toc ol { list-style: none; margin: 0; padding: 0; }
   .toc > ol { position: relative; padding-left: 22px; }
-  .toc .track, .toc .fill { position: absolute; left: 3px; top: 62px; bottom: 38px; width: 2px; border-radius: 2px; }
+  .toc .track, .toc .fill { position: absolute; left: 3px; top: 6px; bottom: 38px; width: 2px; border-radius: 2px; }
   .toc .track { background: var(--rule); }
   .toc .fill { background: var(--iris); transform-origin: top; transform: scaleY(var(--p, 0)); }
   .toc a { position: relative; display: block; padding: 5px 0; color: var(--muted); text-decoration: none; font-size: 14px; line-height: 1.35; }
@@ -57,12 +57,12 @@
   .toc a.top-l::before { top: 15px; }
   .toc .grp { font-size: 12px; color: var(--muted); padding: 10px 0 2px; font-style: italic; }
   /* HEADER: .name is her name at the top (font-size sets how big it is). .hero-art is the painting. */
-  .hero { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px; padding: 48px 0 24px; border-bottom: 1px solid var(--rule); }
+  .hero { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px; padding: 48px 0 24px; }
   .hero h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(44px, 7vw, 76px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
   .hero p.lede { font-size: 21px; max-width: 30ch; color: var(--muted); margin: 0 0 8px; }
   .hero .links a { margin-right: 18px; font-weight: 600; }
   .iris { width: 100%; max-width: 300px; justify-self: end; margin-bottom: -1px; }
-  .hero.art { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); align-items: start; gap: 40px; padding: 40px 0 32px; border-bottom: 1px solid var(--rule); }
+  .hero.art { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); align-items: start; gap: 40px; padding: 40px 0 32px; }
   .hero h1.name { font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 20px; }
   .about-top { padding: 0; }
   .about-top h2 { font-size: 24px; margin: 0 0 10px; }
@@ -150,14 +150,14 @@
   .sheet.card { margin-bottom: 10px; }
   .sheet.card .status { margin-bottom: 4px; font-size: 12px; }
   .card-link .photo { display: block; margin-bottom: 20px; }
-  .card-link h4 { margin-bottom: 4px; }
+  .card-link h4 { margin-bottom: 6px; }
   .card-link .sum { color: var(--muted); margin: 0 0 6px; max-width: 70ch; font-size: 14.5px; line-height: 1.45; }
   .sheet.card h4 { font-size: 20px; }
   .card-link .go { font-size: 14px; }
   /* RESEARCH / EMS ROLE ENTRIES: organization, role, place and dates */
   .entry { background: var(--sheet); border: 1px solid var(--rule); padding: 16px 22px; margin-bottom: 10px; }
   .entry h4 { font-family: "Young Serif", serif; font-weight: 400; font-size: 20px; line-height: 1.2; margin: 0 0 4px; }
-  .entry .meta { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
+  .entry .meta { font-size: 14px; color: var(--muted); margin: 0; }
   .entry p { font-size: 14.5px; line-height: 1.5; margin: 0 0 10px; max-width: 70ch; }
   .entry .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
   .entry .tags li { border: 1px solid var(--rule); border-radius: 999px; padding: 2px 10px; font-size: 13px; background: var(--paper); }
@@ -165,8 +165,7 @@
   .ems-intro p:last-child { margin-bottom: 0; }
   .certs { font-size: 14px; color: var(--muted); }
   .certs b { color: var(--ink); font-weight: 600; }
-  .roles li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
-  .roles li:first-child { border-top: 1px solid var(--rule); }
+  .roles li { padding: 4px 0; }
   .roles b { font-weight: 600; }
   .roles span { display: block; font-size: 14px; color: var(--muted); }
   @media (max-width: 760px) { .entry, .card-link { padding: 14px 16px; } }
@@ -212,8 +211,7 @@
   .about { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
   .about p { margin: 0 0 16px; max-width: 60ch; }
   .about ul { list-style: none; padding: 0; margin: 0; }
-  .about li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
-  .about li:first-child { border-top: 1px solid var(--rule); }
+  .about li { padding: 10px 0; }
   /* CONTACT: the heading and links sit on one line and wrap on small screens */
   section.contact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 36px; padding-top: 28px; }
   .contact h2 { font-size: 28px; margin: 0; }
@@ -223,7 +221,8 @@
   @media (max-width: 900px) {
     .layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
     [id] { scroll-margin-top: 64px; }
-    .toc { order: 0; z-index: 5; max-height: none; overflow: visible; padding: 12px 0 0; margin: 0 -24px; background: var(--paper); border-bottom: 1px solid var(--rule); }
+    .toc { order: 0; z-index: 5; transform: none !important; max-height: none; overflow: visible; padding: 12px 0 0; margin: 0 -24px; background: var(--paper); }
+    .toc .track, .toc .fill { display: none; }
     .toc > ol { display: flex; align-items: center; gap: 20px; overflow-x: auto; white-space: nowrap; padding: 0 24px 12px; scrollbar-width: none; }
     .toc > ol::-webkit-scrollbar { display: none; }
     .toc li { display: contents; }
@@ -258,7 +257,7 @@
   <nav class="toc" aria-label="On this page">
     <span class="track" aria-hidden="true"></span><span class="fill" aria-hidden="true"></span>
     <ol>
-      <li><a class="top-l" href="#about">About</a></li>
+      <li><a class="top-l" href="#about">About me</a></li>
       <li><a class="top-l" href="#projects">Projects</a>
         <ol>
           <li class="grp" aria-hidden="true">Rutgers University</li>
@@ -290,7 +289,7 @@
     <div class="hero-main">
       <h1 class="name">Zoe Goudas</h1>
     <section id="about" class="about-top">
-      <h2>About</h2>
+      <h2>About me</h2>
       <div class="about">
         <div>
           <p>I’m a senior biomedical engineering major with a math minor in the Honors College at Rutgers University–New Brunswick, graduating in May 2027. I’m interested in tissue engineering, biomaterials, medical devices, biosensors, wearable health tech, drug delivery and neural engineering.</p>
@@ -313,18 +312,14 @@
 
     <article class="sheet card" id="low-cost-obstetric-simulator">
       <a class="card-link" href="draft-obstetric-simulator.html">
-        <span class="status">In progress</span>
         <h4>Low-Cost Obstetric Training Simulator</h4>
-        <p class="sum">My senior capstone, a lower-cost and more versatile birthing simulator for the Rutgers-Newark midwifery program.</p>
         <span class="go">View project</span>
       </a>
     </article>
 
     <article class="sheet card" id="speech-feedback-device-for-deaf-learners">
       <a class="card-link" href="draft-speech-feedback-device.html">
-        <span class="status">In progress</span>
         <h4>Speech Feedback Wearable for Deaf Learners</h4>
-        <p class="sum">A collar and phone app that give deaf learners visual and vibrotactile feedback on their speech.</p>
         <span class="go">View project</span>
       </a>
     </article>
@@ -332,7 +327,6 @@
     <article class="sheet card" id="acellular-allograft-tissue-engineering">
       <a class="card-link" href="draft-acellular-allograft.html">
         <h4>Acellular Dermal Allograft Validation Plan</h4>
-        <p class="sum">A study plan for confirming a processing change to a backordered skin graft doesn’t reduce its quality.</p>
         <span class="go">View project</span>
       </a>
     </article>
@@ -340,7 +334,6 @@
     <article class="sheet card" id="probiotic-hydrogel-for-ulcerative-colitis">
       <a class="card-link" href="draft-probiotic-hydrogel.html">
         <h4>Probiotic Hydrogel for Ulcerative Colitis</h4>
-        <p class="sum">A sprayable hydrogel carrying engineered <i>E. coli</i> that release an anti-inflammatory protein in the colon.</p>
         <span class="go">View project</span>
       </a>
     </article>
@@ -348,7 +341,6 @@
     <article class="sheet card" id="adaptive-heat-risk-coach">
       <a class="card-link" href="draft-heat-risk-coach.html">
         <h4>Adaptive Heat Risk Coach App</h4>
-        <p class="sum">An AI app prototype that learns how a user responds to heat and warns them before symptoms get worse.</p>
         <span class="go">View project</span>
       </a>
     </article>
@@ -361,10 +353,6 @@
     <article class="entry" id="max-planck-institute">
       <h4>Max Planck Institute of Colloids and Interfaces</h4>
       <p class="meta">Rotational Research Intern · Potsdam, Germany · Jun – Aug 2023</p>
-      <p>I rotated through 16 biomaterials research groups spanning materials characterization, biochemistry and mechanobiology. I prepared and characterized biomaterial samples, ran protein assays and tissue staining, analyzed microscopy data in ImageJ/FIJI, and documented my work in an electronic lab notebook.</p>
-      <ul class="tags" aria-label="Techniques">
-        <li>Raman spectroscopy</li><li>SEM/TEM</li><li>MicroCT</li><li>HPLC</li><li>Confocal microscopy</li><li>Microtome/cryotome sectioning</li><li>Diamond wire cutting</li><li>Instrumented indentation</li><li>SDS-PAGE</li><li>Bradford assay</li><li>Immunofluorescence</li>
-      </ul>
     </article>
 
     <h3 class="group">Biotechnology High School</h3>
@@ -372,7 +360,6 @@
     <article class="sheet card" id="sound-frequency-and-radish-seed-germination">
       <a class="card-link" href="draft-radish-germination.html">
         <h4>Sound Frequency and Radish Seed Germination</h4>
-        <p class="sum">Testing whether specific sound frequencies change how fast radish seeds germinate.</p>
         <span class="go">View project</span>
       </a>
     </article>
@@ -380,7 +367,6 @@
     <article class="sheet card" id="background-noise-and-c-elegans-chemotaxis">
       <a class="card-link" href="draft-celegans-chemotaxis.html">
         <h4>Background Noise and <i>C. elegans</i> Chemotaxis</h4>
-        <p class="sum">Testing whether different “colors” of background noise change how <i>C. elegans</i> move toward salt.</p>
         <span class="go">View project</span>
       </a>
     </article>
@@ -472,6 +458,32 @@
   window.addEventListener("resize", onScroll);
   document.addEventListener("toggle", onScroll, true);
   update();
+})();
+</script>
+<!-- SCRIPT: on wide screens the contents menu starts level with "About me", then settles in the middle of the screen as you scroll -->
+<script>
+(function () {
+  var toc = document.querySelector(".toc"), head = document.querySelector("#about h2");
+  if (!toc || !head) return;
+  var y = 0, start = null, queued = false;
+  function place() {
+    queued = false;
+    if (window.innerWidth <= 900) { toc.style.transform = ""; y = 0; start = null; return; }
+    var base = toc.getBoundingClientRect().top - y;
+    var aboutNow = head.getBoundingClientRect().top + 2;
+    if (start === null || window.scrollY === 0) start = aboutNow + window.scrollY;
+    var center = Math.max(8, (window.innerHeight - toc.offsetHeight) / 2);
+    var target;
+    if (start >= center) target = Math.max(aboutNow, center);
+    else target = start + (center - start) * Math.min(1, window.scrollY / 300);
+    y = Math.round(target - base);
+    toc.style.transform = "translateY(" + y + "px)";
+  }
+  function onScroll() { if (!queued) { queued = true; requestAnimationFrame(place); } }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { start = null; onScroll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { start = null; place(); });
+  place();
 })();
 </script>
 <div style="position:fixed;left:12px;bottom:12px;z-index:99;background:#1F1A3A;color:#fff;font:600 12px Figtree,sans-serif;padding:6px 10px;border-radius:999px;opacity:.85">Draft preview</div>
