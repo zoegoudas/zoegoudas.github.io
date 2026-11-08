@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -9,14 +10,14 @@
     gtag('js', new Date());
     gtag('config', 'G-0N696S6YXR');
   </script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Low-cost obstetric simulator | Zoe Goudas</title>
-<meta name="description" content="Senior design capstone project redesigning the birthing simulator used by the Rutgers-Newark midwifery nursing program.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 18C12 12 13 6 16 3c3 3 4 9 0 15z' fill='%235B4B9A'/%3E%3Cpath d='M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z' fill='%237D6CC0'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Low-Cost Obstetric Training Simulator | Zoe Goudas</title>
+<meta content="Senior design capstone project redesigning the birthing simulator used by the Rutgers-Newark midwifery nursing program." name="description"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
   /* COLORS: every color on the site comes from these names.
      --paper is the page background, --sheet the card background, --ink the main text,
@@ -59,16 +60,16 @@
   .toc a:hover { color: var(--ink); }
   .toc a[aria-current="true"] { color: var(--ink); font-weight: 600; }
   .toc a[aria-current="true"]::before { background: var(--iris); border-color: var(--iris); }
-  .toc a.top-l { font-family: "Young Serif", serif; font-size: 17px; color: var(--ink); padding-top: 8px; }
+  .toc a.top-l { font-family: "Fraunces", serif; font-size: 17px; color: var(--ink); padding-top: 8px; }
   .toc a.top-l::before { top: 15px; }
   .toc .grp { font-size: 12px; color: var(--muted); padding: 10px 0 2px; font-style: italic; }
   /* HEADER: .name is her name at the top (font-size sets how big it is). .hero-art is the painting. */
-  .hero { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px; padding: 48px 0 24px; border-bottom: 1px solid var(--rule); }
-  .hero h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(44px, 7vw, 76px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
+  .hero { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px; padding: 48px 0 24px; }
+  .hero h1 { font-family: "Fraunces", serif; font-weight: 400; font-size: clamp(44px, 7vw, 76px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
   .hero p.lede { font-size: 21px; max-width: 30ch; color: var(--muted); margin: 0 0 8px; }
   .hero .links a { margin-right: 18px; font-weight: 600; }
   .iris { width: 100%; max-width: 300px; justify-self: end; margin-bottom: -1px; }
-  .hero.art { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); align-items: start; gap: 40px; padding: 40px 0 32px; border-bottom: 1px solid var(--rule); }
+  .hero.art { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); align-items: start; gap: 40px; padding: 40px 0 32px; }
   .hero h1.name { font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 20px; }
   .about-top { padding: 0; }
   .about-top h2 { font-size: 24px; margin: 0 0 10px; }
@@ -117,12 +118,12 @@
   }
   /* SECTIONS AND PROJECT CARDS: spacing above each section, heading sizes, and the white project cards */
   section { padding: 36px 0 8px; }
-  h2 { font-family: "Young Serif", serif; font-weight: 400; font-size: 36px; margin: 0 0 24px; }
+  h2 { font-family: "Fraunces", serif; font-weight: 400; font-size: 36px; margin: 0 0 24px; }
   .sheet { position: relative; background: var(--sheet); border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 20px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 32px; align-items: start; }
   .sheet .photo { grid-column: 1 / -1; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--rule); }
-  .group { font-family: "Young Serif", serif; font-weight: 400; font-size: 22px; color: var(--muted); margin: 56px 0 20px; }
+  .group { font-family: "Fraunces", serif; font-weight: 400; font-size: 22px; color: var(--muted); margin: 56px 0 20px; }
   .group:first-of-type { margin-top: 0; }
-  .sheet h4 { font-family: "Young Serif", serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0 0 12px; }
+  .sheet h4 { font-family: "Fraunces", serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0 0 12px; }
   .sheet p { margin: 0 0 14px; max-width: 60ch; }
   .more summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--iris); font-weight: 600; font-size: 15px; padding: 2px 0; }
   .more summary::-webkit-details-marker { display: none; }
@@ -182,7 +183,7 @@
   @media (max-width: 900px) {
     .layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
     [id] { scroll-margin-top: 64px; }
-    .toc { order: 0; z-index: 5; max-height: none; overflow: visible; padding: 12px 0 0; margin: 0 -24px; background: var(--paper); border-bottom: 1px solid var(--rule); }
+    .toc { order: 0; z-index: 5; max-height: none; overflow: visible; padding: 12px 0 0; margin: 0 -24px; background: var(--paper); }
     .toc > ol { display: flex; align-items: center; gap: 20px; overflow-x: auto; white-space: nowrap; padding: 0 24px 12px; scrollbar-width: none; }
     .toc > ol::-webkit-scrollbar { display: none; }
     .toc li { display: contents; }
@@ -204,14 +205,14 @@
 </style>
 <style>
   .pagewrap { max-width: 960px; }  /* one centered column, so text never stretches across the whole screen */
-  .ptop { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+  .ptop { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; }
   .ptop a { color: var(--muted); text-decoration: none; font-weight: 500; }
   .ptop a:hover { color: var(--iris); }
-  .ptop .home { display: inline-flex; align-items: center; gap: 8px; font-family: "Young Serif", serif; font-size: 20px; color: var(--ink); font-weight: 400; }
+  .ptop .home { display: inline-flex; align-items: center; gap: 8px; font-family: "Fraunces", serif; font-size: 20px; color: var(--ink); font-weight: 400; }
   .ptop .home svg { width: 22px; height: 22px; }
   .phead { padding: 48px 0 36px; }
-  .kicker { font-family: "Young Serif", serif; color: var(--muted); font-size: 18px; margin: 0 0 10px; }
-  .phead h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance; }
+  .kicker { font-family: "Fraunces", serif; color: var(--muted); font-size: 18px; margin: 0 0 10px; }
+  .phead h1 { font-family: "Fraunces", serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance; }
   .phead .lede { font-size: 20px; color: var(--muted); margin: 6px 0 0; max-width: 62ch; }
   /* date under the title, with the "In progress" tag to its right */
   /* title on the left; date and "In progress" stacked on the right, under "All projects" */
@@ -223,7 +224,7 @@
     .ptitle { flex-direction: column; align-items: flex-start; gap: 12px; }
     .pdate { flex-direction: row; align-items: center; padding: 0; }
   }
-  .pgrid { border-top: 1px solid var(--rule); padding-top: 40px; }
+  .pgrid { padding-top: 24px; }
   .pbody section { padding: 0; }
   .pbody section + section { margin-top: 44px; }
   .pbody h2 { font-size: 28px; margin: 0 0 14px; }
@@ -260,8 +261,8 @@
   .pgal a { display: block; }
   .pgal img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
   .pgal figcaption { font-size: 14px; color: var(--muted); margin-top: 6px; }
-  .pnav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid var(--rule); margin-top: 64px; padding-top: 8px; }
-  .pnav a { display: block; padding: 16px 0; color: var(--ink); text-decoration: none; font-family: "Young Serif", serif; font-size: 18px; line-height: 1.3; }
+  .pnav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 64px; padding-top: 8px; }
+  .pnav a { display: block; padding: 16px 0; color: var(--ink); text-decoration: none; font-family: "Fraunces", serif; font-size: 18px; line-height: 1.3; }
   .pnav a:hover { color: var(--iris); }
   .pnav small { display: block; font-family: "Figtree", system-ui, sans-serif; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
   .pnav .next { text-align: right; }
@@ -272,132 +273,118 @@
 </head>
 <body>
 <div class="wrap pagewrap">
-  <header class="ptop">
-    <a class="home" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 18C12 12 13 6 16 3c3 3 4 9 0 15z" fill="#5B4B9A"/><path d="M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z" fill="#7D6CC0"/></svg>Zoe Goudas</a>
-    <a href="index.html#projects">All projects</a>
-  </header>
+<header class="ptop">
+<a class="home" href="index.html"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 18C12 12 13 6 16 3c3 3 4 9 0 15z" fill="#5B4B9A"></path><path d="M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z" fill="#7D6CC0"></path></svg>Zoe Goudas</a>
+<a href="index.html#projects">All projects</a>
+</header>
+<main>
+<div class="phead">
+<div class="ptitle">
+<div>
+<p class="kicker">Rutgers University</p>
+<h1>Low-Cost Obstetric Training Simulator</h1>
+</div>
+<div class="pdate"><span>Aug 2026 – Present</span></div>
+</div>
 
-  <main>
-    <div class="phead">
-      <div class="ptitle">
-        <div>
-          <p class="kicker">Rutgers University</p>
-          <h1>Low-cost obstetric simulator</h1>
-        </div>
-        <div class="pdate"><span>Aug 2026 – Present</span><span class="status">In progress</span></div>
-      </div>
-      <p class="lede">Senior design capstone project redesigning the birthing simulator used by the Rutgers-Newark midwifery nursing program.</p>
-    </div>
+</div>
+<div class="pgrid">
+<article class="pbody">
+<section>
+<h2>Overview</h2>
+<p>The Rutgers-Newark midwifery program trains students on a $16,527 obstetric simulator that can’t model many of the situations they need to practice. My senior design team was tasked with building a more comprehensive, lower-cost alternative. We are designing around what the program’s users want, which is a low-fidelity model that keeps instructors as involved as students. In our interviews, instructors said they prefer the realistic, soft-tissue feel of the low-fidelity model and the ability to control fetal descent by hand over the motorized, high-fidelity version. Our project advisor, the program’s director, emphasized student immersion as her top priority. We aim to keep that immersion while expanding what the current simulator can teach.</p>
+</section>
+<section>
+<h2>Background</h2>
+<p>Nurse-midwives are advanced practice nurses trained in gynecologic, prenatal, labor and delivery, postpartum, and newborn care [1]. They care for a mother through pregnancy, birth, and the weeks after, and build a trusting relationship with her along the way. That trust matters most for first-time mothers facing an unfamiliar and often intimidating experience. Most of a midwife’s work during the birth itself is hands-on. Midwives locate the fetus by palpating the abdomen [2], judge progress by vaginal exam, guide the head and shoulders through the birth canal, and repair tears afterward, all in whatever position is most comfortable for the mother [3].</p>
+<p>Most births are low risk, and the midwife’s role is mainly to support the mother rather than to intervene. But when a rare emergency does occur, the midwife has to know exactly what to do for both mother and baby. To pass through the pelvis, the fetus must flex, rotate, and extend its head to fit the shape of the birth canal [4], and a delivery that has progressed normally for hours can stall or turn dangerous at any moment. In shoulder dystocia, the anterior shoulder catches behind the mother’s pubic bone after the head has delivered, and the midwife must work through a sequence of maneuvers, including repositioning the mother, to free it [5]. Cord prolapse, breech births, and postpartum hemorrhage are a few other emergencies that midwives must learn to recognize and treat effectively.</p>
+<p>Each of these emergencies is uncommon, so a student can finish clinical training without ever managing one. The skills have to be mastered beforehand through repeated simulation drills, where the instructor can stage a scenario on demand and the student can repeat a maneuver until they can perform it accurately and confidently under pressure. This training improves outcomes. After one UK hospital introduced obstetric emergency training for its maternity staff, the rate of newborns with low Apgar scores and hypoxic brain injury fell significantly [6].</p>
+<p>For high-fidelity training, the benchmark is Gaumard’s VICTORIA S2200, which its manufacturer calls the gold standard in obstetric emergency training [7]. VICTORIA is a full-body robotic patient. A computer-controlled system moves the fetus through the birth canal, sensors log the force applied to the fetus and the angle of the mother’s legs, and her vital signs worsen with simulated postpartum blood loss until the learner intervenes. Preprogrammed scenarios cover shoulder dystocia, breech delivery, prolapsed cord, and postpartum hemorrhage [7]. Because motors advance the fetus, the instructor runs the delivery through software rather than by hand, the opposite of what the instructors we interviewed prefer.</p>
+</section>
+<section>
+<h2>Motivation</h2>
+<p>My EMT certification course included obstetric training on a simulator, where we practiced delivering a baby, caring for the mother, and managing complications. These emergencies are rare in the field, but anything can happen on a 911 call, so EMTs have to learn many of the same hands-on skills as midwives.</p>
+<p>The training was intimidating, and the thought of using it on a real call even more so. Since then, nearly every call I’ve led has shown me how much a patient benefits from a provider who stays calm, and that this composure only comes from drilling a skill until it’s second nature. To give their patients the best care, midwives need tools that let them build that confidence. Our simulator is designed to give them that practice, so they can respond to an emergency without hesitation.</p>
+</section>
+<section>
+<h2>Current Simulator</h2>
+<figure class="wrap">
+<a href="ob-setup.jpg" rel="noopener" target="_blank"><img alt="The full setup, with the pelvis model on its stand, newborn, placenta and cord" loading="lazy" src="ob-setup.jpg"/></a>
 
-    <div class="pgrid">
-      <article class="pbody">
-      <section>
-        <h2>Overview</h2>
-        <p>The Rutgers-Newark midwifery program trains students on a $16,527 obstetric simulator that is unable to model many of the situations students need to practice. My senior design team and I were tasked with building a more comprehensive, lower-cost alternative. We are designing around what the program’s users want: a low-fidelity model that involves instructors as much as students. In our interviews, instructors said they prefer the realistic, soft-tissue feel of the low-fidelity model and the ability to control fetal descent by hand over the motorized, high-fidelity version. Our project advisor, the program’s director, emphasized student immersion as her primary goal. Our goal is to preserve that immersion while expanding what the current simulator can teach.</p>
-      </section>
+</figure>
+<p>The program’s preferred model is the MODEL-med Sophie and Her Mum, a low-fidelity simulator for cephalic, breech, and shoulder dystocia deliveries, with optional placenta, postpartum uterus, and postpartum hemorrhage add-on packages [8].</p>
+<p>These photos show how instructors improvise the positions the simulator doesn’t support, using a pelvis model suspended from a wooden stand, a separate newborn, and a placenta with umbilical cord.</p>
+<p>This is the setup our new design is meant to improve on.</p>
+</section>
+<section>
+<h2>Problems</h2>
+<p>We identified these by interviewing program instructors and observing a demonstration.</p>
+<p><i>Positioning.</i> The simulator only supports the supine and hands-and-knees birthing positions. For hands-and-knees, it has to be mounted beneath a plate on a custom frame, with stirrups from a separate vendor supporting the legs. The assembly is unstable and awkward to put together, and extra assistants are needed to hold it steady. Other delivery positions cannot be simulated.</p>
+<p><i>Cost and supply chain.</i> The unit costs $16,527 and is manufactured in Australia, so replacement parts and support are slow to arrive. The stirrups used for the hands-and-knees configuration are handmade by a nonprofit, Breech Without Borders.</p>
+<p><i>Maintenance.</i> The simulator must be fully dried and powdered between sessions, or trapped moisture can cause mold growth and the material can adhere to itself. Instructors reported that the seam where the polymer body meets the metal backing plate is hard to reach to dry and powder thoroughly.</p>
+<figure class="wrap">
+<a href="ob-amniotomy.jpg" rel="noopener" target="_blank"><img alt="In an amniotomy, an amnihook passed through the cervix ruptures the amniotic sac" loading="lazy" src="ob-amniotomy.jpg"/></a>
 
-      <section>
-        <h2>Background</h2>
-        <p>Nurse-midwives are advanced practice nurses trained in gynecologic, prenatal, labor and delivery, postpartum, and newborn care [1]. They care for a mother through pregnancy, birth, and the weeks after. Along with clinical care, they build a trusting relationship with her, which matters most for first-time mothers facing an unfamiliar and often intimidating experience. Most of a midwife’s work during the birth itself is hands-on. Midwives locate the fetus by palpating the abdomen [2], judge progress by vaginal exam, guide the head and shoulders through the birth canal, and repair tears afterward, all in whatever position is most comfortable for the mother [3].</p>
-        <p>Most births are low risk, and the midwife’s role is mainly to support the mother rather than to intervene. The midwife has to know exactly what to do for both mother and child if and when a rare emergency situation occurs. To pass through the pelvis, the fetus must flex, rotate, and extend its head to fit the shape of the birth canal [4], and a delivery that has progressed normally for hours can stall or turn dangerous at any moment. In shoulder dystocia, the anterior shoulder catches behind the pubic bone after the head has delivered, and the midwife must work through a sequence of maneuvers, including repositioning the mother, to free it [5]. Cord prolapse, breech births, and postpartum hemorrhage are a few other emergencies that midwives must learn to recognize and treat effectively.</p>
-        <p>Each of these emergencies is uncommon, so a student can complete their clinical training without managing one. The technical skills have to be perfected beforehand through repeated simulation drills, where the instructor can stage a scenario on demand and the student can repeat a maneuver until they can perform it accurately and confidently under pressure. Such training improves outcomes. For instance, after one UK hospital introduced obstetric emergency training for its maternity staff, the rate of newborns with low Apgar scores and hypoxic brain injury fell significantly [6].</p>
-        <p>For high-fidelity training, the benchmark is Gaumard’s VICTORIA S2200, which its manufacturer calls the gold standard in obstetric emergency training [7]. VICTORIA is a full-body robotic patient. A motorized system moves the fetus through the birth canal, sensors log the pull force on the fetal head and the angle of the mother’s legs, and programmable bleeding drives her vital signs toward shock until the learner successfully intervenes. Preprogrammed scenarios cover shoulder dystocia, breech delivery, prolapsed cord, and postpartum hemorrhage [7]. Motors advance the fetus, so the instructor runs the delivery through software rather than by hand, the opposite of what the instructors we interviewed prefer.</p>
-      </section>
+</figure>
+<p><i>Anatomical fidelity.</i> The umbilical cord and placenta in the add-on package aren’t anatomically realistic. The simulator also has no amniotic sac, so students cannot practice amniotomy, the artificial rupture of membranes with an amnihook to induce or advance labor [9]. The amnihook is a dedicated instrument, and without a sac inside the simulated uterus to practice on, the closest students can get is popping a water balloon.</p>
+<p><i>Fetal descent.</i> Instructors prefer advancing the fetus by hand for the control it gives them over the pace of a lesson. During a demonstration of a standard lesson, they emphasized that water-based lubricant must be applied to the fetus and the birth canal, both per the user manual and for ease of use. Even so, they reported that the fetus can be difficult to push through, particularly in breech and when the simulator is mounted on the unstable frame.</p>
+</section>
+<section>
+<h2>Design Requirements</h2>
+<p>We derived these requirements from the problems above and from interviews with instructors and students.</p>
+<p><i>Tissue response.</i> The maternal and fetal components should mimic the mechanical properties of skin, particularly in the birth canal and vulva. These regions have to stretch for the fetus to pass, so a skin-like material is needed for both function and realism. It’s also why instructors prefer the low-fidelity simulator over the high-fidelity model they own. The low-fidelity materials feel like real skin, while the high-fidelity model is mostly hard plastic to house its mechanical components.</p>
+<p><i>Maternal positions.</i> The simulator should support the supine, hands-and-knees, side-lying, and standing positions. A frame will hold the simulator stable in each position and allow it to be repositioned between them, so that one instructor and one assistant can run a lesson.</p>
+<figure class="wide">
+<a href="ob-positions.jpg" rel="noopener" target="_blank"><img alt="The four birthing positions the new simulator should support" loading="lazy" src="ob-positions.jpg"/></a>
 
-      <section>
-        <h2>Motivation</h2>
-        <p>My EMT certification course included obstetric training on a simulator: delivering a baby, caring for the mother, and managing complications. These emergencies are rare in the field, but anything can happen on a 911 call, so EMTs have to learn many of the same hands-on skills as midwives.</p>
-        <p>The training was intimidating, and the prospect of using it on a real call even more so. However, nearly every call I have led has shown me how much a patient benefits from a provider who stays calm, and that this kind of composure and confidence only comes from drilling a skill until it is second nature. For midwives to administer the highest quality care to their patients, they need tools that let them build that confidence. Our simulator is designed to give them that practice, so they can respond to an emergency without hesitation.</p>
-      </section>
+</figure>
+</section>
+<section>
+<p><i>Fetal presentations.</i> The fetus and pelvis should accommodate the occiput anterior and occiput posterior positions as well as frank and complete breech presentations. They should also support the shoulder dystocia scenario the current simulator already covers.</p>
+<figure class="wide">
+<a href="ob-presentations.jpg" rel="noopener" target="_blank"><img alt="The fetal presentations the new simulator should support, shown from the side" loading="lazy" src="ob-presentations.jpg"/></a>
 
-      <section>
-        <h2>Current Simulator</h2>
-        <figure class="wrap">
-          <a href="ob-setup.jpg" target="_blank" rel="noopener"><img src="ob-setup.jpg" alt="The full setup: pelvis model on its stand, newborn, placenta and cord" loading="lazy"></a>
-          <figcaption>The full setup: pelvis model on its stand, newborn, placenta and cord</figcaption>
-        </figure>
-        <p>The program’s preferred model is the MODEL-med Sophie and Her Mum, a low-fidelity simulator for cephalic, breech, and shoulder dystocia deliveries, with optional placenta, postpartum uterus, and postpartum hemorrhage add on packages [8].</p>
-        <p>These photos show how instructors improvise the positions the simulator does not support: a pelvis model suspended from a wooden stand, a separate newborn, and a placenta with umbilical cord.</p>
-        <p>This is the setup our new design is meant to improve on.</p>
-      </section>
-
-      <section>
-        <h2>Problems</h2>
-        <p>Identified by interviewing program instructors and observing a demonstration.</p>
-        <p><i>Positioning.</i> The simulator only supports the supine and hands-and-knees birthing positions. The hands-and-knees configuration requires mounting it beneath a plate on a custom frame, with stirrups from a separate vendor supporting the legs. The assembly is unstable and awkward to put together, and additional assistants are needed to hold it steady. Other delivery positions cannot be simulated.</p>
-        <p><i>Cost and supply chain.</i> The unit costs $16,527 and is manufactured in Australia, so replacement parts and support are slow to arrive. The stirrups used for the hands-and-knees configuration are handmade by a nonprofit, Breech Without Borders.</p>
-        <p><i>Maintenance.</i> The simulator must be fully dried and powdered between sessions, or trapped moisture can cause mold growth and the material can adhere to itself. Instructors reported that the seam where the polymer body meets the metal backing plate is difficult to access in order to dry and powder thoroughly.</p>
-        <figure class="wrap">
-          <a href="ob-amniotomy.jpg" target="_blank" rel="noopener"><img src="ob-amniotomy.jpg" alt="Amniotomy: an amnihook passed through the cervix ruptures the amniotic sac" loading="lazy"></a>
-          <figcaption>Amniotomy: an amnihook passed through the cervix ruptures the amniotic sac</figcaption>
-        </figure>
-        <p><i>Anatomical fidelity.</i> The umbilical cord and placenta in the add-on package do not model anatomy authentically. The simulator also has no amniotic sac, so students cannot practice amniotomy, the artificial rupture of membranes with an amnihook to induce or advance labor [9]. The amnihook is a dedicated instrument, and without a sac inside the simulated uterus to practice on, the closest students can get is popping a water balloon.</p>
-        <p><i>Fetal descent.</i> Instructors prefer advancing the fetus by hand for the control it gives them over the pace of a lesson. During a demonstration of a standard lesson, they emphasized that water-based lubricant must be applied to the fetus and the birth canal, both per the user manual and for ease of use. Even so, they reported that the fetus can be difficult to push through, particularly in breech and when the simulator is mounted on the unstable frame.</p>
-      </section>
-
-      <section>
-        <h2>Design Requirements</h2>
-        <p>We derived these requirements from the problems above and from interviews with instructors and students.</p>
-        <p><i>Tissue response.</i> The maternal and fetal components should mimic the mechanical properties of skin, particularly in the birth canal and vulva. These regions have to stretch for the fetus to pass, so a skin-like material serves both function and realism. This is also why instructors prefer the low-fidelity simulator over the high-fidelity model they own. The low-fidelity materials feel like real skin, while the high-fidelity model is built mostly from hard plastic to accommodate its mechanical components.</p>
-        <p><i>Maternal positions.</i> The simulator should support these positions: supine, hands-and-knees, side-lying, and standing. A frame will hold the simulator stable in each position and allow it to be repositioned between them, so that one instructor and one assistant can run a lesson.</p>
-        <figure class="wide">
-          <a href="ob-positions.jpg" target="_blank" rel="noopener"><img src="ob-positions.jpg" alt="The four birthing positions the new simulator should support" loading="lazy"></a>
-          <figcaption>The four birthing positions the new simulator should support</figcaption>
-        </figure>
-      </section>
-
-      <section>
-        <p><i>Fetal presentations.</i> The fetus and pelvis should accommodate the occiput anterior and occiput posterior positions as well as frank and complete breech presentations. They should also support the shoulder dystocia scenario the current simulator already covers.</p>
-        <figure class="wide">
-          <a href="ob-presentations.jpg" target="_blank" rel="noopener"><img src="ob-presentations.jpg" alt="The fetal presentations the new simulator should support, shown from the side" loading="lazy"></a>
-          <figcaption>The fetal presentations the new simulator should support, shown from the side</figcaption>
-        </figure>
-      </section>
-
-      <section>
-        <p><i>Manual control.</i> Instructors will continue to advance the fetus by hand, which lets them control the pace of the lesson. The fetus should pass through the birth canal in every supported position without excessive force when the standard water-based lubricant is applied.</p>
-        <p><i>Umbilical cord and placenta.</i> The cord and placenta should be closer to the real organs in size and texture. The cord should be able to simulate a nuchal cord and cord prolapse, and the placenta should be able to model placenta previa.</p>
-        <p><i>Postpartum hemorrhage.</i> The simulator should support postpartum hemorrhage scenarios, which the current simulator offers only as a separate add-on package. Instructors should be able to set the volume and rate of simulated blood released.</p>
-        <p><i>Cost.</i> The simulator should be significantly cheaper than the current model. Its parts should be easy to source, and replacements should be inexpensive and readily available.</p>
-      </section>
-
-      <section>
-        <h2>Next Steps</h2>
-        <p>My team and I are currently planning our prototyping process. We are modeling the mother and fetus in 3D CAD, focusing on accurate anatomy of the vulva, birth canal, and uterus. We are also designing a stand that is stable enough for one instructor and one assistant to run a lesson, but can still switch between positions quickly. From the CAD models, we will 3D print scaled-down molds and use them to cast small silicone prototypes. These prototypes will let us compare silicone formulations, test the internal structural support, and validate the molding process before we build the full-scale simulator.</p>
-      </section>
-
-      <section>
-        <h2>Photos</h2>
-        <div class="pgal">
-          <figure><a href="ob-pelvis.jpg" target="_blank" rel="noopener"><img src="ob-pelvis.jpg" alt="The pelvis model, seen from below" loading="lazy"></a><figcaption>The pelvis model, seen from below</figcaption></figure>
-          <figure><a href="ob-newborn.jpg" target="_blank" rel="noopener"><img src="ob-newborn.jpg" alt="Newborn model" loading="lazy"></a><figcaption>Newborn model</figcaption></figure>
-          <figure><a href="ob-placenta.jpg" target="_blank" rel="noopener"><img src="ob-placenta.jpg" alt="Placenta and umbilical cord models" loading="lazy"></a><figcaption>Placenta and umbilical cord models</figcaption></figure>
-          <figure><a href="ob-perineal-pad.jpg" target="_blank" rel="noopener"><img src="ob-perineal-pad.jpg" alt="Pad for practicing perineal repair" loading="lazy"></a><figcaption>Pad for practicing perineal repair</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="refs">
-        <h2>References</h2>
-        <p>[1] Rutgers School of Nursing. Nurse-Midwifery. <a href="https://nursing.rutgers.edu/midwifery/" target="_blank" rel="noopener">https://nursing.rutgers.edu/midwifery/</a></p>
-        <p>[2] Superville SS, Siccardi MA. Leopold Maneuvers. In: StatPearls. Treasure Island (FL): StatPearls Publishing; 2025. PMID: 32809649.</p>
-        <p>[3] Gupta JK, Sood A, Hofmeyr GJ, Vogel JP. Position in the second stage of labour for women without epidural anaesthesia. Cochrane Database Syst Rev. 2017;5:CD002006. doi:10.1002/14651858.CD002006.pub4</p>
-        <p>[4] Liao JB, Buhimschi CS, Norwitz ER. Normal labor: mechanism and duration. Obstet Gynecol Clin North Am. 2005;32(2):145-164.</p>
-        <p>[5] Davis DD, Roshan A, Varacallo MA. Shoulder Dystocia. In: StatPearls. Treasure Island (FL): StatPearls Publishing; 2025. PMID: 29261950.</p>
-        <p>[6] Draycott T, Sibanda T, Owen L, Akande V, Winter C, Reading S, Whitelaw A. Does training in obstetric emergencies improve neonatal outcome? BJOG. 2006;113(2):177-182.</p>
-        <p>[7] Gaumard Scientific. VICTORIA S2200 advanced obstetric patient simulator [product page]. <a href="https://www.gaumard.com/s2200-victoria-childbirth-simulator" target="_blank" rel="noopener">https://www.gaumard.com/s2200-victoria-childbirth-simulator</a></p>
-        <p>[8] MODEL-med International. Sophie and Her Mum birth simulator [product listing]. HealthySimulation.com. <a href="https://www.healthysimulation.com/vendor-product/sophie-and-her-mum/" target="_blank" rel="noopener">https://www.healthysimulation.com/vendor-product/sophie-and-her-mum/</a></p>
-        <p>[9] Cleveland Clinic. Amniotomy. <a href="https://my.clevelandclinic.org/health/treatments/24270-amniotomy" target="_blank" rel="noopener">https://my.clevelandclinic.org/health/treatments/24270-amniotomy</a></p>
-      </section>
-      </article>
-    </div>
-
-    <nav class="pnav" aria-label="More projects">
-      <span></span>
-      <a class="next" href="speech-feedback-device.html"><small>Next project</small>Speech feedback device for deaf learners</a>
-    </nav>
-  </main>
-
-  <footer>Zoe Goudas</footer>
+</figure>
+</section>
+<section>
+<p><i>Manual control.</i> Instructors will continue to advance the fetus by hand, which lets them control the pace of the lesson. The fetus should pass through the birth canal in every supported position without excessive force when the standard water-based lubricant is applied.</p>
+<p><i>Umbilical cord and placenta.</i> The cord and placenta should be closer to the real organs in size and texture. The cord should be able to simulate a nuchal cord and cord prolapse, and the placenta should be able to model placenta previa.</p>
+<p><i>Postpartum hemorrhage.</i> The simulator should support postpartum hemorrhage scenarios, which the current simulator offers only as a separate add-on package. Instructors should be able to set the volume and rate of simulated blood released.</p>
+<p><i>Cost.</i> The simulator should be significantly cheaper than the current model. Its parts should be easy to source, and replacements should be inexpensive and readily available.</p>
+</section>
+<section>
+<h2>Next Steps</h2>
+<p>My team is now planning our prototyping process. We are modeling the mother and fetus in 3D CAD, focusing on accurate anatomy of the vulva, birth canal, and uterus. We are also designing a stand stable enough for one instructor and one assistant to run a lesson that can still switch between positions quickly. From the CAD models, we will 3D print scaled-down molds and use them to cast small silicone prototypes. These prototypes will let us compare silicone formulations, test the internal structural support, and validate the molding process before we build the full-scale simulator.</p>
+</section>
+<section>
+<h2>Photos</h2>
+<div class="pgal">
+<figure><a href="ob-pelvis.jpg" rel="noopener" target="_blank"><img alt="The pelvis model, seen from below" loading="lazy" src="ob-pelvis.jpg"/></a></figure>
+<figure><a href="ob-newborn.jpg" rel="noopener" target="_blank"><img alt="Newborn model" loading="lazy" src="ob-newborn.jpg"/></a></figure>
+<figure><a href="ob-placenta.jpg" rel="noopener" target="_blank"><img alt="Placenta and umbilical cord models" loading="lazy" src="ob-placenta.jpg"/></a></figure>
+<figure><a href="ob-perineal-pad.jpg" rel="noopener" target="_blank"><img alt="Pad for practicing perineal repair" loading="lazy" src="ob-perineal-pad.jpg"/></a></figure>
+</div>
+</section>
+<section class="refs">
+<h2>References</h2>
+<p>[1] Rutgers School of Nursing. Nurse-Midwifery. <a href="https://nursing.rutgers.edu/midwifery/" rel="noopener" target="_blank">https://nursing.rutgers.edu/midwifery/</a></p>
+<p>[2] Superville SS, Siccardi MA. Leopold Maneuvers. In: StatPearls. Treasure Island (FL): StatPearls Publishing; 2025. PMID: 32809649.</p>
+<p>[3] Gupta JK, Sood A, Hofmeyr GJ, Vogel JP. Position in the second stage of labour for women without epidural anaesthesia. Cochrane Database Syst Rev. 2017;5:CD002006. doi:10.1002/14651858.CD002006.pub4</p>
+<p>[4] Liao JB, Buhimschi CS, Norwitz ER. Normal labor: mechanism and duration. Obstet Gynecol Clin North Am. 2005;32(2):145-164.</p>
+<p>[5] Davis DD, Roshan A, Varacallo MA. Shoulder Dystocia. In: StatPearls. Treasure Island (FL): StatPearls Publishing; 2025. PMID: 29261950.</p>
+<p>[6] Draycott T, Sibanda T, Owen L, Akande V, Winter C, Reading S, Whitelaw A. Does training in obstetric emergencies improve neonatal outcome? BJOG. 2006;113(2):177-182.</p>
+<p>[7] Gaumard Scientific. VICTORIA S2200 advanced obstetric patient simulator [product page]. <a href="https://www.gaumard.com/s2200-victoria-childbirth-simulator" rel="noopener" target="_blank">https://www.gaumard.com/s2200-victoria-childbirth-simulator</a></p>
+<p>[8] MODEL-med International. Sophie and Her Mum birth simulator [product listing]. HealthySimulation.com. <a href="https://www.healthysimulation.com/vendor-product/sophie-and-her-mum/" rel="noopener" target="_blank">https://www.healthysimulation.com/vendor-product/sophie-and-her-mum/</a></p>
+<p>[9] Cleveland Clinic. Amniotomy. <a href="https://my.clevelandclinic.org/health/treatments/24270-amniotomy" rel="noopener" target="_blank">https://my.clevelandclinic.org/health/treatments/24270-amniotomy</a></p>
+</section>
+</article>
+</div>
+<nav aria-label="More projects" class="pnav">
+<span></span>
+<a class="next" href="speech-feedback-device.html"><small>Next project</small>Speech Feedback Wearable for Deaf Learners</a>
+</nav>
+</main>
+<footer>Zoe Goudas</footer>
 </div>
 </body>
 </html>

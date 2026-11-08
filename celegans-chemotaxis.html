@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -9,14 +10,14 @@
     gtag('js', new Date());
     gtag('config', 'G-0N696S6YXR');
   </script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Background noise and C. elegans chemotaxis | Zoe Goudas</title>
-<meta name="description" content="Testing whether different &quot;colors&quot; of background noise change how C. elegans worms move toward salt.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 18C12 12 13 6 16 3c3 3 4 9 0 15z' fill='%235B4B9A'/%3E%3Cpath d='M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z' fill='%237D6CC0'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Background Noise and C. elegans Chemotaxis | Zoe Goudas</title>
+<meta content='Testing whether different "colors" of background noise change how C. elegans worms move toward salt.' name="description"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
   /* COLORS: every color on the site comes from these names.
      --paper is the page background, --sheet the card background, --ink the main text,
@@ -59,16 +60,16 @@
   .toc a:hover { color: var(--ink); }
   .toc a[aria-current="true"] { color: var(--ink); font-weight: 600; }
   .toc a[aria-current="true"]::before { background: var(--iris); border-color: var(--iris); }
-  .toc a.top-l { font-family: "Young Serif", serif; font-size: 17px; color: var(--ink); padding-top: 8px; }
+  .toc a.top-l { font-family: "Fraunces", serif; font-size: 17px; color: var(--ink); padding-top: 8px; }
   .toc a.top-l::before { top: 15px; }
   .toc .grp { font-size: 12px; color: var(--muted); padding: 10px 0 2px; font-style: italic; }
   /* HEADER: .name is her name at the top (font-size sets how big it is). .hero-art is the painting. */
-  .hero { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px; padding: 48px 0 24px; border-bottom: 1px solid var(--rule); }
-  .hero h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(44px, 7vw, 76px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
+  .hero { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px; padding: 48px 0 24px; }
+  .hero h1 { font-family: "Fraunces", serif; font-weight: 400; font-size: clamp(44px, 7vw, 76px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
   .hero p.lede { font-size: 21px; max-width: 30ch; color: var(--muted); margin: 0 0 8px; }
   .hero .links a { margin-right: 18px; font-weight: 600; }
   .iris { width: 100%; max-width: 300px; justify-self: end; margin-bottom: -1px; }
-  .hero.art { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); align-items: start; gap: 40px; padding: 40px 0 32px; border-bottom: 1px solid var(--rule); }
+  .hero.art { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); align-items: start; gap: 40px; padding: 40px 0 32px; }
   .hero h1.name { font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 20px; }
   .about-top { padding: 0; }
   .about-top h2 { font-size: 24px; margin: 0 0 10px; }
@@ -113,12 +114,12 @@
   }
   /* SECTIONS AND PROJECT CARDS: spacing above each section, heading sizes, and the white project cards */
   section { padding: 36px 0 8px; }
-  h2 { font-family: "Young Serif", serif; font-weight: 400; font-size: 36px; margin: 0 0 24px; }
+  h2 { font-family: "Fraunces", serif; font-weight: 400; font-size: 36px; margin: 0 0 24px; }
   .sheet { position: relative; background: var(--sheet); border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 20px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 32px; align-items: start; }
   .sheet .photo { grid-column: 1 / -1; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--rule); }
-  .group { font-family: "Young Serif", serif; font-weight: 400; font-size: 22px; color: var(--muted); margin: 56px 0 20px; }
+  .group { font-family: "Fraunces", serif; font-weight: 400; font-size: 22px; color: var(--muted); margin: 56px 0 20px; }
   .group:first-of-type { margin-top: 0; }
-  .sheet h4 { font-family: "Young Serif", serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0 0 12px; }
+  .sheet h4 { font-family: "Fraunces", serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0 0 12px; }
   .sheet p { margin: 0 0 14px; max-width: 60ch; }
   .more summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--iris); font-weight: 600; font-size: 15px; padding: 2px 0; }
   .more summary::-webkit-details-marker { display: none; }
@@ -178,7 +179,7 @@
   @media (max-width: 900px) {
     .layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
     [id] { scroll-margin-top: 64px; }
-    .toc { order: 0; z-index: 5; max-height: none; overflow: visible; padding: 12px 0 0; margin: 0 -24px; background: var(--paper); border-bottom: 1px solid var(--rule); }
+    .toc { order: 0; z-index: 5; max-height: none; overflow: visible; padding: 12px 0 0; margin: 0 -24px; background: var(--paper); }
     .toc > ol { display: flex; align-items: center; gap: 20px; overflow-x: auto; white-space: nowrap; padding: 0 24px 12px; scrollbar-width: none; }
     .toc > ol::-webkit-scrollbar { display: none; }
     .toc li { display: contents; }
@@ -200,14 +201,14 @@
 </style>
 <style>
   .pagewrap { max-width: 960px; }  /* one centered column, so text never stretches across the whole screen */
-  .ptop { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+  .ptop { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; }
   .ptop a { color: var(--muted); text-decoration: none; font-weight: 500; }
   .ptop a:hover { color: var(--iris); }
-  .ptop .home { display: inline-flex; align-items: center; gap: 8px; font-family: "Young Serif", serif; font-size: 20px; color: var(--ink); font-weight: 400; }
+  .ptop .home { display: inline-flex; align-items: center; gap: 8px; font-family: "Fraunces", serif; font-size: 20px; color: var(--ink); font-weight: 400; }
   .ptop .home svg { width: 22px; height: 22px; }
   .phead { padding: 48px 0 36px; }
-  .kicker { font-family: "Young Serif", serif; color: var(--muted); font-size: 18px; margin: 0 0 10px; }
-  .phead h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance; }
+  .kicker { font-family: "Fraunces", serif; color: var(--muted); font-size: 18px; margin: 0 0 10px; }
+  .phead h1 { font-family: "Fraunces", serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance; }
   .phead .lede { font-size: 20px; color: var(--muted); margin: 6px 0 0; max-width: 62ch; }
   /* date under the title, with the "In progress" tag to its right */
   /* title on the left; date and "In progress" stacked on the right, under "All projects" */
@@ -219,7 +220,7 @@
     .ptitle { flex-direction: column; align-items: flex-start; gap: 12px; }
     .pdate { flex-direction: row; align-items: center; padding: 0; }
   }
-  .pgrid { border-top: 1px solid var(--rule); padding-top: 40px; }
+  .pgrid { padding-top: 24px; }
   .pbody section { padding: 0; }
   .pbody section + section { margin-top: 44px; }
   .pbody h2 { font-size: 28px; margin: 0 0 14px; }
@@ -256,101 +257,98 @@
   .pgal a { display: block; }
   .pgal img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
   .pgal figcaption { font-size: 14px; color: var(--muted); margin-top: 6px; }
-  .pnav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid var(--rule); margin-top: 64px; padding-top: 8px; }
-  .pnav a { display: block; padding: 16px 0; color: var(--ink); text-decoration: none; font-family: "Young Serif", serif; font-size: 18px; line-height: 1.3; }
+  .pnav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 64px; padding-top: 8px; }
+  .pnav a { display: block; padding: 16px 0; color: var(--ink); text-decoration: none; font-family: "Fraunces", serif; font-size: 18px; line-height: 1.3; }
   .pnav a:hover { color: var(--iris); }
   .pnav small { display: block; font-family: "Figtree", system-ui, sans-serif; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
   .pnav .next { text-align: right; }
   @media (max-width: 900px) {
     .docs { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
+
+  /* figures drawn as diagrams, text-beside-figure rows, and sub-headings inside a section */
+  .pbody figure svg { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+  .pbody figure.schem { margin: 26px 0 30px; }
+  .pbody .trow { display: grid; grid-template-columns: minmax(0, 1fr) 44%; gap: 28px; align-items: start; margin: 0 0 26px; }
+  .pbody .trow > div > p:last-child, .pbody .trow p:last-child { margin-bottom: 0; }
+  .pbody .trow figure { margin: 0; }
+  .pbody ul.crit { margin: 0 0 14px; padding-left: 20px; display: grid; gap: 10px; }
+  .pbody ul.crit li { line-height: 1.7; padding-left: 2px; }
+  .pbody h3 { font-family: "Figtree", system-ui, sans-serif; font-weight: 600; font-size: 19px; line-height: 1.35; margin: 30px 0 10px; }
+  .pbody h2 + h3 { margin-top: 4px; }
+  .pbody .appframe { display: block; width: 100%; height: 760px; border: 1px solid var(--rule); border-radius: 6px; background: #fff; margin: 4px 0 10px; }
+  .pbody .applink { font-size: 15px; }
+  @media (max-width: 760px) { .pbody .trow { grid-template-columns: minmax(0, 1fr); gap: 14px; } .pbody .appframe { height: 640px; } }
 </style>
 </head>
 <body>
 <div class="wrap pagewrap">
-  <header class="ptop">
-    <a class="home" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 18C12 12 13 6 16 3c3 3 4 9 0 15z" fill="#5B4B9A"/><path d="M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z" fill="#7D6CC0"/></svg>Zoe Goudas</a>
-    <a href="index.html#projects">All projects</a>
-  </header>
+<header class="ptop">
+<a class="home" href="index.html"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 18C12 12 13 6 16 3c3 3 4 9 0 15z" fill="#5B4B9A"></path><path d="M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z" fill="#7D6CC0"></path></svg>Zoe Goudas</a>
+<a href="index.html#projects">All projects</a>
+</header>
+<main>
+<div class="phead">
+<div class="ptitle">
+<div>
+<p class="kicker">Biotechnology HS</p>
+<h1>Background Noise and <i>C. elegans</i> Chemotaxis</h1>
+</div>
+<div class="pdate"><span>Jan – Apr 2023</span></div>
+</div>
 
-  <main>
-    <div class="phead">
-      <div class="ptitle">
-        <div>
-          <p class="kicker">Biotechnology HS</p>
-          <h1>Background noise and <i>C. elegans</i> chemotaxis</h1>
-        </div>
-        <div class="pdate"><span>Jan – Apr 2023</span></div>
-      </div>
-      <p class="lede">Testing whether different &quot;colors&quot; of background noise change how C. elegans worms move toward salt.</p>
-    </div>
+</div>
+<div class="pgrid">
+<article class="pbody">
+<section>
+<h2>Background</h2>
+<p>Many people play brown, pink, white, or blue noise to study or sleep without knowing what the “colors” mean. Each color describes how a noise spreads its power across the audible spectrum. Its power spectral density (PSD) is proportional to 1/f<sup>β</sup>.</p>
+<figure class="wrap">
+<a href="noise-spectra.jpg" rel="noopener" target="_blank"><img alt="Power spectral density of each noise color, relative to its level at 1 kHz." loading="lazy" src="noise-spectra.jpg"/></a>
 
-    <div class="pgrid">
-      <article class="pbody">
-      <section>
-        <h2>Background</h2>
-        <figure class="wrap">
-          <a href="noise-spectra.jpg" target="_blank" rel="noopener"><img src="noise-spectra.jpg" alt="Power spectral density of each noise color, relative to its level at 1 kHz" loading="lazy"></a>
-          <figcaption>Power spectral density of each noise color, relative to its level at 1 kHz</figcaption>
-        </figure>
-        <p>Many people play brown, pink, white or blue noise to study or sleep, but don't know what the “colors” of noise mean. Each color is defined by its energy and power distribution across the audible frequency spectrum. Each assumes a signal with components at all frequencies, with a power spectral density per unit of bandwidth proportional to 1/f<sup>β</sup>.</p>
-        <p>Brown noise has β = 2, and its power spectral density is plotted as a linear function of frequency that decreases by 6.02 dB per octave. This produces an audio signal that emphasizes low frequencies and heavily attenuates higher ones.</p>
-        <p>Pink noise has β = 1, and its PSD decreases by 3.01 dB/octave. Similarly to brown noise, it highlights lower frequencies and reduces higher ones, but more gently.</p>
-        <p>White noise has β = 0, which produces a flat power spectrum. Every audible frequency is played at the same intensity.</p>
-        <p>Blue noise has β = −1, and its PSD increases by 3.01 dB/octave. Blue noise is the opposite of pink noise: high frequencies are more prominent while low frequencies are cut off.</p>
-      </section>
+</figure><p>White noise (β = 0) has a flat spectrum, so every frequency has equal power. Pink noise (β = 1) falls by 3 dB per octave and brown noise (β = 2) by 6 dB per octave, so both emphasize low frequencies, brown more strongly. Blue noise (β = −1) rises by 3 dB per octave and emphasizes high frequencies. The names come from an analogy to light: blue noise concentrates power at high frequencies like blue light, and white noise contains all frequencies equally like white light. Brown noise is the exception, named after Brownian motion.</p>
+<p>Researchers use <i>C. elegans</i> as a model organism because it shares many genes with humans. I tested whether these noise colors change its chemotaxis, the movement toward or away from a chemical, in this case salt (NaCl). I hypothesized that brown noise would have the greatest effect and that the worms would move toward the salt.</p>
+</section>
+<section>
+<h2>Methods</h2>
+<figure class="wrap">
+<a href="celegans-microscope.jpg" rel="noopener" target="_blank"><img alt="Worms under the dissecting microscope, showing the starting point of a control plate and test sites on white and brown noise plates." loading="lazy" src="celegans-microscope.jpg"/></a>
 
-      <section>
-        <p>Looking at the above graphs of each noise's power spectral density, it is evident that the distributions of sound frequencies are loosely analogous to frequencies in the visible color spectrum, which is how they earn their names (with the exception of brown/Brownian noise). For example, if the sound wave pattern of blue noise (high frequencies) were translated into light waves, it would be blue, and if white noise (all frequencies) were translated, it would be white light (all frequencies).</p>
-        <p><i>C. elegans</i> is a common model organism because it shares many genes with humans. I tested whether these noises change its chemotaxis, the way it moves toward or away from a chemical, in this case salt (NaCl). I hypothesized that brown noise would have the greatest effect and that the worms would move toward the salt.</p>
-      </section>
+</figure><p>I cultured worms on NGM agar plates seeded with <i>E. coli</i> OP50, washed them, and placed them at the center of assay plates divided into four quadrants, with salt at two test sites and water at two control sites.</p>
+<p>I placed each plate on a speaker for 60 minutes under one of five conditions (silence, brown, pink, white, or blue noise), with five replicate plates per condition. I counted the worms at each site, calculated a chemotaxis index for each plate, and compared conditions using a one-way ANOVA.</p>
+</section>
+<section>
+<h2>Results</h2>
+<figure class="wrap">
+<a href="celegans-chart.jpg" rel="noopener" target="_blank"><img alt="Mean chemotaxis index for each condition, with standard deviation error bars." loading="lazy" src="celegans-chart.jpg"/></a>
 
-      <section>
-        <h2>Methods</h2>
-        <figure class="wrap">
-          <a href="celegans-microscope.jpg" target="_blank" rel="noopener"><img src="celegans-microscope.jpg" alt="Worms under the dissecting microscope: the starting point of a control plate, and test sites on white and brown noise plates" loading="lazy"></a>
-          <figcaption>Worms under the dissecting microscope: the starting point of a control plate, and test sites on white and brown noise plates</figcaption>
-        </figure>
-        <p>I cultured worms on NGM agar plates seeded with <i>E. coli</i> OP50, then washed them and placed them at the center of assay plates divided into four sections, with salt at two test sites and water at two control sites.</p>
-        <p>Each plate sat on a speaker for 60 minutes under one of five conditions: silence, brown, pink, white or blue noise, with five replicate plates per condition. I counted the worms at each site, calculated a chemotaxis index for each plate, and compared the conditions with a one-way ANOVA.</p>
-      </section>
-
-      <section>
-        <h2>Results</h2>
-        <figure class="wrap">
-          <a href="celegans-chart.jpg" target="_blank" rel="noopener"><img src="celegans-chart.jpg" alt="Mean chemotaxis index for each condition, with standard deviation error bars" loading="lazy"></a>
-          <figcaption>Mean chemotaxis index for each condition, with standard deviation error bars</figcaption>
-        </figure>
-        <p>There was no significant difference between the conditions (p = 0.708), so the hypothesis wasn't supported. Every mean chemotaxis index was close to zero, meaning the worms split fairly evenly between salt and water.</p>
-        <p>There was a pattern, though. Brown and pink noise, which emphasize lower frequencies, had positive mean indexes. Blue and white noise had slightly negative ones. This fits an earlier study where <i>C. elegans</i> responded most strongly at 23 Hz, the lowest frequency tested.</p>
-      </section>
-
-      <section>
-        <h2>Limitations</h2>
-        <p>The silence condition had much more spread than the others because many worms stayed clumped at the starting point. It was my first time washing worms, and I didn't break up the pellet enough. Better washing and more replicates would make a difference easier to detect.</p>
-      </section>
-
-      <section>
-        <h2>Awards</h2>
-        <p>I presented this project at two regional science fairs and won 2nd place at the Jersey Shore Science Fair.</p>
-      </section>
-
-      <section class="pfiles">
-        <h2>Files</h2>
-        <ul class="docs">
-          <li><a class="doc" href="celegans-jssf-poster.pdf" target="_blank" rel="noopener"><img src="thumb-poster.jpg" alt="" loading="lazy"><span><b>Poster</b> Jersey Shore Science Fair poster<span class="ext">PDF</span></span></a></li>
-        </ul>
-      </section>
-      </article>
-    </div>
-
-    <nav class="pnav" aria-label="More projects">
-      <a class="prev" href="radish-germination.html"><small>Previous project</small>Sound frequency and radish seed germination</a>
-      <span></span>
-    </nav>
-  </main>
-
-  <footer>Zoe Goudas</footer>
+</figure><p>The conditions did not differ significantly (p = 0.708), so the results did not support my hypothesis. Every mean chemotaxis index was close to zero, meaning the worms split roughly evenly between salt and water.</p>
+</section>
+<section>
+<h2>Discussion</h2>
+<p>The data still showed a trend. Brown and pink noise, which emphasize low frequencies, produced positive mean indexes, while blue and white noise produced slightly negative ones. This matches an earlier study in which <i>C. elegans</i> responded most strongly at 23 Hz, the lowest frequency tested.</p>
+</section>
+<section>
+<h2>Limitations</h2>
+<p>The silence condition had much more variance than the others because many worms stayed clumped at the starting point. It was my first time washing worms, and I didn't break up the pellet enough. Better washing technique and more replicates would make any effect easier to detect.</p>
+</section>
+<section>
+<h2>Awards</h2>
+<p>I presented this project at two regional science fairs and won 2nd place at the Jersey Shore Science Fair.</p>
+</section>
+<section class="pfiles">
+<h2>Files</h2>
+<ul class="docs">
+<li><a class="doc" href="https://zoegoudas.dev/celegans-jssf-poster.pdf" rel="noopener" target="_blank"><img alt="" loading="lazy" src="thumb-poster.jpg"/><span><b>Poster</b> Jersey Shore Science Fair poster<span class="ext">PDF</span></span></a></li>
+</ul>
+</section></article>
+</div>
+<nav aria-label="More projects" class="pnav">
+<a class="prev" href="radish-germination.html"><small>Previous project</small>Sound Frequency and Radish Seed Germination</a>
+<span></span>
+</nav>
+</main>
+<footer>Zoe Goudas</footer>
 </div>
 </body>
 </html>

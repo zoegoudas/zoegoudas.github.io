@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -9,15 +10,15 @@
     gtag('js', new Date());
     gtag('config', 'G-0N696S6YXR');
   </script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Zoe Goudas</title>
 <!-- The title shows in the browser tab. The description is what Google and link previews show. -->
-<meta name="description" content="Zoe Goudas. I’m a senior biomedical engineering major and math minor in the Honors College at Rutgers University–New Brunswick. I’m interested in tissue engineering, biomaterials, medical devices, biosensors, wearable health tech, targeted drug delivery and neural engineering. For my senior capstone, my team and I are designing a low-cost obstetric training simulator in partnership with the Rutgers-Newark Midwifery Nursing program.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 18C12 12 13 6 16 3c3 3 4 9 0 15z' fill='%235B4B9A'/%3E%3Cpath d='M15 19C10 19 5 21 4 26c5 0 9-3 11-7zM17 19c5 0 10 2 11 7-5 0-9-3-11-7z' fill='%237D6CC0'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<meta content="Zoe Goudas, senior biomedical engineering major and math minor in the Honors College at Rutgers University–New Brunswick. Projects in medical devices, biomaterials and drug delivery, research experience at the Max Planck Institute, and four years as an EMT." name="description"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
   /* COLORS: every color on the site comes from these names.
      --paper is the page background, --sheet the card background, --ink the main text,
@@ -48,11 +49,11 @@
   [id] { scroll-margin-top: 24px; }
 
   /* Table of contents: a progress rail that fills as you scroll */
-  .toc { order: 2; position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto; padding: 56px 0 32px; scrollbar-width: none; }
+  .toc { order: 2; position: sticky; top: 0; align-self: start; max-height: calc(100vh - 16px); overflow-y: auto; padding: 0 0 32px; scrollbar-width: none; }
   .toc::-webkit-scrollbar { display: none; }
   .toc ol { list-style: none; margin: 0; padding: 0; }
   .toc > ol { position: relative; padding-left: 22px; }
-  .toc .track, .toc .fill { position: absolute; left: 3px; top: 62px; bottom: 38px; width: 2px; border-radius: 2px; }
+  .toc .track, .toc .fill { position: absolute; left: 3px; top: 6px; bottom: 38px; width: 2px; border-radius: 2px; }
   .toc .track { background: var(--rule); }
   .toc .fill { background: var(--iris); transform-origin: top; transform: scaleY(var(--p, 0)); }
   .toc a { position: relative; display: block; padding: 5px 0; color: var(--muted); text-decoration: none; font-size: 14px; line-height: 1.35; }
@@ -60,16 +61,16 @@
   .toc a:hover { color: var(--ink); }
   .toc a[aria-current="true"] { color: var(--ink); font-weight: 600; }
   .toc a[aria-current="true"]::before { background: var(--iris); border-color: var(--iris); }
-  .toc a.top-l { font-family: "Young Serif", serif; font-size: 17px; color: var(--ink); padding-top: 8px; }
+  .toc a.top-l { font-family: "Fraunces", serif; font-size: 17px; color: var(--ink); padding-top: 8px; }
   .toc a.top-l::before { top: 15px; }
   .toc .grp { font-size: 12px; color: var(--muted); padding: 10px 0 2px; font-style: italic; }
   /* HEADER: .name is her name at the top (font-size sets how big it is). .hero-art is the painting. */
-  .hero { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px; padding: 48px 0 24px; border-bottom: 1px solid var(--rule); }
-  .hero h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(44px, 7vw, 76px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
+  .hero { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 24px; padding: 48px 0 24px; }
+  .hero h1 { font-family: "Fraunces", serif; font-weight: 400; font-size: clamp(44px, 7vw, 76px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
   .hero p.lede { font-size: 21px; max-width: 30ch; color: var(--muted); margin: 0 0 8px; }
   .hero .links a { margin-right: 18px; font-weight: 600; }
   .iris { width: 100%; max-width: 300px; justify-self: end; margin-bottom: -1px; }
-  .hero.art { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); align-items: start; gap: 40px; padding: 40px 0 32px; border-bottom: 1px solid var(--rule); }
+  .hero.art { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); align-items: start; gap: 40px; padding: 40px 0 32px; }
   .hero h1.name { font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 20px; }
   .about-top { padding: 0; }
   .about-top h2 { font-size: 24px; margin: 0 0 10px; }
@@ -77,7 +78,9 @@
   .about-top .about { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .about-top .about ul { display: flex; flex-wrap: wrap; gap: 8px; }
   .about-top .about li, .about-top .about li:first-child { border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; font-size: 14px; background: var(--sheet); }
-  .hero.art .hero-art { display: block; width: 100%; max-width: 340px; height: auto; justify-self: end; }
+  /* desktop: the painting at its original size, top right */
+  .hero-art-wrap { justify-self: end; width: 100%; max-width: 340px; }
+  .hero.art .hero-art { display: block; width: 100%; height: auto; }
   .hero-credit { font-size: 13px; color: var(--muted); }
   .hero.pic { position: relative; display: block; min-height: clamp(340px, 40vw, 480px); margin-top: 32px; padding: clamp(32px, 5vw, 56px); border: 0; border-radius: 6px; overflow: hidden; background: #D8CDBF; }
   .hero.pic .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
@@ -91,7 +94,21 @@
     /* phones: name first, then the painting, then About */
     .hero.art .hero-main { display: contents; }
     .hero.art .name { order: 1; margin-bottom: 0; }
-    .hero.art .hero-art { justify-self: center; max-width: 240px; order: 2; }
+    /* phones: the painting sits at the top right, fades to the left and down into About, with her name over it */
+    .hero.art { padding-top: 0; }
+    .hero-art-wrap { overflow: hidden; min-height: 0; max-width: none; }
+    .hero.art .hero-art { position: absolute; inset: auto; height: auto; max-width: none; object-fit: fill; }
+    .hero-art-wrap::after { content: ""; position: absolute; inset: 0; }
+    .hero.art { display: block; position: relative; padding-top: 0; }
+    .hero.art .hero-main { display: block; }
+    .hero-art-wrap { position: absolute; top: 0; right: -30px; width: 62vw; aspect-ratio: 100 / 160; z-index: 0; }
+    .hero.art .hero-art { width: 137%; left: 0%; top: -26%; }
+    .hero-art-wrap { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-50%' y='-50%' width='200%' height='200%'%3E%3CfeGaussianBlur stdDeviation='8.2'/%3E%3C/filter%3E%3Cpath d='M-30,-30 H15.0 L15.0,-30.0 C15.0,-25.0 12.7,-10.9 15.0,0.0 C17.4,10.9 23.9,26.8 29.1,35.7 C34.4,44.7 38.8,51.2 46.5,53.7 C54.2,56.2 69.4,48.2 75.4,50.5 C81.4,52.8 80.5,63.1 82.3,67.6 C84.1,72.1 78.5,75.8 86.5,77.5 C94.5,79.2 122.8,77.5 130.0,77.5 V-30 Z' fill='white' filter='url(%23b)'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-50%' y='-50%' width='200%' height='200%'%3E%3CfeGaussianBlur stdDeviation='8.2'/%3E%3C/filter%3E%3Cpath d='M-30,-30 H15.0 L15.0,-30.0 C15.0,-25.0 12.7,-10.9 15.0,0.0 C17.4,10.9 23.9,26.8 29.1,35.7 C34.4,44.7 38.8,51.2 46.5,53.7 C54.2,56.2 69.4,48.2 75.4,50.5 C81.4,52.8 80.5,63.1 82.3,67.6 C84.1,72.1 78.5,75.8 86.5,77.5 C94.5,79.2 122.8,77.5 130.0,77.5 V-30 Z' fill='white' filter='url(%23b)'/%3E%3C/svg%3E"); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+    .hero-art-wrap::after { background:
+       linear-gradient(90deg, rgba(245,244,248,1.00) 0%, rgba(245,244,248,0.50) 0%, rgba(245,244,248,0) 0%),
+       linear-gradient(180deg, rgba(245,244,248,0) 95%, rgba(245,244,248,0.85) 98%, #F5F4F8 100%); }
+    .hero.art .name { position: relative; z-index: 2; margin: 0; padding: 20vw 0 0; font-size: 38px; line-height: 1.2; }
+    .hero.art .about-top { position: relative; z-index: 2; margin-top: 10vw; }
     .hero.art .about-top { order: 3; }
   }
   @media (max-width: 1050px) {
@@ -117,13 +134,13 @@
     @keyframes bloom { to { opacity: 1; } }
   }
   /* SECTIONS AND PROJECT CARDS: spacing above each section, heading sizes, and the white project cards */
-  section { padding: 36px 0 8px; }
-  h2 { font-family: "Young Serif", serif; font-weight: 400; font-size: 36px; margin: 0 0 24px; }
+  section { padding: 28px 0 0; }
+  h2 { font-family: "Fraunces", serif; font-weight: 400; font-size: 36px; margin: 0 0 18px; }
   .sheet { position: relative; background: var(--sheet); border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 20px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 32px; align-items: start; }
   .sheet .photo { grid-column: 1 / -1; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--rule); }
-  .group { font-family: "Young Serif", serif; font-weight: 400; font-size: 22px; color: var(--muted); margin: 56px 0 20px; }
+  .group { font-family: "Fraunces", serif; font-weight: 400; font-size: 20px; color: var(--muted); margin: 32px 0 12px; }
   .group:first-of-type { margin-top: 0; }
-  .sheet h4 { font-family: "Young Serif", serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0 0 12px; }
+  .sheet h4 { font-family: "Fraunces", serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0 0 12px; }
   .sheet p { margin: 0 0 14px; max-width: 60ch; }
   .more summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--iris); font-weight: 600; font-size: 15px; padding: 2px 0; }
   .more summary::-webkit-details-marker { display: none; }
@@ -137,10 +154,33 @@
   .sheet.solo { grid-template-columns: 1fr; }
   .sheet.card { display: block; padding: 0; transition: border-color .15s; }
   .sheet.card:hover { border-color: var(--iris); }
-  .card-link { display: block; padding: 28px 32px; color: inherit; text-decoration: none; }
+  .card-link { display: block; padding: 16px 22px; color: inherit; text-decoration: none; }
+  .sheet.card { margin-bottom: 10px; }
+  .sheet.card .status { margin-bottom: 4px; font-size: 12px; }
   .card-link .photo { display: block; margin-bottom: 20px; }
-  .card-link h4 { margin-bottom: 8px; }
-  .card-link .sum { color: var(--muted); margin: 0 0 14px; max-width: 62ch; }
+  .card-link h4 { margin-bottom: 6px; }
+  /* timeframe and "In progress" are in the cards but hidden unless turned on below */
+  .card-link .date, .entry .date { display: none; color: var(--muted); }
+  .card-link .status { display: none; }
+  .card-link, .entry { position: relative; }
+  .card-link .sum { color: var(--muted); margin: 0 0 6px; max-width: 70ch; font-size: 14.5px; line-height: 1.45; }
+  .sheet.card h4 { font-size: 20px; }
+  .card-link .go { font-size: 14px; }
+  /* RESEARCH / EMS ROLE ENTRIES: organization, role, place and dates */
+  .entry { background: var(--sheet); border: 1px solid var(--rule); padding: 16px 22px; margin-bottom: 10px; }
+  .entry h4 { font-family: "Fraunces", serif; font-weight: 400; font-size: 20px; line-height: 1.2; margin: 0 0 4px; }
+  .entry .meta { font-size: 14px; color: var(--muted); margin: 0; }
+  .entry p { font-size: 14.5px; line-height: 1.5; margin: 0 0 10px; max-width: 70ch; }
+  .entry .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .entry .tags li { border: 1px solid var(--rule); border-radius: 999px; padding: 2px 10px; font-size: 13px; background: var(--paper); }
+  .roles { list-style: none; margin: 0 0 16px; padding: 0; }
+  .ems-intro p:last-child { margin-bottom: 0; }
+  .certs { font-size: 14px; color: var(--muted); }
+  .certs b { color: var(--ink); font-weight: 600; }
+  .roles li { padding: 4px 0; }
+  .roles b { font-weight: 600; }
+  .roles span { display: block; font-size: 14px; color: var(--muted); }
+  @media (max-width: 760px) { .entry, .card-link { padding: 14px 16px; } }
   .card-link .go { display: inline-flex; align-items: center; gap: 8px; color: var(--iris); font-weight: 600; font-size: 15px; }
   .card-link .go::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .15s; }
   .card-link:hover .go::after { transform: translateX(3px) rotate(-45deg); }
@@ -163,12 +203,12 @@
   /* EMS PHOTOS: columns sets the photo grid (2 columns, each at least 260px wide) */
   .ems-intro p { margin: 0 0 16px; }
   /* EMS photos: stacked in a column on the right, with the text wrapping around them */
-  #ems { display: flow-root; }
+  #ems .ems-body { display: flow-root; }
   #ems .gallery { columns: auto; float: right; width: 200px; margin: 4px 0 12px 32px; display: flex; flex-direction: column; gap: 10px; }
   #ems .gallery figure { margin: 0; padding: 0; background: none; border: 0; }
   #ems .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; box-shadow: 0 1px 3px rgba(31,26,58,.12); }
   @media (max-width: 640px) {
-    #ems { display: flex; flex-direction: column; }
+    #ems .ems-body { display: flex; flex-direction: column; }
     #ems .ems-intro { order: 1; }
     #ems .gallery { order: 2; float: none; width: 100%; margin: 8px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     #ems .gallery img { aspect-ratio: 1; object-fit: cover; }
@@ -183,18 +223,18 @@
   .about { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
   .about p { margin: 0 0 16px; max-width: 60ch; }
   .about ul { list-style: none; padding: 0; margin: 0; }
-  .about li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
-  .about li:first-child { border-top: 1px solid var(--rule); }
+  .about li { padding: 10px 0; }
   /* CONTACT: the heading and links sit on one line and wrap on small screens */
-  section.contact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 36px; padding-top: 36px; }
+  section.contact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 36px; padding-top: 28px; }
   .contact h2 { font-size: 28px; margin: 0; }
   .contact-line { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 0; font-size: 17px; }
-  footer { padding: 48px 0; color: var(--muted); font-size: 14px; }
+  footer { padding: 28px 0 32px; color: var(--muted); font-size: 14px; }
   /* TABLETS AND PHONES (under 900px wide): the table of contents becomes a bar across the top */
   @media (max-width: 900px) {
     .layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
     [id] { scroll-margin-top: 64px; }
-    .toc { order: 0; z-index: 5; max-height: none; overflow: visible; padding: 12px 0 0; margin: 0 -24px; background: var(--paper); border-bottom: 1px solid var(--rule); }
+    .toc { order: 0; z-index: 5; transform: none !important; max-height: none; overflow: visible; padding: 12px 0 0; margin: 0 -24px; background: var(--paper); }
+    .toc .track, .toc .fill { display: none; }
     .toc > ol { display: flex; align-items: center; gap: 20px; overflow-x: auto; white-space: nowrap; padding: 0 24px 12px; scrollbar-width: none; }
     .toc > ol::-webkit-scrollbar { display: none; }
     .toc li { display: contents; }
@@ -212,6 +252,58 @@
     .iris { justify-self: start; max-width: 200px; order: -1; }
     .sheet { grid-template-columns: 1fr; padding: 20px; }
     .about { grid-template-columns: 1fr; gap: 24px; }
+    /* phone margins and spacing (set in the tuner) */
+    .wrap { padding: 0 30px; }
+    .toc { margin: 0 -30px; }
+    .toc > ol { padding: 0 30px 12px; }
+    .about-top h2, h2 { margin-bottom: 8px; }
+    .about-top p, .sheet p, .ems-intro p { margin-bottom: 14px; }
+  }
+  /* CONTACT ICONS: small line icons before each contact link */
+  .contact-line a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+  .contact-line a span { text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 4px; }
+  .contact-line a:hover span { text-decoration-color: currentColor; }
+  .contact-line .ci { width: 1.1em; height: 1.1em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  /* DESKTOP SETTINGS from the desktop tuner (saved Nov 7, v4) */
+  @media (min-width: 761px) {
+    body { font-size: 17px; }
+    .wrap { max-width: 1200px; padding: 0 24px; }
+    .layout { grid-template-columns: minmax(0, 1fr) 200px; gap: 26px; }
+    .hero.art { gap: 62px; padding: 40px 0 0; }
+    #projects { padding-top: 48px; }
+    .hero h1.name { font-size: 48px; line-height: 1.1; margin: 0 0 20px; }
+    .about-top h2 { font-size: 36px; margin: 0 0 10px; }
+    .about-top p { font-size: 17px; line-height: 1.45; margin: 0 0 10px; max-width: 100ch; }
+    section { padding-top: 28px; }
+    h2 { font-size: 36px; margin-bottom: 18px; }
+    .contact h2 { font-size: 36px; }
+    .group { font-size: 20px; margin: 32px 0 12px; } .group:first-of-type { margin-top: 0; }
+    .sheet.card h4 { font-size: 20px; }
+    .entry h4 { font-size: 20px; }
+    .entry .meta, .certs, .card-link .go, .roles span { font-size: 14px; }
+    .roles li { font-size: 17px; }
+    .ems-intro p:not(.certs) { font-size: 17px; line-height: 1.45; }
+    .contact-line { font-size: 17px; } footer { padding-bottom: 32px; }
+    .toc > ol { padding-left: 22px; }
+    .toc a { font-size: 14px; padding: 5px 0; }
+    .toc a.top-l { font-family: "Fraunces", serif; font-size: 17px; padding-top: 8px; }
+    .toc a::before { width: 7px; height: 7px; left: -21.5px; top: calc(5px + 0.675em - 3.5px); }
+    .toc a.top-l::before { top: calc(8px + 0.675em - 3.5px); }
+    .toc .track, .toc .fill { left: 3px; width: 2px; top: 6px; bottom: 38px; }
+    .hero.art { align-items: start; }
+    .about-top p:last-child { margin-bottom: 0; }
+    #projects { position: relative; z-index: 1; }
+    .hero.art { grid-template-columns: minmax(0, 1fr) minmax(0, 0.923fr); }
+    .hero-art-wrap { width: 100%; max-width: 600px; justify-self: end; align-self: start; height: 0; overflow: visible; position: relative; z-index: 0; }
+    .sheet.card, .entry { margin-bottom: 11px; border-radius: 0px; overflow: hidden; border: 1px solid var(--rule); background: var(--sheet); box-shadow: none; }
+    .card-link, .entry { padding: 24px 24px; }
+    .card-link h4 { margin-bottom: 0; }
+    .card-link .go { display: none; }
+    /* EMS photos in a row under the text */
+    #ems .ems-body { display: flex; flex-direction: column; }
+    #ems .gallery { order: 2; float: none; width: auto; display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; margin: 32px 0 0; }
+    #ems .gallery figure { width: 200px; flex: 0 0 200px; }
+    #ems .gallery img { border-radius: 2px; }
   }
 </style>
 </head>
@@ -219,149 +311,146 @@
 <!-- PAGE: .wrap centers everything; .layout splits it into the main column and the table of contents -->
 <div class="wrap">
 <div class="layout">
-  <!-- TABLE OF CONTENTS: the list on the right that follows you as you scroll. Each link jumps to a section below. On phones it becomes a bar across the top. -->
-  <nav class="toc" aria-label="On this page">
-    <span class="track" aria-hidden="true"></span><span class="fill" aria-hidden="true"></span>
-    <ol>
-      <li><a class="top-l" href="#about">About</a></li>
-      <li><a class="top-l" href="#projects">Projects</a>
-        <ol>
-          <li class="grp" aria-hidden="true">Rutgers University</li>
-          <li><a href="#low-cost-obstetric-simulator">Low-cost obstetric simulator</a></li>
-          <li><a href="#speech-feedback-device-for-deaf-learners">Speech feedback device for deaf learners</a></li>
-          <li><a href="#acellular-allograft-tissue-engineering">Acellular allograft tissue engineering</a></li>
-          <li><a href="#probiotic-hydrogel-for-ulcerative-colitis">Probiotic hydrogel for ulcerative colitis</a></li>
-          <li><a href="#adaptive-heat-risk-coach">Adaptive heat risk coach</a></li>
-          <li class="grp" aria-hidden="true">Biotechnology HS</li>
-          <li><a href="#sound-frequency-and-radish-seed-germination">Sound frequency and radish seed germination</a></li>
-          <li><a href="#background-noise-and-c-elegans-chemotaxis">Background noise and <i>C. elegans</i> chemotaxis</a></li>
-        </ol>
-      </li>
-      <li><a class="top-l" href="#ems">EMS</a></li>
+<!-- TABLE OF CONTENTS: the list on the right that follows you as you scroll. Each link jumps to a section below. On phones it becomes a bar across the top. -->
+<nav aria-label="On this page" class="toc">
+<span aria-hidden="true" class="track"></span><span aria-hidden="true" class="fill"></span>
+<ol>
+<li><a class="top-l" href="#about">About me</a></li>
+<li><a class="top-l" href="#projects">Projects</a>
+<ol>
+<li><a href="#low-cost-obstetric-simulator">Low-Cost Obstetric Training Simulator</a></li>
+<li><a href="#speech-feedback-device-for-deaf-learners">Speech Feedback Wearable for Deaf Learners</a></li>
+<li><a href="#acellular-allograft-tissue-engineering">Acellular Dermal Allograft Validation Plan</a></li>
+<li><a href="#probiotic-hydrogel-for-ulcerative-colitis">Probiotic Hydrogel for Ulcerative Colitis</a></li>
+<li><a href="#adaptive-heat-risk-coach">Adaptive Heat Risk Coach App</a></li>
+</ol>
+</li>
+<li><a class="top-l" href="#research">Research</a>
+<ol>
+<li><a href="#max-planck-institute">Max Planck Institute</a></li>
+<li><a href="#sound-frequency-and-radish-seed-germination">Sound Frequency and Radish Seed Germination</a></li>
+<li><a href="#background-noise-and-c-elegans-chemotaxis">Background Noise and <i>C. elegans</i> Chemotaxis</a></li>
+</ol>
+</li>
+<li><a class="top-l" href="#ems">Emergency Medical Services</a></li>
+<li><a class="top-l" href="#contact">Contact</a></li>
+</ol>
+</nav>
+<main>
+<!-- ABOUT: her paragraphs and interest list. Edit these in the editor's About section. -->
+<!-- HEADER: her name and About on the left, the painting on the right -->
+<div class="hero art">
+<div class="hero-main">
+<h1 class="name">Zoe Goudas</h1>
+<section class="about-top" id="about">
+<h2>About me</h2>
+<div class="about">
+<div>
+<p>I’m a senior in the Honors College at Rutgers University, majoring in biomedical engineering with a minor in mathematics. I’m interested in tissue engineering, biomaterials, medical devices, biosensors, wearable health tech, drug delivery, and neural engineering.</p>
+<p>For my senior capstone, my team is redesigning the obstetric training simulator used by the Rutgers Nurse-Midwifery Program to improve hands-on training and lower its cost. I’m also working on building a wearable device and app that combine vibrotactile and visual feedback to help deaf learners practice speech.</p>
+<p>I’m looking for R&amp;D internships and co-ops for spring or summer 2027. After I graduate in May 2027, I plan to earn a master’s degree in biomedical engineering.</p>
+<p>Outside of school, I work and volunteer as an EMT, play guitar, grow plants, hike, snowboard, and do calisthenics.</p>
+</div>
+</div>
+</section>
+</div>
+<div class="hero-art-wrap"><img alt="Painting of morning glories" class="hero-art" src="morning-glory-painting.jpg"/></div>
+</div>
+<!-- PROJECTS: one card per project. Each card links to that project's own page, like obstetric-simulator.html. -->
+<section id="projects">
+<h2>Projects</h2>
+<article class="sheet card" id="low-cost-obstetric-simulator">
+<a class="card-link" href="obstetric-simulator.html">
+<span class="status">In progress</span>
+<h4>Low-Cost Obstetric Training Simulator</h4>
+<span class="date">Aug 2026 – Present</span>
+<span class="go">View project</span>
+</a>
+</article>
+<article class="sheet card" id="speech-feedback-device-for-deaf-learners">
+<a class="card-link" href="speech-feedback-device.html">
+<span class="status">In progress</span>
+<h4>Speech Feedback Wearable for Deaf Learners</h4>
+<span class="date">Oct 2026 – Present</span>
+<span class="go">View project</span>
+</a>
+</article>
+<article class="sheet card" id="acellular-allograft-tissue-engineering">
+<a class="card-link" href="acellular-allograft.html">
+<h4>Acellular Dermal Allograft Validation Plan</h4>
+<span class="date">Jan – Apr 2026</span>
+<span class="go">View project</span>
+</a>
+</article>
+<article class="sheet card" id="probiotic-hydrogel-for-ulcerative-colitis">
+<a class="card-link" href="probiotic-hydrogel.html">
+<h4>Probiotic Hydrogel for Ulcerative Colitis</h4>
+<span class="date">Jan – Apr 2026</span>
+<span class="go">View project</span>
+</a>
+</article>
+<article class="sheet card" id="adaptive-heat-risk-coach">
+<a class="card-link" href="heat-risk-coach.html">
+<h4>Adaptive Heat Risk Coach App</h4>
+<span class="date">Jan – Apr 2026</span>
+<span class="go">View project</span>
+</a>
+</article>
+</section>
+<!-- RESEARCH EXPERIENCE: the Max Planck internship, then her high school research projects -->
+<section id="research">
+<h2>Research</h2>
+<article class="entry" id="max-planck-institute">
+<h4>Max Planck Institute of Colloids and Interfaces</h4>
+<span class="date">Jun – Aug 2023</span>
+</article>
+<article class="sheet card" id="sound-frequency-and-radish-seed-germination">
+<a class="card-link" href="radish-germination.html">
+<h4>Sound Frequency and Radish Seed Germination</h4>
+<span class="date">Jan – May 2024</span>
+<span class="go">View project</span>
+</a>
+</article>
+<article class="sheet card" id="background-noise-and-c-elegans-chemotaxis">
+<a class="card-link" href="celegans-chemotaxis.html">
+<h4>Background Noise and <i>C. elegans</i> Chemotaxis</h4>
+<span class="date">Jan – Apr 2023</span>
+<span class="go">View project</span>
+</a>
+</article>
+</section>
+<!-- EMS: her roles, a short intro and photo gallery. Each photo opens full size when clicked. -->
+<section id="ems">
+<h2>Emergency Medical Services</h2>
+<div class="ems-body">
+<div class="gallery">
+<figure><a href="ems-1.jpg"><img alt="With the crew at Morganville EMS" loading="lazy" src="ems-1.jpg"/></a></figure>
+<figure><a href="ems-2.jpg"><img alt="In the bay at Morganville EMS" loading="lazy" src="ems-2.jpg"/></a></figure>
+<figure><a href="ems-3.jpg"><img alt="A night with the squad" loading="lazy" src="ems-3.jpg"/></a></figure>
+<figure><a href="ems-4.jpg"><img alt="Crew photo with a Morganville EMS ambulance" loading="lazy" src="ems-4.jpg"/></a></figure>
+</div>
+<div class="ems-intro">
 
-      <li><a class="top-l" href="#contact">Contact</a></li>
-    </ol>
-  </nav>
-  <main>
 
-  <!-- ABOUT: her paragraphs and interest list. Edit these in the editor's About section. -->
-  <!-- HEADER: her name and About on the left, the painting on the right -->
-  <div class="hero art">
-    <div class="hero-main">
-      <h1 class="name">Zoe Goudas</h1>
-    <section id="about" class="about-top">
-      <h2>About</h2>
-      <div class="about">
-        <div>
-          <p>I’m a senior biomedical engineering major and math minor in the Honors College at Rutgers University–New Brunswick. I’m interested in tissue engineering, biomaterials, medical devices, biosensors, wearable health tech, targeted drug delivery and neural engineering. For my senior capstone, my team and I are designing a low-cost obstetric training simulator in partnership with the Rutgers-Newark Midwifery Nursing program.</p>
-          <p>I’ve spent four years working and volunteering as an EMT, where I’ve gained firsthand patient care experience that shapes how I approach biomedical engineering.</p>
-          <p>I’m looking for R&amp;D internships for spring/summer 2027, and I’m planning to pursue a master’s degree in BME after I graduate.</p>
-          <p>Outside of school, I play guitar, collect and grow plants, hike, snowboard, and train in calisthenics.</p>
-        </div>
-
-      </div>
-    </section>
-    </div>
-    <img class="hero-art" src="morning-glory-painting.jpg" alt="Painting of morning glories">
-  </div>
-
-  <!-- PROJECTS: one card per project. Each card links to that project's own page, like obstetric-simulator.html. -->
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <h3 class="group">Rutgers University</h3>
-
-    <article class="sheet card" id="low-cost-obstetric-simulator">
-      <a class="card-link" href="obstetric-simulator.html">
-        <span class="status">In progress</span>
-        <h4>Low-cost obstetric simulator</h4>
-        <p class="sum">Senior design capstone project redesigning the birthing simulator used by the Rutgers-Newark midwifery nursing program.</p>
-        <span class="go">View project</span>
-      </a>
-    </article>
-
-    <article class="sheet card" id="speech-feedback-device-for-deaf-learners">
-      <a class="card-link" href="speech-feedback-device.html">
-        <span class="status">In progress</span>
-        <h4>Speech feedback device for deaf learners</h4>
-        <p class="sum">A wearable collar and phone app that sense how a deaf learner is producing speech and give visual or vibrotactile feedback in place of the hearing they're missing.</p>
-        <span class="go">View project</span>
-      </a>
-    </article>
-
-    <article class="sheet card" id="acellular-allograft-tissue-engineering">
-      <a class="card-link" href="acellular-allograft.html">
-        <h4>Acellular allograft tissue engineering</h4>
-        <p class="sum">An evidence generation plan for modifying how a backordered skin graft is processed, without losing quality.</p>
-        <span class="go">View project</span>
-      </a>
-    </article>
-
-    <article class="sheet card" id="probiotic-hydrogel-for-ulcerative-colitis">
-      <a class="card-link" href="probiotic-hydrogel.html">
-        <h4>Probiotic hydrogel for ulcerative colitis</h4>
-        <p class="sum">A proposed sprayable hydrogel that delivers an anti-inflammatory protein to treat ulcerative colitis symptoms.</p>
-        <span class="go">View project</span>
-      </a>
-    </article>
-
-    <article class="sheet card" id="adaptive-heat-risk-coach">
-      <a class="card-link" href="heat-risk-coach.html">
-        <h4>Adaptive heat risk coach</h4>
-        <p class="sum">An AI app prototype that learns how a person reacts to heat and coaches them before symptoms get worse.</p>
-        <span class="go">View project</span>
-      </a>
-    </article>
-
-    <h3 class="group">Biotechnology HS</h3>
-
-    <article class="sheet card" id="sound-frequency-and-radish-seed-germination">
-      <a class="card-link" href="radish-germination.html">
-        <h4>Sound frequency and radish seed germination</h4>
-        <p class="sum">Testing whether specific sound frequencies change how fast radish seeds germinate.</p>
-        <span class="go">View project</span>
-      </a>
-    </article>
-
-    <article class="sheet card" id="background-noise-and-c-elegans-chemotaxis">
-      <a class="card-link" href="celegans-chemotaxis.html">
-        <h4>Background noise and <i>C. elegans</i> chemotaxis</h4>
-        <p class="sum">Testing whether different &quot;colors&quot; of background noise change how C. elegans worms move toward salt.</p>
-        <span class="go">View project</span>
-      </a>
-    </article>
-  </section>
-
-  <!-- EMS: her EMS intro line and photo gallery. Each photo opens full size when clicked. -->
-  <section id="ems">
-    <h2>EMS</h2>
-    <div class="gallery">
-      <figure><a href="ems-1.jpg"><img src="ems-1.jpg" alt="With the crew at the Morganville First Aid Squad" loading="lazy"></a></figure>
-      <figure><a href="ems-2.jpg"><img src="ems-2.jpg" alt="In the bay at Morganville EMS" loading="lazy"></a></figure>
-      <figure><a href="ems-3.jpg"><img src="ems-3.jpg" alt="A night with the squad" loading="lazy"></a></figure>
-      <figure><a href="ems-4.jpg"><img src="ems-4.jpg" alt="Crew photo with a Morganville EMS ambulance" loading="lazy"></a></figure>
-    </div>
-    <div class="ems-intro">
-      <p>I started volunteering with Morganville EMS as a cadet in high school, where I discovered my passion for patient care and human connection. I quickly advanced through cadet training to earn my national EMT certification. Four years later, I still volunteer there and work part-time at Quality Medical Transport. Every 911 call I’m dispatched to reminds me why I continue: the chance to make a difference in someone’s life.</p>
-      <p>Whether a shift means calming a patient through a panic attack or treating someone so badly injured they can barely respond to my assessment, my time in EMS has reshaped how I view biomedical engineering and healthcare. As a provider, I use the same medical devices I study and design as a biomedical engineering student, and I’ve even been the patient being assessed and treated. That firsthand exposure pushes me to design with all three perspectives in mind: the provider working under pressure, the patient relying on the technology, and the engineer building it. That’s what excites me about biomedical engineering: I can turn my ideas and engineering skills into something that changes a patient’s life, while helping the providers who treat them deliver the best possible care.</p>
-    </div>
-  </section>
-
-  <!-- CONTACT: the one-line list of email, LinkedIn, GitHub and resume links -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p class="contact-line">
-      <a href="mailto:zoe.goudas@gmail.com">zoe.goudas@gmail.com</a>
-      <a href="mailto:zag30@scarletmail.rutgers.edu">zag30@scarletmail.rutgers.edu</a>
-      <a href="https://www.linkedin.com/in/zoe-goudas-a71374274">LinkedIn</a>
-      <a href="https://github.com/zoegoudas">GitHub</a>
-      <a href="Zoe_Goudas_Resume.pdf">Resume</a>
-    </p>
-  </section>
-
-  <!-- FOOTER: her name (and the painting credit, if one is filled in) -->
-  <footer>Zoe Goudas</footer>
-  </main>
+<p>I joined Morganville EMS in high school as a cadet. After completing an EMT-Basic course and earning my EMT certification, I started leading calls and managing patient assessment, treatment, and transport decisions. I continue to volunteer with Morganville EMS and also work part-time as an EMT at Quality Medical Transport.</p>
+<p>The calls I deal with can be unpredictable, ranging from simple lift assists to traumatic accidents to suspected strokes. Taking responsibility for patients and sharpening my skills on calls has made me a more decisive and composed leader.</p>
+<p>My EMS experience connects directly to my work in biomedical engineering. I use many of the devices I study in class to treat patients, for example, pulse oximeters, AEDs, automatic stretchers, and hemostatic dressings. I want to apply what I learn in biomedical engineering to design devices that perform reliably in the field and improve care for both patients and providers.</p>
+</div>
+</div>
+</section>
+<!-- CONTACT: the one-line list of email, LinkedIn, GitHub and resume links -->
+<section class="contact" id="contact">
+<h2>Contact</h2>
+<p class="contact-line">
+<a href="mailto:zoe.goudas@gmail.com"><svg aria-hidden="true" class="ci" viewbox="0 0 24 24"><rect height="13" rx="1.5" width="18" x="3" y="5.5"></rect><path d="M3.5 6.5l8.5 6.5 8.5-6.5"></path></svg><span>zoe.goudas@gmail.com</span></a>
+<a href="https://www.linkedin.com/in/zoe-goudas-a71374274"><svg aria-hidden="true" class="ci" viewbox="0 0 24 24"><rect height="14" rx="1.5" width="18" x="3" y="5"></rect><circle cx="8.6" cy="10.4" r="1.9"></circle><path d="M5.6 15.6c.5-1.6 1.6-2.4 3-2.4s2.5.8 3 2.4M14 10h4M14 13h4M14 16h2.5"></path></svg><span>LinkedIn</span></a>
+<a href="https://github.com/zoegoudas"><svg aria-hidden="true" class="ci" viewbox="0 0 24 24"><rect height="14" rx="1.5" width="18" x="3" y="5"></rect><path d="M9.5 9.5L7 12l2.5 2.5M14.5 9.5L17 12l-2.5 2.5M12.8 9l-1.6 6"></path></svg><span>GitHub</span></a>
+<a href="https://zoegoudas.dev/Zoe_Goudas_Resume.pdf"><svg aria-hidden="true" class="ci" viewbox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v4h4M9 12h6M9 15h6M9 18h4"></path></svg><span>Resume</span></a>
+</p>
+</section>
+<!-- FOOTER: her name (and the painting credit, if one is filled in) -->
+<footer>Zoe Goudas</footer>
+</main>
 </div>
 </div>
 <!-- SCRIPT: highlights the section you're reading in the table of contents and fills its line as you scroll. No need to edit this. -->
@@ -413,6 +502,32 @@
   window.addEventListener("resize", onScroll);
   document.addEventListener("toggle", onScroll, true);
   update();
+})();
+</script>
+<!-- SCRIPT: on wide screens the contents menu starts level with "About me", then settles in the middle of the screen as you scroll -->
+<script>
+(function () {
+  var toc = document.querySelector(".toc"), head = document.querySelector("#about h2");
+  if (!toc || !head) return;
+  var y = 0, start = null, queued = false;
+  function place() {
+    queued = false;
+    if (window.innerWidth <= 900) { toc.style.transform = ""; y = 0; start = null; return; }
+    var base = toc.getBoundingClientRect().top - y;
+    var aboutNow = head.getBoundingClientRect().top + 2;
+    if (start === null || window.scrollY === 0) start = aboutNow + window.scrollY;
+    var center = Math.max(8, (window.innerHeight - toc.offsetHeight) / 2);
+    var target;
+    if (start >= center) target = Math.max(aboutNow, center);
+    else target = start + (center - start) * Math.min(1, window.scrollY / 300);
+    y = Math.round(target - base);
+    toc.style.transform = "translateY(" + y + "px)";
+  }
+  function onScroll() { if (!queued) { queued = true; requestAnimationFrame(place); } }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { start = null; onScroll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { start = null; place(); });
+  place();
 })();
 </script>
 </body>
