@@ -11,6 +11,8 @@
     gtag('config', 'G-0N696S6YXR');
   </script>
 <meta charset="utf-8"/>
+<!-- LIGHT / DARK MODE: uses the visitor's saved choice, otherwise their device setting -->
+<script>(function () { var t; try { t = localStorage.getItem("theme"); } catch (e) {} if (t !== "light" && t !== "dark") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; document.documentElement.setAttribute("data-theme", t); })();</script>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Zoe Goudas</title>
 <!-- The title shows in the browser tab. The description is what Google and link previews show. -->
@@ -25,7 +27,7 @@
      --muted the grey text, --iris the purple for links, --rule the thin lines,
      --stem the green "In progress" dot, and --petal/--pollen color the flower drawing. */
   :root {
-    --paper: #F5F4F8;
+    --paper: #F2EFF9;
     --sheet: #FFFFFF;
     --ink: #1F1A3A;
     --muted: #5E5873;
@@ -34,6 +36,20 @@
     --petal-deep: #CFC6EC;
     --stem: #3F6B4E;
     --rule: #D8D3E6;
+    --pollen: #E2B53E;
+  }
+  /* DARK MODE COLORS: the same names as above, used when the site is in dark mode */
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #1E1B2E;
+    --sheet: #282439;
+    --ink: #EEEAF8;
+    --muted: #B3ADC8;
+    --iris: #B8A9F0;
+    --petal: #3A3356;
+    --petal-deep: #4A4170;
+    --stem: #7FC29A;
+    --rule: #3B3654;
     --pollen: #E2B53E;
   }
   * { box-sizing: border-box; }
@@ -105,8 +121,7 @@
     .hero.art .hero-art { width: 137%; left: 0%; top: -26%; }
     .hero-art-wrap { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-50%' y='-50%' width='200%' height='200%'%3E%3CfeGaussianBlur stdDeviation='8.2'/%3E%3C/filter%3E%3Cpath d='M-30,-30 H15.0 L15.0,-30.0 C15.0,-25.0 12.7,-10.9 15.0,0.0 C17.4,10.9 23.9,26.8 29.1,35.7 C34.4,44.7 38.8,51.2 46.5,53.7 C54.2,56.2 69.4,48.2 75.4,50.5 C81.4,52.8 80.5,63.1 82.3,67.6 C84.1,72.1 78.5,75.8 86.5,77.5 C94.5,79.2 122.8,77.5 130.0,77.5 V-30 Z' fill='white' filter='url(%23b)'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-50%' y='-50%' width='200%' height='200%'%3E%3CfeGaussianBlur stdDeviation='8.2'/%3E%3C/filter%3E%3Cpath d='M-30,-30 H15.0 L15.0,-30.0 C15.0,-25.0 12.7,-10.9 15.0,0.0 C17.4,10.9 23.9,26.8 29.1,35.7 C34.4,44.7 38.8,51.2 46.5,53.7 C54.2,56.2 69.4,48.2 75.4,50.5 C81.4,52.8 80.5,63.1 82.3,67.6 C84.1,72.1 78.5,75.8 86.5,77.5 C94.5,79.2 122.8,77.5 130.0,77.5 V-30 Z' fill='white' filter='url(%23b)'/%3E%3C/svg%3E"); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
     .hero-art-wrap::after { background:
-       linear-gradient(90deg, rgba(245,244,248,1.00) 0%, rgba(245,244,248,0.50) 0%, rgba(245,244,248,0) 0%),
-       linear-gradient(180deg, rgba(245,244,248,0) 95%, rgba(245,244,248,0.85) 98%, #F5F4F8 100%); }
+       linear-gradient(180deg, transparent 95%, color-mix(in srgb, var(--paper) 85%, transparent) 98%, var(--paper) 100%); }
     .hero.art .name { position: relative; z-index: 2; margin: 0; padding: 20vw 0 0; font-size: 38px; line-height: 1.2; }
     .hero.art .about-top { position: relative; z-index: 2; margin-top: 10vw; }
     .hero.art .about-top { order: 3; }
@@ -314,6 +329,49 @@
     #research .card-link, #research .entry { padding: 22px 26px; }
     #projects .card-link { padding: 22px 26px; }
   }
+  /* LIGHT/DARK SWITCH */
+  .mode-toggle { display: inline-flex; align-items: center; gap: 8px; margin: 16px 0 0; padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; background: var(--sheet); color: var(--muted); font: 500 13px/1 "Figtree", system-ui, sans-serif; cursor: pointer; transition: color .15s, border-color .15s; }
+  .mode-toggle:hover { color: var(--ink); border-color: var(--iris); }
+  .mode-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  html[data-theme="dark"] .mode-toggle .moon, html:not([data-theme="dark"]) .mode-toggle .sun { display: none; }
+  @media (max-width: 900px) {
+    .mode-toggle { position: fixed; right: 14px; bottom: 14px; z-index: 20; width: 42px; height: 42px; margin: 0; padding: 0; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+    .mode-toggle .ml { display: none; }
+  }
+  /* dark mode: the phone header painting is turned into light-on-dark so its paper blends into the page */
+  /* light mode: the painting's paper blends into the page color */
+  html:not([data-theme="dark"]) .hero-art-wrap { mix-blend-mode: darken; }
+  html[data-theme="dark"] .hero-art { filter: invert(.95) hue-rotate(180deg) saturate(1.3); }
+  html[data-theme="dark"] .hero-art-wrap { mix-blend-mode: lighten; }
+  /* the name of today's vine, after her name in the footer (desktop only, since phones don't show the vine) */
+  footer .vine-name { margin-left: 10px; font-size: 13px; color: var(--muted); }
+  footer .vine-name:empty { display: none; }
+  @media (max-width: 760px) { footer .vine-name { display: none; } }
+  /* VINE (desktop): a flat-color morning glory vine down the right side. It is drawn by the script at the bottom of the page:
+     one flower per project/research card (in-progress projects get a bud), and it grows down the page as you scroll. */
+  main { position: relative; z-index: 0; }
+  .vine { display: none; }
+  @media (min-width: 761px) {
+    .hero-art-wrap { display: none; }
+    .vine { display: block; position: absolute; top: 0; left: 0; width: 100%; overflow: visible; pointer-events: none; z-index: -1; }
+    .vine .stem { fill: none; stroke: var(--vine-stem, #6F9C86); stroke-width: var(--vine-w, 4px); stroke-linecap: round; stroke-linejoin: round; transition: stroke-dashoffset .9s ease-out; }
+    .vine .stem.thin { stroke: var(--vine-thin, #86B19C); stroke-width: calc(var(--vine-w, 4px) * 0.65); }
+    .vine .shoot { fill: none; stroke: var(--vine-stem, #6F9C86); stroke-width: calc(var(--vine-w, 4px) * 0.7); stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease-out; }
+    .vine .pop.on .shoot { stroke-dashoffset: 0; }
+    .vine .pop.shootg { transform: none; }
+    .vine .twig { fill: none; stroke: var(--vine-stem, #6F9C86); stroke-width: calc(var(--vine-w, 4px) * 0.6); stroke-linecap: round; }
+    .vine .curl { fill: none; stroke: var(--vine-stem, #6F9C86); stroke-width: 2; stroke-linecap: round; }
+    .vine .pop { transform: scale(0); transform-origin: 0 0; transition: transform .6s cubic-bezier(.34, 1.56, .64, 1); }
+    .vine .pop.on { transform: scale(1); }
+    .vine.still .stem, .vine.still .pop, .vine.still .shoot { transition: none; }
+    .vine .pop.on.wiggle { animation: vine-wiggle .7s ease-in-out; }
+    @keyframes vine-wiggle { 0%, 100% { transform: scale(1) rotate(0); } 20% { transform: scale(1.08) rotate(-14deg); } 45% { transform: scale(1.08) rotate(11deg); } 70% { transform: scale(1.04) rotate(-6deg); } }
+  }
+  @media (min-width: 761px) and (prefers-reduced-motion: reduce) {
+    .vine .stem, .vine .pop, .vine .shoot { transition: none; }
+    .vine.still .stem, .vine.still .pop, .vine.still .shoot { transition: none; }
+    .vine .pop.on.wiggle { animation: none; }
+  }
 </style>
 </head>
 <body>
@@ -344,8 +402,12 @@
 <li><a class="top-l" href="#ems">Emergency Medical Services</a></li>
 <li><a class="top-l" href="#contact">Contact</a></li>
 </ol>
+<!-- LIGHT/DARK SWITCH: on phones it floats in the bottom-right corner -->
+<button aria-label="Switch to dark mode" class="mode-toggle" type="button"><svg aria-hidden="true" class="moon" viewbox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg><svg aria-hidden="true" class="sun" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg><span class="ml">Dark mode</span></button>
 </nav>
 <main>
+<!-- VINE: drawn by the vine script at the bottom of the page (desktop only) -->
+<svg aria-hidden="true" class="vine" focusable="false"></svg>
 <!-- ABOUT: her paragraphs and interest list. Edit these in the editor's About section. -->
 <!-- HEADER: her name and About on the left, the painting on the right -->
 <div class="hero art">
@@ -362,7 +424,7 @@
 </div>
 </section>
 </div>
-<div class="hero-art-wrap"><img alt="Painting of morning glories" class="hero-art" src="morning-glory-painting.jpg"/></div>
+<div class="hero-art-wrap"><picture><source media="(min-width: 761px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/><img alt="Painting of morning glories" class="hero-art" src="morning-glory-painting.jpg"/></picture></div>
 </div>
 <!-- PROJECTS: one card per project. Each card links to that project's own page, like obstetric-simulator.html. -->
 <section id="projects">
@@ -465,7 +527,7 @@
 </p>
 </section>
 <!-- FOOTER: her name (and the painting credit, if one is filled in) -->
-<footer>Zoe Goudas</footer>
+<footer>Zoe Goudas<span class="vine-name"></span></footer>
 </main>
 </div>
 </div>
@@ -561,6 +623,514 @@
   window.addEventListener("resize", function () { start = null; onScroll(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { start = null; place(); });
   place();
+})();
+</script>
+<!-- SCRIPT: the light/dark switch. Clicking it saves the choice; with no saved choice the site follows the device setting. -->
+<script>
+(function () {
+  var root = document.documentElement, btn = document.querySelector(".mode-toggle");
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark";
+    if (!btn) return;
+    btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    btn.querySelector(".ml").textContent = dark ? "Light mode" : "Dark mode";
+  }
+  function apply(t, save) {
+    root.setAttribute("data-theme", t);
+    if (save) { try { localStorage.setItem("theme", t); } catch (e) {} }
+    label();
+    document.dispatchEvent(new CustomEvent("themechange", { detail: t }));
+  }
+  if (btn) btn.addEventListener("click", function () { apply(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true); });
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  function onDevice(e) { var saved; try { saved = localStorage.getItem("theme"); } catch (er) {} if (saved !== "light" && saved !== "dark") apply(e.matches ? "dark" : "light", false); }
+  if (mq.addEventListener) mq.addEventListener("change", onDevice); else if (mq.addListener) mq.addListener(onDevice);
+  label();
+})();
+</script>
+<!-- SCRIPT: draws the morning glory vine on the right (desktop only). It reads the Projects and Research cards, so adding a card adds a flower.
+     Cards with "In progress" get a bud. The vine grows down as you scroll, and a card's flower wiggles when you hover the card. -->
+<script>
+(function () {
+  var main = document.querySelector("main"), svg = document.querySelector("main > svg.vine");
+  if (!main || !svg) return;
+  var NS = "http://www.w3.org/2000/svg";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var cards = [].slice.call(document.querySelectorAll("#projects .sheet.card, #research .sheet.card, #research .entry"));
+  /* VINE COLORS: change these to recolor the vine (the vine color tuner makes this block for you).
+     flowers = the fade from the top flower to the bottom one; the inner circle and star are the flower color blended toward discTo/starTo
+     by discTint/starTint (0 = flower color, 1 = fully that color) */
+  var C = {
+    leaf: "#8DB7A2", leafDark: "#73A08B", leafLight: "#AACBB9", vein: "#B3D2C2", veinLight: "#C6DED1",
+    stem: "#6F9C86", thinStem: "#86B19C",
+    flowers: ["#717EDD", "#8B79D8", "#B184D0", "#DB93C2", "#E7A0BE"],
+    discTint: 0.22, starTint: 0.62, discTo: "#FFFFFF", starTo: "#FFFFFF", center: "#FFFDF6", pollen: "#F0CF6A",
+    budPink: "#E4A3C4", sepal: "#5E8C76", endBud1: "#B9A1DC", endBud2: "#CDB5E4",
+    /* sizes: 1 = as designed */
+    leafSize: 1, leafDensity: 1, flowerSize: 1, stemWidth: 4
+  };
+  if (window.VINE_COLORS) for (var key in window.VINE_COLORS) C[key] = window.VINE_COLORS[key];
+  window.VINE_COLORS = C;
+
+  /* A NEW VINE EVERY VISIT: each page load picks one of these morning glories and shuffles where the leaves and buds go.
+     The last part of each line says where it shows well: "both", "light" (the light page) or "dark" (the dark page);
+     each one is equally likely. Delete a line to take that variety out. */
+  var tuner = !!window.VINE_SHOW_ALL;
+  var SEED = tuner ? 0 : 1 + Math.floor(Math.random() * 997);
+  var BASE = JSON.parse(JSON.stringify(C));
+  function variety(leaf, o) {
+    var V = {
+      leaf: leaf, leafDark: mix(leaf, "#000000", 0.15), leafLight: mix(leaf, "#FFFFFF", 0.24), vein: mix(leaf, "#FFFFFF", 0.36), veinLight: mix(leaf, "#FFFFFF", 0.5),
+      stem: mix(leaf, "#000000", 0.14), thinStem: mix(leaf, "#FFFFFF", 0.08), sepal: mix(leaf, "#000000", 0.24),
+      discTint: 0.22, starTint: 0.62, discTo: "#FFFFFF", starTo: "#FFFFFF", center: "#FFFDF6", pollen: "#F0CF6A"
+    };
+    for (var k in o) V[k] = o[k];
+    return V;
+  }
+  var VARIETIES = [
+    ["blue-to-pink morning glories", {}, "both"],
+    ["Heavenly Blue morning glory", variety("#7FAE6E", { flowers: ["#6FA8EC", "#74AAEA", "#79ABE8", "#7EABE6", "#84ABE4"], discTint: 0.4, starTint: 0.72, center: "#FFF4CC", pollen: "#F2D35C", budPink: "#B9CFF2", endBud1: "#8FB6EA", endBud2: "#C3D6F3" }), "both"],
+    ["blue dawn flower", variety("#6E9F6B", { flowers: ["#5B6FE0", "#6E66DA", "#8A62D0", "#B062C0", "#C96AB4"], discTint: 0.2, starTint: 0.5, center: "#FBF2FF", pollen: "#EBDDF8", budPink: "#D59BCB", endBud1: "#8C7DDA", endBud2: "#D59BCB" }), "both"],
+    ["Grandpa Ott morning glory", variety("#86B47A", { flowers: ["#4F3DB4", "#5537AE", "#5B34AA", "#6132A6", "#6830A2"], discTint: 0.06, starTint: 0.85, starTo: "#C42A86", center: "#F3A6D2", pollen: "#FFF5F0", budPink: "#DE93BE", endBud1: "#7E5BC2", endBud2: "#DE93BE" }), "light"],
+    ["Split Second morning glory", variety("#79A96B", { flowers: ["#F197BA", "#EF93B7", "#EE8FB4", "#EC8BB1", "#EA87AE"], discTint: 0.3, starTint: 0.5, starTo: "#FFE3EE", center: "#FFF6FA", pollen: "#F3D98A", budPink: "#F4B3CC", endBud1: "#E57DA6", endBud2: "#F6BFD3" }), "both"],
+    ["Crimson Rambler morning glory", variety("#6B9A5C", { flowers: ["#C62C72", "#C22A73", "#BE2874", "#BA2775", "#B62576"], discTint: 0.15, starTint: 0.55, center: "#FFFFFF", pollen: "#F6E6B8", budPink: "#E58AB4", endBud1: "#C62C72", endBud2: "#EFA6C6" }), "both"],
+    ["Scarlett O'Hara morning glory", variety("#5F9152", { flowers: ["#CC2440", "#C82242", "#C42044", "#C01F47", "#BB1E4B"], discTint: 0.1, starTint: 0.4, starTo: "#8E1230", center: "#FFFFFF", pollen: "#F5E7B0", budPink: "#E77F93", endBud1: "#C8233F", endBud2: "#EE9AAA" }), "both"],
+    ["Tie Dye morning glory", variety("#7CAB6C", { flowers: ["#D9C9F2", "#D8C6F1", "#D7C3F0", "#D6C1EF", "#D5BEEE"], discTint: 0.1, starTint: 0.85, starTo: "#7A4FC3", center: "#FFFFFF", pollen: "#EED48A", budPink: "#C4A9E8", endBud1: "#8D66CC", endBud2: "#CDB6EC" }), "both"],
+    ["moonflower", variety("#4E7A49", { flowers: ["#FBFBF6", "#FAFAF4", "#F9F9F2", "#F8F8F0", "#F7F7EE"], discTint: 0.18, discTo: "#E9F0DA", starTint: 0.7, starTo: "#CFE3C2", center: "#FFFFFF", pollen: "#E9E3B0", budPink: "#E4EAD6", endBud1: "#DCE6CC", endBud2: "#EEF2E4" }), "dark"],
+    ["Milky Way morning glory", variety("#77A86A", { flowers: ["#F8F3F8", "#F8F3F7", "#F8F2F7", "#F8F2F6", "#F8F1F6"], discTint: 0.1, starTint: 0.88, starTo: "#A8327E", center: "#FFFFFF", pollen: "#F0D78C", budPink: "#E2A6C8", endBud1: "#B5468A", endBud2: "#E6B6D1" }), "dark"],
+    ["Flying Saucers morning glory", variety("#78A86C", { flowers: ["#E4E7F8", "#E2E5F8", "#E0E3F7", "#DFE1F7", "#DDDFF6"], discTint: 0.25, starTint: 0.85, starTo: "#6377D4", center: "#FFF7DA", pollen: "#EBCB5A", budPink: "#C9D0F2", endBud1: "#8C9BE0", endBud2: "#D3D8F4" }), "dark"],
+    ["Mt. Fuji morning glory", variety("#73A565", { flowers: ["#FAFAFD", "#FAFAFD", "#FAF9FD", "#FAF8FC", "#FAF8FC"], discTint: 0.95, discTo: "#4F63C8", starTint: 0.35, starTo: "#4F63C8", center: "#FFFFFF", pollen: "#F1DE8C", budPink: "#9AA8E2", endBud1: "#5F72CC", endBud2: "#AEB9E8" }), "dark"]
+  ];
+  var picked = -1;
+  function mode() { return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+  function pickVariety() {
+    if (tuner) return;
+    var m = mode(), ok = function (v) { return v[2] === "both" || v[2] === m; };
+    if (picked < 0 || !ok(VARIETIES[picked])) {
+      var pool = [];
+      VARIETIES.forEach(function (v, i) { if (ok(v)) for (var w = 0; w < (v[3] || 1); w++) pool.push(i); });
+      picked = pool[Math.floor(Math.random() * pool.length)];
+    }
+    var v = VARIETIES[picked];
+    for (var k in BASE) C[k] = JSON.parse(JSON.stringify(BASE[k]));
+    for (k in v[1]) C[k] = v[1][k];
+    var cap = document.querySelector("footer .vine-name");
+    if (cap) cap.textContent = "Today's vine: " + v[0];
+  }
+  pickVariety();
+  var LEAF, LEAF_DARK, LEAF_LIGHT, VEIN, VEIN_LIGHT, SEPAL, BUDPINK, FLOWERS;
+  function readColors() {
+    LEAF = C.leaf; LEAF_DARK = C.leafDark; LEAF_LIGHT = C.leafLight; VEIN = C.vein; VEIN_LIGHT = C.veinLight;
+    SEPAL = C.sepal; BUDPINK = C.budPink; FLOWERS = C.flowers;
+    svg.style.setProperty("--vine-stem", C.stem); svg.style.setProperty("--vine-thin", C.thinStem); svg.style.setProperty("--vine-w", C.stemWidth + "px");
+  }
+  var grownY = 0, state = null, flowerFor = [];
+
+  function mk(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function f(n) { return Math.round(n * 10) / 10; }
+  function rnd(i) { var x = Math.sin((i + SEED * 13.37) * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+  function hex(c) { return [1, 3, 5].map(function (i) { return parseInt(c.substr(i, 2), 16); }); }
+  function mix(a, b, t) {
+    var A = hex(a), B = hex(b);
+    return "#" + A.map(function (v, i) { return ("0" + Math.round(v + (B[i] - v) * t).toString(16)).slice(-2); }).join("");
+  }
+  function flowerColor(t) {
+    t = Math.max(0, Math.min(1, t)) * (FLOWERS.length - 1);
+    var i = Math.min(FLOWERS.length - 2, Math.floor(t));
+    return mix(FLOWERS[i], FLOWERS[i + 1], t - i);
+  }
+  /* a smooth curve through the points */
+  function smooth(p) {
+    var d = "M" + f(p[0].x) + "," + f(p[0].y);
+    for (var i = 0; i < p.length - 1; i++) {
+      var p0 = p[i - 1] || p[i], p1 = p[i], p2 = p[i + 1], p3 = p[i + 2] || p2;
+      d += " C" + [p1.x + (p2.x - p0.x) / 6, p1.y + (p2.y - p0.y) / 6, p2.x - (p3.x - p1.x) / 6, p2.y - (p3.y - p1.y) / 6, p2.x, p2.y].map(f).join(",");
+    }
+    return d;
+  }
+
+  /* SHAPES: an open flower, a bud, a heart-shaped leaf, a curly tendril */
+  function bloom(g, r, color, spin) {
+    var d = "";
+    for (var k = 0; k <= 5; k++) {
+      var a = spin + k * Math.PI * 2 / 5;
+      var x = Math.cos(a) * r, y = Math.sin(a) * r;
+      if (!k) { d = "M" + f(x) + "," + f(y); continue; }
+      var am = a - Math.PI / 5;
+      d += " Q" + f(Math.cos(am) * r * 1.13) + "," + f(Math.sin(am) * r * 1.13) + " " + f(x) + "," + f(y);
+    }
+    mk("path", { d: d + "Z", fill: color }, g);
+    mk("circle", { r: f(r * 0.66), fill: mix(color, C.discTo, C.discTint) }, g);
+    var s = "";
+    for (k = 0; k < 10; k++) {
+      var b = spin + k * Math.PI / 5, rr = k % 2 ? r * 0.2 : r * 0.8;
+      s += (k ? " L" : "M") + f(Math.cos(b) * rr) + "," + f(Math.sin(b) * rr);
+    }
+    mk("path", { d: s + "Z", fill: mix(color, C.starTo, C.starTint), "stroke-linejoin": "round" }, g);
+    mk("circle", { r: f(r * 0.28), fill: C.center }, g);
+    mk("circle", { r: f(r * 0.11), fill: C.pollen }, g);
+  }
+  function bud(g, len, color) {
+    var w = len * 0.36;
+    mk("path", { d: "M0,0 C" + [len * .3, -w, len * .72, -w * .6, len, 0].map(f).join(",") + " C" + [len * .72, w * .6, len * .3, w, 0, 0].map(f).join(",") + "Z", fill: color }, g);
+    mk("path", { d: "M0,0 C" + [len * .3, -w, len * .72, -w * .6, len, 0].map(f).join(",") + " C" + [len * .62, -w * .05, len * .3, w * .3, 0, 0].map(f).join(",") + "Z", fill: mix(color, "#FFFFFF", 0.35) }, g);
+    mk("path", { d: "M-1,0 L" + f(len * .34) + "," + f(-w * .85) + " L" + f(len * .2) + ",0 L" + f(len * .34) + "," + f(w * .85) + "Z", fill: SEPAL }, g);
+  }
+  var leafN = 0;
+  function leaf(g, light) {
+    var lobed = rnd(++leafN * 7.7) < 0.18;
+    var full = lobed
+      ? "M0,0 C-6,-6 -12,-18 -4,-26 C2,-32 14,-30 18,-22 C20,-17 16,-13 21,-11 C27,-12 33,-14 39,-9 C45,-5 50,-1 58,0 C50,1 45,5 39,9 C33,14 27,12 21,11 C16,13 20,17 18,22 C14,30 2,32 -4,26 C-12,18 -6,6 0,0Z"
+      : "M0,0 C-5,-8 -9,-20 2,-25 C12,-30 26,-24 34,-14 C41,-7 47,-2 57,0 C47,2 41,7 34,14 C26,24 12,30 2,25 C-9,20 -5,8 0,0Z";
+    var half = lobed
+      ? "M0,0 C-6,-6 -12,-18 -4,-26 C2,-32 14,-30 18,-22 C20,-17 16,-13 21,-11 C27,-12 33,-14 39,-9 C45,-5 50,-1 58,0Z"
+      : "M0,0 C-5,-8 -9,-20 2,-25 C12,-30 26,-24 34,-14 C41,-7 47,-2 57,0Z";
+    mk("path", { d: full, fill: light ? LEAF_LIGHT : LEAF }, g);
+    mk("path", { d: half, fill: light ? LEAF : LEAF_DARK }, g);
+    mk("path", { d: lobed ? "M1,0 L48,0 M6,0 L12,-18 M6,0 L12,18" : "M1,0 L48,0 M10,0 L20,-14 M10,0 L20,14 M24,0 L31,-9 M24,0 L31,9", stroke: light ? VEIN_LIGHT : VEIN, "stroke-width": 1.4, "stroke-linecap": "round", fill: "none" }, g);
+  }
+
+
+  function build() {
+    readColors();
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    state = null; flowerFor = [];
+    if (window.innerWidth <= 760 || !cards.length) return;
+    var m = main.getBoundingClientRect(), W = m.width;
+    function box(el) { var r = el.getBoundingClientRect(); return { l: r.left - m.left, r: r.right - m.left, t: r.top - m.top, b: r.bottom - m.top }; }
+    /* the vine lives between the right edge of the cards and the right edge of the column */
+    var L = 0;
+    cards.forEach(function (c) { L = Math.max(L, box(c).r); });
+    L += 26;
+    var R = W - 10, B = R - L;
+    if (B < 120) return;
+    var hero = box(document.querySelector(".hero.art")), heroL = Math.max(box(document.querySelector(".hero-main")).r + 34, L - 30), hB = R - heroL;
+    var ph = box(document.querySelector("#projects h2")), phY = (ph.t + ph.b) / 2;
+    var top = hero.t + 4;
+
+    /* layers, back to front: the thin stem and its leaves, the main stem and its leaves, then flowers */
+    var back = mk("g", {}, svg), mid = mk("g", {}, svg), front = mk("g", {}, svg);
+
+    /* stem points: four through the header, then one beside each card. The thin stem swings the opposite way, so the two twist around each other */
+    var yEnd = box(cards[cards.length - 1]).b + 70;
+    /* taper: 1 at the top of the vine, down to 0.4 at the bottom */
+    function tp(y) { return 1 - 0.6 * Math.pow(Math.max(0, Math.min(1, (y - top) / (yEnd - top))), 0.9); }
+    var pts = [], pts2 = [], pts3 = [], hx = [0.84, 0.3, 0.74, 0.32];
+    function both(x, x2, y) {
+      pts.push({ x: x, y: y });
+    }
+    for (var k = 0; k < 4; k++) both(heroL + hB * hx[k], heroL + hB * (k ? 1.08 - hx[k] : 0.7), top + k * (phY - top) / 4);
+    both(L + B * 0.64, L + B * 0.3, phY);
+    var cardY = cards.map(function (c, i) {
+      var bx = box(c), cy = (bx.t + bx.b) / 2;
+      both(L + B * (i % 2 ? 0.3 : 0.62), L + B * (i % 2 ? 0.7 : 0.26), cy);
+      return cy;
+    });
+    var lastB = box(cards[cards.length - 1]).b;
+    pts.push({ x: L + B * 0.5, y: lastB + 34 });
+    /* each stem ends in a swirl: it curls around (dir 1 = to the right, -1 = to the left) and tightens */
+    function swirl(points, R, dir) {
+      var E = points[points.length - 1], C = { x: E.x + dir * R, y: E.y }, maxY = E.y;
+      for (var u = 0.06; u <= 1.001; u += 0.06) {
+        var th = dir > 0 ? Math.PI - u * Math.PI * 2.3 : u * Math.PI * 2.3, r = R * (1 - 0.45 * u);
+        var q = { x: C.x + Math.cos(th) * r, y: C.y + Math.sin(th) * r };
+        points.push(q); maxY = Math.max(maxY, q.y);
+      }
+      return { startY: E.y, maxY: maxY, c: C };
+    }
+    svg.setAttribute("height", Math.ceil(lastB + 140));
+    svg.style.height = Math.ceil(lastB + 140) + "px";
+
+    function makeStem(points, cls, layer) {
+      var el = mk("path", { d: smooth(points), "class": cls }, layer);
+      var total = el.getTotalLength(), samples = [];
+      for (var s = 0; s <= total; s += 5) samples.push({ s: s, y: el.getPointAtLength(s).y });
+      el.style.strokeDasharray = total + " " + total;
+      el.style.strokeDashoffset = total;
+      return {
+        el: el, total: total,
+        sAtY: function (y) { for (var i = 0; i < samples.length; i++) if (samples[i].y >= y) return samples[i].s; return total; },
+        at: function (s) {
+          var p = el.getPointAtLength(s), a = el.getPointAtLength(Math.max(0, s - 2)), b = el.getPointAtLength(Math.min(total, s + 2));
+          return { x: p.x, y: p.y, a: Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI };
+        }
+      };
+    }
+    var stem = makeStem(pts, "stem", mid);
+    /* the two thinner stems wind back and forth around the main one in long waves, closer in as the vine tapers, and stop before the end */
+    function twine(period, phase, until) {
+      var out = [];
+      for (var s = 0; s <= stem.total; s += 10) {
+        var p = stem.at(s);
+        if (p.y > top + until * (yEnd - top)) break;
+        var nr = (p.a + 90) * Math.PI / 180, off = 0.2 * B * (0.4 + 0.6 * tp(p.y)) * Math.sin(Math.PI * 2 * s / period + phase);
+        var lo = (p.y < phY ? heroL : L) + 30, hi = R - 45;
+        out.push({ x: Math.max(lo, Math.min(hi, p.x + Math.cos(nr) * off)), y: p.y + Math.sin(nr) * off });
+      }
+      return out;
+    }
+    var thin = makeStem(twine(300, 0.6 + SEED * 0.61, 0.88), "stem thin", back), third = makeStem(twine(380, 3.4 + SEED * 0.37, 0.84), "stem thin", back);
+    [stem, thin, third].forEach(function (st) { st.swirlS = st.total - 20; });
+    var deco = [], flowersS = [], leaves = [];
+    /* one piece hanging off a stem at length s: drawn pointing right, then turned to angle deg */
+    function piece(st, layer, s, deg, draw) {
+      var p = st.at(s);
+      var outer = mk("g", { transform: "translate(" + f(p.x) + "," + f(p.y) + ") rotate(" + f(deg) + ")" }, layer);
+      var g = mk("g", { "class": "pop" }, outer);
+      draw(g, p);
+      deco.push({ y: p.y, g: g });
+      return g;
+    }
+    function leafOn(st, layer, s, deg, sc, light) {
+      return piece(st, layer, s, deg, function (g) {
+        mk("line", { x1: 0, y1: 0, x2: 7, y2: 0, "class": "twig" }, g);
+        leaf(mk("g", { transform: "translate(6,0) scale(" + f(sc * C.leafSize) + ")" }, g), light);
+      });
+    }
+    var later = [];
+    var heads = [];
+    function flowerAt(s, deg, kind, r, color, stalk) {
+      r *= C.flowerSize;
+      flowersS.push(s);
+      /* where the flower head will sit, so small flowers can keep clear of it */
+      var p = stem.at(s), d = stalk || Math.max(10, Math.min(kind === "bud" ? 14 : 30, p.x - L - 2 * r + 10)), dd = kind === "bud" ? d + r : d, ra = deg * Math.PI / 180;
+      heads.push({ x: p.x + Math.cos(ra) * dd, y: p.y + Math.sin(ra) * dd, r: r * 1.15 });
+      var slot = { g: null };
+      later.push(function () { slot.g = drawFlower(s, deg, kind, r, color, stalk); });
+      return slot;
+    }
+    function drawFlower(s, deg, kind, r, color, stalk) {
+      return piece(stem, front, s, deg, function (g, p) {
+        var d = stalk || Math.max(10, Math.min(kind === "bud" ? 14 : 30, p.x - L - 2 * r + 10));
+        mk("line", { x1: 0, y1: 0, x2: d, y2: 0, "class": "twig" }, g);
+        var head = mk("g", { transform: "translate(" + d + ",0)" + (kind === "bud" ? "" : " rotate(" + f(-deg) + ")") }, g);
+        if (kind === "bud") bud(head, r * 2.2, color);
+        else bloom(head, r, color, rnd(s) * 1.2);
+      });
+    }
+
+    /* header flowers (where the painting used to be) */
+    var hy = function (t) { return stem.sAtY(top + t * (phY - top)); };
+    flowerAt(hy(0.16), -25, "bloom", 38, flowerColor(0));
+    flowerAt(hy(0.42), 200, "bloom", 44, flowerColor(0.08));
+    flowerAt(hy(0.66), -32, "bud", 28, flowerColor(0.14));
+    flowerAt(hy(0.86), 195, "bloom", 33, flowerColor(0.2));
+
+    /* one flower per card, pointing at the card; "In progress" cards get a bud */
+    cards.forEach(function (c, i) {
+      var t = 0.25 + 0.75 * i / Math.max(1, cards.length - 1);
+      var busy = !!c.querySelector(".status");
+      var last = i === cards.length - 1;
+      /* the last flower sits a little higher and tucked in, half over the stem, instead of right on the bend */
+      flowerFor[i] = flowerAt(stem.sAtY(cardY[i] - (last ? 22 : 0)), last ? 205 : (i % 2 ? 165 : 198) + (rnd(i) - 0.5) * 12, busy ? "bud" : "bloom", (busy ? 26 : 35) * (0.72 + 0.28 * tp(cardY[i])), flowerColor(t), last ? 16 : 0);
+    });
+
+    function leafOn2(st, layer, s, deg, sc, light) {
+      var stalk = 6 + rnd(s * 3.1) * 12;
+      return piece(st, layer, s, deg, function (g) {
+        mk("line", { x1: 0, y1: 0, x2: stalk + 1, y2: 0, "class": "twig" }, g);
+        leaf(mk("g", { transform: "translate(" + f(stalk) + ",0) scale(" + f(sc * C.leafSize) + ")" }, g), light);
+      });
+    }
+    /* main stem leaves: big, close together, alternating sides, with clusters */
+    var side = 1, n = 0, s;
+    for (s = 14; s < stem.swirlS - 4; ) {
+      var p = stem.at(s), near = flowersS.some(function (fs) { return Math.abs(fs - s) < 24; });
+      if (!near) {
+        var ang = p.a + side * (45 + rnd(n) * 55), sc = (0.8 + rnd(n + 50) * 0.5) * (0.5 + 0.5 * tp(p.y));
+        leaves.push(leafOn2(stem, mid, s, ang, sc));
+        if (n % 2 === 1) leafOn2(stem, mid, s + 5, ang + side * (35 + rnd(n + 2) * 20), sc * 0.8);
+        side = -side; n++;
+      }
+      s += (20 + rnd(n + 9) * 8) / (0.45 + 0.55 * tp(p.y)) / C.leafDensity;
+    }
+    /* the two thinner stems: lighter leaves behind, plus a few small pink buds like on the real plant */
+    [thin, third].forEach(function (st, j) {
+      side = j ? 1 : -1;
+      for (s = 24; s < st.swirlS - 4; ) {
+        p = st.at(s);
+        var sc2 = (0.7 + rnd(n + 31) * 0.45) * (0.5 + 0.5 * tp(p.y));
+        leafOn2(st, back, s, p.a + side * (40 + rnd(n) * 60), sc2, n % 3 !== 0);
+        if (n % 11 === 3) {
+          var bs = s + 6, bang = p.a - side * 60;
+          later.push((function (bs, bang, st) { return function () {
+            piece(st, front, bs, bang, function (g) {
+              mk("line", { x1: 0, y1: 0, x2: 9, y2: 0, "class": "twig" }, g);
+              bud(mk("g", { transform: "translate(8,0)" }, g), 22, BUDPINK);
+            });
+          }; })(bs, bang, st));
+        }
+        side = -side; n++;
+        s += (22 + rnd(n + 3) * 10) / (0.45 + 0.55 * tp(p.y)) / C.leafDensity;
+      }
+    });
+    /* side shoots: a thin branch that winds around the stem it grows from and ends in a bud or two, with a couple of small leaves */
+    function placeAt(layer, x, y, deg, revealY, draw) {
+      var outer = mk("g", { transform: "translate(" + f(x) + "," + f(y) + ") rotate(" + f(deg) + ")" }, layer);
+      var g = mk("g", { "class": "pop" }, outer);
+      draw(g);
+      deco.push({ y: revealY, g: g });
+      return g;
+    }
+    function shoot(st, s, len, amp, side, n) {
+      var q = [];
+      len = Math.min(len, st.total - s - 2);
+      if (len < 50) return;
+      for (var u = 0; u <= 1.001; u += 0.05) {
+        var p = st.at(s + u * len), nr = (p.a + 90) * Math.PI / 180;
+        var off = side * amp * (Math.sin(u * Math.PI * 2.3) * Math.min(1, u * 3) + u * 0.9);
+        q.push({ x: p.x + Math.cos(nr) * off, y: p.y + Math.sin(nr) * off });
+      }
+      var outer = mk("g", {}, mid), g = mk("g", { "class": "pop shootg" }, outer);
+      mk("path", { d: smooth(q), "class": "shoot", pathLength: 1 }, g);
+      deco.push({ y: q[0].y, g: g });
+      var e = q[q.length - 1], e0 = q[q.length - 3], ang = Math.atan2(e.y - e0.y, e.x - e0.x) * 180 / Math.PI;
+      var col = rnd(n + 13) > 0.5 ? BUDPINK : mix(flowerColor((e.y - top) / (yEnd - top)), "#FFFFFF", 0.2);
+      later.push(function () {
+        var k = 0.7 + 0.3 * tp(e.y);
+        placeAt(front, e.x, e.y, ang, e.y, function (g) { bud(g, 34 * k, col); });
+        if (rnd(n + 17) > 0.6) placeAt(front, e.x, e.y, ang + (rnd(n) > 0.5 ? 38 : -38), e.y, function (g) {
+          mk("line", { x1: 0, y1: 0, x2: 6, y2: 0, "class": "twig" }, g);
+          bud(mk("g", { transform: "translate(5,0)" }, g), 25 * (0.7 + 0.3 * tp(e.y)), BUDPINK);
+        });
+      });
+      [0.38, 0.7].forEach(function (u, j) {
+        var a = q[Math.round(u * 20)], b = q[Math.round(u * 20) + 1];
+        var da = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI + (j ? -1 : 1) * side * 65;
+        placeAt(mid, a.x, a.y, da, a.y, function (g) {
+          mk("line", { x1: 0, y1: 0, x2: 5, y2: 0, "class": "twig" }, g);
+          leaf(mk("g", { transform: "translate(4,0) scale(" + f(0.45 * (0.6 + 0.4 * tp(a.y)) * C.leafSize) + ")" }, g), true);
+        });
+      });
+    }
+    var nShoot = 0;
+    [[stem, 90, 170], [thin, 150, 240], [third, 120, 230]].forEach(function (cfg, j) {
+      var st = cfg[0];
+      for (s = cfg[1]; s < st.swirlS - 60; ) {
+        var p = st.at(s), k = tp(p.y);
+        if (!flowersS.some(function (fs) { return Math.abs(fs - s) < 30; })) {
+          shoot(st, s, (110 + rnd(nShoot + 40) * 70) * (0.6 + 0.4 * k), (16 + rnd(nShoot + 41) * 10) * (0.6 + 0.4 * k), nShoot % 2 ? 1 : -1, nShoot);
+          nShoot++;
+        }
+        s += cfg[2] * (0.8 + rnd(nShoot + 44) * 0.5) / (0.6 + 0.4 * k);
+      }
+    });
+    /* THE END, like the original painting: the vine splits into thin sprays. One arches up and out and ends in two buds
+       pointing up; another trails off to the side; big leaves hang down off the ends */
+    function spray(st, s, offs, layer) {
+      var p0 = st.at(s), q = [{ x: p0.x, y: p0.y }];
+      offs.forEach(function (o) { q.push({ x: p0.x + o[0], y: p0.y + o[1] }); });
+      var outer = mk("g", {}, layer), g = mk("g", { "class": "pop shootg" }, outer);
+      mk("path", { d: smooth(q), "class": "shoot", pathLength: 1 }, g);
+      deco.push({ y: p0.y, g: g });
+      var e = q[q.length - 1], e0 = q[q.length - 2];
+      return { x: e.x, y: e.y, a: Math.atan2(e.y - e0.y, e.x - e0.x) * 180 / Math.PI, y0: p0.y };
+    }
+    function hangingLeaf(x, y, deg, sc, revealY, light) {
+      placeAt(mid, x, y, deg, revealY, function (g) {
+        mk("line", { x1: 0, y1: 0, x2: 12, y2: 0, "class": "twig" }, g);
+        leaf(mk("g", { transform: "translate(11,0) scale(" + f(sc * C.leafSize) + ")" }, g), light);
+      });
+    }
+    var endY = stem.at(stem.total).y;
+    /* the bud spray: out to the right, then up */
+    var room = Math.min(110, R - stem.at(stem.sAtY(endY - 24)).x - 30);
+    var up = spray(stem, stem.sAtY(endY - 24), [[room * 0.35, 20], [room * 0.75, 6], [room * 0.92, -42]], mid);
+    later.push(function () {
+      placeAt(front, up.x, up.y, -84, up.y0 + 40, function (g) {
+        mk("line", { x1: 0, y1: 0, x2: 8, y2: 0, "class": "twig" }, g);
+        bud(mk("g", { transform: "translate(7,0)" }, g), 30, C.endBud1);
+      });
+      placeAt(front, up.x + 3, up.y + 14, -52, up.y0 + 40, function (g) {
+        mk("line", { x1: 0, y1: 0, x2: 14, y2: 0, "class": "twig" }, g);
+        bud(mk("g", { transform: "translate(13,0)" }, g), 24, C.endBud2);
+      });
+    });
+    hangingLeaf(up.x - room * 0.55, up.y + 26, 65, 0.7, up.y0 + 30, true);
+    /* a spray trailing off to the left with a leaf hanging from it */
+    var side2 = spray(stem, stem.sAtY(endY - 8), [[-30, 10], [-60, 16]], back);
+    hangingLeaf(side2.x, side2.y, 98, 0.9, side2.y0 + 20);
+    /* big leaves hanging off the very end of the main stem */
+    var tip = stem.at(stem.total);
+    hangingLeaf(tip.x, tip.y, 96, 1.05, tip.y);
+    hangingLeaf(tip.x + 4, tip.y - 6, 55, 0.85, tip.y, true);
+    /* the thinner stems just trail off with a hanging leaf */
+    [thin, third].forEach(function (st) {
+      var tp2 = st.at(st.total);
+      hangingLeaf(tp2.x, tp2.y, 90 + (tp2.a - 90) * 0.3, 0.75, tp2.y, true);
+    });
+    /* a leaf in the spot the last flower moved out of, on the stem's bend */
+    var lastS = stem.sAtY(cardY[cardY.length - 1] + 10);
+    leafOn2(stem, mid, lastS, 168, 1);
+    /* flowers go on top of the leaves */
+    later.forEach(function (draw) { draw(); });
+    flowerFor = flowerFor.map(function (slot) { return slot.g; });
+
+    state = { stems: [stem, thin, third], deco: deco, tipY: -1 };
+  }
+
+  /* grow the vine to just below what's on screen; it never shrinks back */
+  function grow(instant) {
+    if (!state) return;
+    var y = window.innerHeight * 0.8 - main.getBoundingClientRect().top;
+    if (y > grownY) grownY = y;
+    var tipY = (reduce || window.VINE_SHOW_ALL) ? 1e9 : grownY;
+    if (tipY <= state.tipY && !instant) return;
+    var old = instant ? tipY : Math.max(0, state.tipY);
+    state.stems.forEach(function (st) {
+      var s = Math.min(st.total, st.sAtY(tipY));
+      st.el.style.strokeDashoffset = st.total - s;
+    });
+    state.deco.forEach(function (d) {
+      if (d.y <= tipY && !d.g.classList.contains("on")) {
+        d.g.style.transitionDelay = (tipY > old && tipY < 1e8 ? Math.max(0, 0.75 * (d.y - old) / (tipY - old)) : 0).toFixed(2) + "s";
+        d.g.classList.add("on");
+      }
+    });
+    state.tipY = tipY;
+  }
+
+  function rebuild() {
+    var again = grownY > 0;
+    if (again) svg.classList.add("still");
+    build();
+    if (again) {
+      grow(true);
+      requestAnimationFrame(function () { requestAnimationFrame(function () { svg.classList.remove("still"); }); });
+    } else {
+      requestAnimationFrame(function () { grow(false); });
+    }
+  }
+
+  window.vineRebuild = function () { grownY = Math.max(grownY, 1); rebuild(); };
+  /* switching light/dark: keep today's vine if it shows well in the new mode, otherwise pick another */
+  document.addEventListener("themechange", function () { if (tuner) return; pickVariety(); window.vineRebuild(); });
+  cards.forEach(function (c, i) {
+    c.addEventListener("mouseenter", function () {
+      var g = flowerFor[i];
+      if (!g || !g.classList.contains("on") || reduce) return;
+      g.classList.remove("wiggle");
+      g.getBoundingClientRect();
+      g.classList.add("wiggle");
+    });
+  });
+  svg.addEventListener("animationend", function (e) { e.target.classList.remove("wiggle"); });
+
+  var queued = false, timer = null;
+  window.addEventListener("scroll", function () {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(function () { queued = false; grow(false); });
+  }, { passive: true });
+  window.addEventListener("resize", function () { clearTimeout(timer); timer = setTimeout(rebuild, 150); });
+  window.addEventListener("load", rebuild);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
+  rebuild();
 })();
 </script>
 </body>
