@@ -306,11 +306,12 @@
     #ems .gallery img { border-radius: 2px; }
   }
   /* PROJECTS (desktop): each white box ends after its text; the painting sits on the right */
-  .card-link .meta { display: block; font-size: 14px; line-height: 1.4; color: var(--muted); margin-top: 6px; }
+  .card-link .meta, .entry .meta { display: block; font-size: 14px; line-height: 1.4; color: var(--muted); margin-top: 6px; }
   @media (min-width: 761px) {
     #projects { position: relative; }
-    #projects { display: grid; grid-template-columns: minmax(0, max-content); align-content: start; }
-    #projects .sheet.card { width: auto; }
+    #projects, #research { display: grid; grid-template-columns: minmax(0, var(--boxw, max-content)); align-content: start; }
+    #projects .sheet.card, #research .sheet.card, #research .entry { width: auto; }
+    #research .card-link, #research .entry { padding: 22px 26px; }
     #projects .card-link { padding: 22px 26px; }
   }
 </style>
@@ -415,10 +416,12 @@
 <article class="entry" id="max-planck-institute">
 <h4>Max Planck Institute of Colloids and Interfaces</h4>
 <span class="date">Jun – Aug 2023</span>
+<span class="meta">Jun – Aug 2023 · Potsdam, Germany · Summer Research Intern</span>
 </article>
 <article class="sheet card" id="sound-frequency-and-radish-seed-germination">
 <a class="card-link" href="radish-germination.html">
 <h4>Sound Frequency and Radish Seed Germination</h4>
+<span class="meta">Jan – May 2024 · Biotechnology High School · Independent research</span>
 <span class="date">Jan – May 2024</span>
 <span class="go">View project</span>
 </a>
@@ -426,6 +429,7 @@
 <article class="sheet card" id="background-noise-and-c-elegans-chemotaxis">
 <a class="card-link" href="celegans-chemotaxis.html">
 <h4>Background Noise and <i>C. elegans</i> Chemotaxis</h4>
+<span class="meta">Jan – Apr 2023 · Biotechnology High School · Independent research</span>
 <span class="date">Jan – Apr 2023</span>
 <span class="go">View project</span>
 </a>
@@ -465,6 +469,23 @@
 </main>
 </div>
 </div>
+<!-- SCRIPT: makes the Projects and Research boxes all the same width (the widest one) on wide screens -->
+<script>
+(function () {
+  var root = document.documentElement;
+  function size() {
+    root.style.removeProperty("--boxw");
+    if (window.innerWidth <= 760) return;
+    var w = 0;
+    [].forEach.call(document.querySelectorAll("#projects .sheet.card, #research .sheet.card, #research .entry"), function (el) { w = Math.max(w, el.getBoundingClientRect().width); });
+    if (w) root.style.setProperty("--boxw", Math.ceil(w) + "px");
+  }
+  window.addEventListener("resize", size);
+  window.addEventListener("load", size);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(size);
+  size();
+})();
+</script>
 <!-- SCRIPT: highlights the section you're reading in the table of contents and fills its line as you scroll. No need to edit this. -->
 <script>
 (function () {
