@@ -329,8 +329,9 @@
     .vine .pop.shootg { transform: none; }
     .vine .twig { fill: none; stroke: var(--vine-stem, #6F9C86); stroke-width: calc(var(--vine-w, 4px) * 0.6); stroke-linecap: round; }
     .vine .curl { fill: none; stroke: var(--vine-stem, #6F9C86); stroke-width: 2; stroke-linecap: round; }
-    .vine .pop { transform: scale(0); transform-origin: 0 0; transition: transform .6s cubic-bezier(.34, 1.56, .64, 1); }
-    .vine .pop.on { transform: scale(1); }
+    .vine .pop { opacity: 0; transform: rotate(-18deg) scale(.15, .04); transform-origin: 0 0; transition: transform 1.1s cubic-bezier(.22, .61, .36, 1), opacity .5s ease-out; }
+    .vine .pop.on { opacity: 1; transform: none; }
+    .vine.auto .stem { transition: none; }
     .vine.still .stem, .vine.still .pop, .vine.still .shoot { transition: none; }
     .vine .pop.on.wiggle { animation: vine-wiggle .7s ease-in-out; }
     @keyframes vine-wiggle { 0%, 100% { transform: scale(1) rotate(0); } 20% { transform: scale(1.08) rotate(-14deg); } 45% { transform: scale(1.08) rotate(11deg); } 70% { transform: scale(1.04) rotate(-6deg); } }
@@ -1000,7 +1001,7 @@
     if (!state) return;
     var y = window.innerHeight * 0.8 - main.getBoundingClientRect().top;
     if (y > grownY) grownY = y;
-    var tipY = (reduce || window.VINE_SHOW_ALL) ? 1e9 : grownY;
+    var tipY = (reduce || window.VINE_SHOW_ALL) ? 1e9 : Math.min(grownY, autoY());
     if (tipY <= state.tipY && !instant) return;
     var old = instant ? tipY : Math.max(0, state.tipY);
     state.stems.forEach(function (st) {
@@ -1016,6 +1017,29 @@
     state.tipY = tipY;
   }
 
+  /* on load the vine grows by itself through the first screen, then keeps growing as you scroll */
+  var AUTO_MS = 2600, autoT0 = null, autoTo = 0, autoDone = false, autoStarted = false;
+  function autoY() {
+    if (autoDone) return Infinity;
+    if (autoT0 === null) return 0;
+    var u = Math.min(1, (performance.now() - autoT0) / AUTO_MS);
+    return autoTo * (1 - Math.pow(1 - u, 2.2));
+  }
+  function startAuto() {
+    if (autoStarted || !state) return;
+    autoStarted = true;
+    if (reduce || window.VINE_SHOW_ALL) { autoDone = true; grow(false); return; }
+    autoTo = Math.max(window.innerHeight * 0.8 - main.getBoundingClientRect().top, grownY);
+    svg.classList.add("auto");
+    autoT0 = performance.now();
+    (function tick() {
+      grow(false);
+      if (performance.now() - autoT0 < AUTO_MS) { requestAnimationFrame(tick); return; }
+      autoDone = true;
+      svg.classList.remove("auto");
+      grow(false);
+    })();
+  }
   function rebuild() {
     var again = grownY > 0;
     if (again) svg.classList.add("still");
@@ -1024,7 +1048,7 @@
       grow(true);
       requestAnimationFrame(function () { requestAnimationFrame(function () { svg.classList.remove("still"); }); });
     } else {
-      requestAnimationFrame(function () { grow(false); });
+      requestAnimationFrame(startAuto);
     }
   }
 
