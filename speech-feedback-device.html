@@ -213,7 +213,11 @@
   .pbody figure a { display: block; }
   .pbody figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
   .pbody figure.wrap { float: right; width: 45%; margin: 6px 0 14px 28px; }
-  .pbody figure.wide { width: 80%; margin: 20px auto 0; }
+  .pbody figure.wide { width: 80%; margin: 20px auto 22px; }
+  .pbody figure.clr { clear: both; }
+  .pbody .stack { float: right; width: 33%; margin: 6px 0 14px 28px; }
+  .pbody .stack figure { margin: 0 0 16px; }
+  @media (max-width: 640px) { .pbody .stack { float: none; width: 100%; margin: 4px 0 18px; } }
   @media (max-width: 640px) {
     .pbody figure.wrap { float: none; width: 100%; margin: 4px 0 18px; }
     .pbody figure.wide { width: 100%; }
@@ -283,17 +287,30 @@
 <section>
 <h2>Background</h2>
 <h3>Speech Production</h3>
+
+<div class="stack">
+<figure>
+<a href="speech-power-source-filter.jpg" rel="noopener" target="_blank"><img alt="Diagram of the voice: the lungs and diaphragm as the power source, the larynx as the sound source, and the mouth and throat as the resonating filter" loading="lazy" src="speech-power-source-filter.jpg"/></a>
+<figcaption>The voice as a power source, sound source, and filter. Image: Find Your Voice [6].</figcaption>
+</figure>
+<figure>
+<a href="speech-source-filter-model.jpg" rel="noopener" target="_blank"><img alt="Block diagram: a voiced pulse train set by the pitch period passes through a glottal filter, or an unvoiced noise signal is selected by a switch, then the signal passes through a vocal tract filter and a lip radiation filter to give the speech signal" loading="lazy" src="speech-source-filter-model.jpg"/></a>
+<figcaption>The source-filter model as signal blocks. A pulse train (voiced) or noise (unvoiced) passes through glottal, vocal tract, and lip radiation filters to make speech [7].</figcaption>
+</figure>
+</div>
 <p>Speech production has three stages. The lungs supply airflow, the vocal folds act as the source, and the vocal tract acts as the filter.</p>
 
 <p>Engineers model the same system as signal blocks. A pulse generator represents the vibrating vocal folds, and a noise source represents the hiss in sounds like s and f. The filter changes over time as the tongue, jaw, and lips move.</p>
 
+
 <p>Each stage changes the signal. The lungs provide steady pressure but no sound. The vocal folds chop that airflow into pulses, which contain many harmonics of the fundamental frequency. The vocal tract boosts the harmonics near its resonances, called formants, and the lips slightly boost high frequencies.</p>
 
 <p>This model guides where the sensors go. A throat sensor measures the source before the vocal tract filters it, while a microphone records the final output.</p>
-<h3>Neural Control of Speech</h3>
+<h3 style="clear:both">Neural Control of Speech</h3>
 <p>The DIVA model (Directions Into Velocities of Articulators) is a neural network model of how the brain learns and controls speech [3, 5]. Each box in the diagram below is a map of neurons in a specific brain region. In the feedforward system, the speech sound map in the left premotor cortex sends learned motor commands to the motor cortex, which moves the tongue, lips, jaw, and larynx. The initiation map in the supplementary motor area starts each sound. In the feedback system, the same speech sound map sends auditory and somatosensory targets, which specify how each sound should sound and feel. Error maps in the auditory and somatosensory cortex compare those targets with what the speaker actually hears and feels, and the right premotor cortex turns any mismatch into a correction [1].</p>
-<figure class="schem">
-<a href="diva-figure1.png" rel="noopener" target="_blank"><img alt="Block diagram of the DIVA model showing feedforward and feedback control systems" loading="lazy" src="diva-figure1.png"/></a>
+<figure class="wide" style="max-width:600px">
+<a href="diva-model.jpg" rel="noopener" target="_blank"><img alt="Schematic of the DIVA model: a feedforward control system and a feedback control system, with the speech sound map sending commands to the articulator map and auditory and somatosensory targets to error maps that compare them with feedback from the ear and mouth" loading="lazy" src="diva-model.jpg"/></a>
+<figcaption>The DIVA model. Click to enlarge. From Guenther, <i>Neural Control of Speech</i>, ch. 3 [8].</figcaption>
 </figure>
 <p>Infants learn by babbling, which links movements to how they sound and feel, and then by imitating the speech they hear. Early attempts depend heavily on feedback, and each correction updates the feedforward command, so with practice the brain relies on feedback only for unexpected errors.</p>
 <p>Researchers test this loop with delayed auditory feedback, which plays a speaker’s voice back through headphones a fraction of a second late. Fluent speakers slow down or start to stutter, while people who stutter often become more fluent. In one study, researchers recorded brain activity in 15 epilepsy surgery patients as they read aloud with their voice delayed by 0, 50, 100, or 200 ms [2]. Speech slowed as the delay grew, especially for sentences. Auditory areas activated after speech onset and responded more strongly to longer delays, which suggests they detect errors. The authors concluded that the superior temporal gyrus, the supramarginal gyrus, and especially the dorsal precentral gyrus handle auditory feedback, and that different networks may process timing and pitch errors.</p>
@@ -363,7 +380,10 @@
 <p>[2] Ozker M, Doyle W, Devinsky O, Flinker A. A cortical network processes auditory error signals during human speech production to maintain fluency. PLoS Biol. 2022;20(2):e3001493. <a href="https://doi.org/10.1371/journal.pbio.3001493" rel="noopener" target="_blank">https://doi.org/10.1371/journal.pbio.3001493</a></p>
 <p>[3] Tourville JA, Guenther FH. The DIVA model: A neural theory of speech acquisition and production. Lang Cogn Process. 2011;26(7):952-981. <a href="https://doi.org/10.1080/01690960903498424" rel="noopener" target="_blank">https://doi.org/10.1080/01690960903498424</a></p>
 <p>[4] Delsys. EMG Voice: How electromyography is giving a voice to those who cannot speak. <a href="https://delsys.com/emg-voice-how-electromyography-is-giving-a-voice-to-those-who-cannot-speak/" rel="noopener" target="_blank">https://delsys.com/emg-voice-how-electromyography-is-giving-a-voice-to-those-who-cannot-speak/</a></p>
-<p>[5] Rowe HP, Guenther FH. Using the DIVA model to better understand speech motor disorders. Clin Linguist Phonet. 2026. <a href="https://doi.org/10.1080/02699206.2026.2680130" rel="noopener" target="_blank">https://doi.org/10.1080/02699206.2026.2680130</a> DIVA diagram reproduced under CC BY 4.0.</p>
+<p>[5] Rowe HP, Guenther FH. Using the DIVA model to better understand speech motor disorders. Clin Linguist Phonet. 2026. <a href="https://doi.org/10.1080/02699206.2026.2680130" rel="noopener" target="_blank">https://doi.org/10.1080/02699206.2026.2680130</a></p>
+<p>[6] Find Your Voice Coaching. Wendler Glottoplasty. <a href="https://www.findyourvoice.be/wendler-glottoplasty/" rel="noopener" target="_blank">https://www.findyourvoice.be/wendler-glottoplasty/</a></p>
+<p>[7] Block diagram of the simplified source-filter model of speech production [figure]. ResearchGate. <a href="https://www.researchgate.net/figure/Block-diagram-of-the-simplified-source-filter-model-of-speech-production_fig8_36454330" rel="noopener" target="_blank">https://www.researchgate.net/figure/Block-diagram-of-the-simplified-source-filter-model-of-speech-production_fig8_36454330</a></p>
+<p>[8] Guenther FH. Neural Control of Speech. MIT Press; 2016. Chapter 3. Figure via the Guenther Lab: <a href="https://sites.bu.edu/guentherlab/research-projects/the-diva-model-of-speech-motor-control/" rel="noopener" target="_blank">https://sites.bu.edu/guentherlab/research-projects/the-diva-model-of-speech-motor-control/</a></p>
 </section>
 </article>
 </div>

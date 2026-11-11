@@ -216,9 +216,11 @@
   .pbody figure a { display: block; }
   .pbody figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
   .pbody figure.wrap { float: right; width: 45%; margin: 6px 0 14px 28px; }
-  .pbody figure.wide { width: 80%; margin: 20px auto 0; }
+  .pbody figure.wide { width: 80%; margin: 20px auto 22px; }
+  .pbody figure.clr { clear: both; }
+  .pbody figure .pair { display: flex; gap: 14px; align-items: flex-end; }
   @media (max-width: 640px) {
-    .pbody figure.wrap { float: none; width: 100%; margin: 4px 0 18px; }
+    .pbody figure.wrap { float: none; width: 100% !important; margin: 4px 0 18px; }
     .pbody figure.wide { width: 100%; }
   }
   .pbody figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
@@ -287,6 +289,10 @@
 <p>Most births are low risk, and the midwife’s role is mainly to support the mother rather than to intervene. But when a rare emergency does occur, the midwife has to know exactly what to do for both mother and baby. To pass through the pelvis, the fetus must flex, rotate, and extend its head to fit the shape of the birth canal [4], and a delivery that has progressed normally for hours can stall or turn dangerous at any moment. In shoulder dystocia, the anterior shoulder catches behind the mother’s pubic bone after the head has delivered, and the midwife must work through a sequence of maneuvers, including repositioning the mother, to free it [5]. Cord prolapse, breech births, and postpartum hemorrhage are a few other emergencies that midwives must learn to recognize and treat effectively.</p>
 <p>Each of these emergencies is uncommon, so a student can finish clinical training without ever managing one. The skills have to be mastered beforehand through repeated simulation drills, where the instructor can stage a scenario on demand and the student can repeat a maneuver until they can perform it accurately and confidently under pressure. This training improves outcomes. After one UK hospital introduced obstetric emergency training for its maternity staff, the rate of newborns with low Apgar scores and hypoxic brain injury fell significantly [6].</p>
 <p>For high-fidelity training, the benchmark is Gaumard’s VICTORIA S2200, which its manufacturer calls the gold standard in obstetric emergency training [7]. VICTORIA is a full-body robotic patient. A computer-controlled system moves the fetus through the birth canal, sensors log the force applied to the fetus and the angle of the mother’s legs, and her vital signs worsen with simulated postpartum blood loss until the learner intervenes. Preprogrammed scenarios cover shoulder dystocia, breech delivery, prolapsed cord, and postpartum hemorrhage [7]. Because motors advance the fetus, the instructor runs the delivery through software rather than by hand, the opposite of what the instructors we interviewed prefer.</p>
+<figure class="wide clr">
+<div class="pair"><a style="flex:1.709" href="ob-victoria-tablet.jpg" rel="noopener" target="_blank"><img alt="VICTORIA lying in a hospital bed with fetal monitoring belts while an instructor controls the simulation from a tablet showing vital signs" loading="lazy" src="ob-victoria-tablet.jpg"/></a><a style="flex:0.823" href="ob-victoria-delivery.jpg" rel="noopener" target="_blank"><img alt="A clinical team delivering the newborn model from VICTORIA under a surgical light" loading="lazy" src="ob-victoria-delivery.jpg"/></a></div>
+<figcaption>VICTORIA S2200, run from a tablet (left) and during a simulated delivery (right). Photos: Gaumard Scientific [7].</figcaption>
+</figure>
 </section>
 <section>
 <h2>Motivation</h2>
@@ -295,10 +301,11 @@
 </section>
 <section>
 <h2>Current Simulator</h2>
-<figure class="wrap">
-<a href="ob-setup.jpg" rel="noopener" target="_blank"><img alt="The full setup, with the pelvis model on its stand, newborn, placenta and cord" loading="lazy" src="ob-setup.jpg"/></a>
-</figure>
 <p>The program’s preferred model is the MODEL-med Sophie and Her Mum, a low-fidelity simulator for cephalic, breech, and shoulder dystocia deliveries, with optional placenta, postpartum uterus, and postpartum hemorrhage add-on packages [8].</p>
+<figure class="wide">
+<div class="pair"><a style="flex:1.012" href="ob-sophie.jpg" rel="noopener" target="_blank"><img alt="The Sophie and Her Mum simulator: a soft lower-torso model on a mounting plate, with a newborn model beside it" loading="lazy" src="ob-sophie.jpg"/></a><a style="flex:1.19" href="ob-setup.jpg" rel="noopener" target="_blank"><img alt="The program's setup, with the pelvis model on its stand, newborn, placenta and cord" loading="lazy" src="ob-setup.jpg"/></a></div>
+<figcaption>Left: Sophie and Her Mum as sold. Photo: MODEL-med [8]. Right: the program's improvised setup.</figcaption>
+</figure>
 <p>These photos show how instructors improvise the positions the simulator doesn’t support, using a pelvis model suspended from a wooden stand, a separate newborn, and a placenta with umbilical cord.</p>
 <p>This is the setup our new design is meant to improve on.</p>
 </section>
@@ -308,6 +315,10 @@
 <p><i>Positioning.</i> The simulator only supports the supine and hands-and-knees birthing positions. For hands-and-knees, it has to be mounted beneath a plate on a custom frame, with stirrups from a separate vendor supporting the legs. The assembly is unstable and awkward to put together, and extra assistants are needed to hold it steady. Other delivery positions cannot be simulated.</p>
 <p><i>Cost and supply chain.</i> The unit costs $16,527 and is manufactured in Australia, so replacement parts and support are slow to arrive. The stirrups used for the hands-and-knees configuration are handmade by a nonprofit, Breech Without Borders.</p>
 <p><i>Maintenance.</i> The simulator must be fully dried and powdered between sessions, or trapped moisture can cause mold growth and the material can adhere to itself. Instructors reported that the seam where the polymer body meets the metal backing plate is hard to reach to dry and powder thoroughly.</p>
+<figure class="wrap" style="width:32%">
+<a href="ob-amniotomy.jpg" rel="noopener" target="_blank"><img alt="Illustration of an amniotomy: an amnihook passed through the cervix to puncture the amniotic sac in front of the fetus's head" loading="lazy" src="ob-amniotomy.jpg"/></a>
+<figcaption>Amniotomy, the procedure the current simulator can't model. Illustration © 2021 Cleveland Clinic [9].</figcaption>
+</figure>
 <p><i>Anatomical fidelity.</i> The umbilical cord and placenta in the add-on package aren’t anatomically realistic. The simulator also has no amniotic sac, so students cannot practice amniotomy, the artificial rupture of membranes with an amnihook to induce or advance labor [9]. The amnihook is a dedicated instrument, and without a sac inside the simulated uterus to practice on, the closest students can get is popping a water balloon.</p>
 <p><i>Fetal descent.</i> Instructors prefer advancing the fetus by hand for the control it gives them over the pace of a lesson. During a demonstration of a standard lesson, they emphasized that water-based lubricant must be applied to the fetus and the birth canal, both per the user manual and for ease of use. Even so, they reported that the fetus can be difficult to push through, particularly in breech and when the simulator is mounted on the unstable frame.</p>
 </section>
@@ -316,13 +327,33 @@
 <p>We derived these requirements from the problems above and from interviews with instructors and students.</p>
 <p><i>Tissue response.</i> The maternal and fetal components should mimic the mechanical properties of skin, particularly in the birth canal and vulva. These regions have to stretch for the fetus to pass, so a skin-like material is needed for both function and realism. It’s also why instructors prefer the low-fidelity simulator over the high-fidelity model they own. The low-fidelity materials feel like real skin, while the high-fidelity model is mostly hard plastic to house its mechanical components.</p>
 <p><i>Maternal positions.</i> The simulator should support the supine, hands-and-knees, side-lying, and standing positions. A frame will hold the simulator stable in each position and allow it to be repositioned between them, so that one instructor and one assistant can run a lesson.</p>
+<figure class="wide" style="max-width:440px">
+<a href="ob-positions.jpg" rel="noopener" target="_blank"><img alt="Eight labor and birth positions: rocking, squatting with partner, squatting, leaning forward, kneeling with birthing ball, on hands and knees, semi-sitting with partner, and lying on your side" loading="lazy" src="ob-positions.jpg"/></a>
+<figcaption>Common labor and birth positions. The current simulator supports only two. Chart © Kaiser Permanente [11].</figcaption>
+</figure>
 
+<figure class="wrap" style="width:34%">
+<a href="ob-presentations.jpg" rel="noopener" target="_blank"><img alt="Fetal positions in the uterus: occiput anterior, occiput posterior, complete breech, frank breech, transverse lie, and footling breech" loading="lazy" src="ob-presentations.jpg"/></a>
+<figcaption>Fetal positions and presentations. Illustration © 2024 Cleveland Clinic [10].</figcaption>
+</figure>
 <p><i>Fetal presentations.</i> The fetus and pelvis should accommodate the occiput anterior and occiput posterior positions as well as frank and complete breech presentations. They should also support the shoulder dystocia scenario the current simulator already covers.</p>
 
 <p><i>Manual control.</i> Instructors will continue to advance the fetus by hand, which lets them control the pace of the lesson. The fetus should pass through the birth canal in every supported position without excessive force when the standard water-based lubricant is applied.</p>
 <p><i>Umbilical cord and placenta.</i> The cord and placenta should be closer to the real organs in size and texture. The cord should be able to simulate a nuchal cord and cord prolapse, and the placenta should be able to model placenta previa.</p>
 <p><i>Postpartum hemorrhage.</i> The simulator should support postpartum hemorrhage scenarios, which the current simulator offers only as a separate add-on package. Instructors should be able to set the volume and rate of simulated blood released.</p>
 <p><i>Cost.</i> The simulator should be significantly cheaper than the current model. Its parts should be easy to source, and replacements should be inexpensive and readily available.</p>
+<figure class="wide clr" style="max-width:380px">
+<a href="ob-shoulder-dystocia.jpg" rel="noopener" target="_blank"><img alt="Shoulder dystocia: the baby's head has delivered but the front shoulder is stuck behind the mother's pubic bone, with the area where nerves can stretch labeled" loading="lazy" src="ob-shoulder-dystocia.jpg"/></a>
+<figcaption>Shoulder dystocia. © Rice University, OpenStax, CC BY 4.0 [12].</figcaption>
+</figure>
+<figure class="wide clr" style="max-width:420px">
+<div class="pair"><a style="flex:1.464" href="ob-nuchal-cord.jpg" rel="noopener" target="_blank"><img alt="Two drawings of a fetus in the uterus: normal anatomy, and a nuchal cord with the umbilical cord wrapped around the neck" loading="lazy" src="ob-nuchal-cord.jpg"/></a><a style="flex:0.899" href="ob-cord-prolapse.jpg" rel="noopener" target="_blank"><img alt="Cord prolapse: the umbilical cord has slipped through the cervix ahead of the fetal head" loading="lazy" src="ob-cord-prolapse.jpg"/></a></div>
+<figcaption>Left: a nuchal cord, wrapped around the baby's neck [14]. Right: cord prolapse, with the cord compressed in front of the head. © Rice University, OpenStax, CC BY 4.0 [12].</figcaption>
+</figure>
+<figure class="wide clr" style="max-width:520px">
+<a href="ob-placenta-previa.jpg" rel="noopener" target="_blank"><img alt="Five drawings of placental location: normal, low lying placenta, marginal previa, partial previa, and complete placenta previa covering the cervix" loading="lazy" src="ob-placenta-previa.jpg"/></a>
+<figcaption>Placenta previa, from low lying to complete. © Rice University, OpenStax, CC BY 4.0 [13].</figcaption>
+</figure>
 </section>
 
 
@@ -350,6 +381,11 @@
 <p>[7] Gaumard Scientific. VICTORIA S2200 advanced obstetric patient simulator [product page]. <a href="https://www.gaumard.com/s2200-victoria-childbirth-simulator" rel="noopener" target="_blank">https://www.gaumard.com/s2200-victoria-childbirth-simulator</a></p>
 <p>[8] MODEL-med International. Sophie and Her Mum birth simulator [product listing]. HealthySimulation.com. <a href="https://www.healthysimulation.com/vendor-product/sophie-and-her-mum/" rel="noopener" target="_blank">https://www.healthysimulation.com/vendor-product/sophie-and-her-mum/</a></p>
 <p>[9] Cleveland Clinic. Amniotomy. <a href="https://my.clevelandclinic.org/health/treatments/24270-amniotomy" rel="noopener" target="_blank">https://my.clevelandclinic.org/health/treatments/24270-amniotomy</a></p>
+<p>[10] Cleveland Clinic. Fetal Positions for Birth. <a href="https://my.clevelandclinic.org/health/articles/9677-fetal-positions-for-birth" rel="noopener" target="_blank">https://my.clevelandclinic.org/health/articles/9677-fetal-positions-for-birth</a></p>
+<p>[11] Kaiser Permanente. Your labor &amp; delivery experience. <a href="https://healthy.kaiserpermanente.org/health-wellness/maternity/labor-delivery/what-to-expect" rel="noopener" target="_blank">https://healthy.kaiserpermanente.org/health-wellness/maternity/labor-delivery/what-to-expect</a></p>
+<p>[12] OpenStax. Maternal-Newborn Nursing, 19.7 Obstetrical Emergencies. <a href="https://openstax.org/books/maternal-newborn-nursing/pages/19-7-obstetrical-emergencies" rel="noopener" target="_blank">https://openstax.org/books/maternal-newborn-nursing/pages/19-7-obstetrical-emergencies</a></p>
+<p>[13] OpenStax. Maternal-Newborn Nursing, 12.2 Conditions Limited to Pregnancy. <a href="https://openstax.org/books/maternal-newborn-nursing/pages/12-2-conditions-limited-to-pregnancy" rel="noopener" target="_blank">https://openstax.org/books/maternal-newborn-nursing/pages/12-2-conditions-limited-to-pregnancy</a></p>
+<p>[14] National Birth Injury Lawyers. Nuchal Cord. <a href="https://www.nationalbirthinjurylaw.com/nuchal-cord" rel="noopener" target="_blank">https://www.nationalbirthinjurylaw.com/nuchal-cord</a></p>
 </section>
 </article>
 </div>

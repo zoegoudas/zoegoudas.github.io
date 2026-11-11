@@ -213,7 +213,7 @@
   .pbody figure a { display: block; }
   .pbody figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
   .pbody figure.wrap { float: right; width: 45%; margin: 6px 0 14px 28px; }
-  .pbody figure.wide { width: 80%; margin: 20px auto 0; }
+  .pbody figure.wide { width: 80%; margin: 20px auto 22px; }
   @media (max-width: 640px) {
     .pbody figure.wrap { float: none; width: 100%; margin: 4px 0 18px; }
     .pbody figure.wide { width: 100%; }
@@ -288,16 +288,32 @@
 <section>
 <h2>Mechanical Testing</h2>
 <p>Graft samples are cut into standard dog-bone shapes following ASTM soft-tissue tensile testing recommendations, hydrated in PBS for 30 minutes, and pulled to failure on an Instron with a 100 N load cell at 10 mm/min.</p>
+<figure class="wide">
+<a href="allograft-tensile-setup.jpg" rel="noopener" target="_blank"><img alt="A tensile test: a photo of a specimen clamped in a testing machine, a labeled diagram of the fixed and movable heads, grips and clip-on strain gauge, and a dog-bone test specimen with its dimensions" loading="lazy" src="allograft-tensile-setup.jpg"/></a>
+<figcaption>How a tensile test works. Grips hold each end of a dog-bone specimen, one head pulls at a constant rate, and the machine records force while a gauge tracks stretch across the narrow middle. The specimen shown is a standard size for rigid materials. Graft samples are much smaller.</figcaption>
+</figure>
+<figure class="wrap">
+<a href="allograft-stress-strain.jpg" rel="noopener" target="_blank"><img alt="Generalized stress-strain curve for biological tissue, showing the toe region, linear region, proportional limit, elastic limit, yield point, ultimate stress and rupture point" loading="lazy" src="allograft-stress-strain.jpg"/></a>
+<figcaption>A typical stress-strain curve for soft tissue. Ultimate tensile strength is the peak, Young's modulus is the slope of the linear region, and elongation at break is the strain at rupture [1].</figcaption>
+</figure>
 <p>The test records ultimate tensile strength, Young's modulus and elongation at break. Each sample is photographed before and after to check for tearing, delamination, and fiber disruption. The two groups are compared with a two-sample t-test.</p>
 </section>
 <section>
 <h2>Biochemical Testing</h2>
 <p>Collagen type I and elastin are measured with ELISA kits and normalized to total protein from a BCA assay. Technical replicates must have a coefficient of variation under 15%.</p>
+<figure class="wide">
+<a href="allograft-elisa.jpg" rel="noopener" target="_blank"><img alt="Five steps of a sandwich ELISA: capture antibody on the plate binds the target protein, a biotin-labeled detection antibody binds it, streptavidin-HRP attaches to the biotin, and TMB substrate turns blue, then yellow when stopped, read at 450 nm" loading="lazy" src="allograft-elisa.jpg"/></a>
+<figcaption>How a sandwich ELISA kit measures collagen I or elastin. The color change at the end scales with how much protein is in the sample. Image: FineTest [2, 3].</figcaption>
+</figure>
 <p>The statistics plan checks normality first (Shapiro-Wilk), switches to Welch's t-test or a Mann-Whitney U test when the assumptions fail, and applies a Bonferroni correction across the three measures.</p>
 </section>
 <section>
 <h2>Histology</h2>
 <p>First, a PicoGreen DNA assay confirms both grafts are fully decellularized, meaning less than 50 ng of double-stranded DNA per mg of dry tissue.</p>
+<figure class="wrap">
+<a href="allograft-fibroblast-stain.jpg" rel="noopener" target="_blank"><img alt="Confocal images of two fibroblasts with nuclei stained blue by DAPI and actin stained red by rhodamine phalloidin, one spread on flat PDMS and one stretched along a micropatterned surface" loading="lazy" src="allograft-fibroblast-stain.jpg"/></a>
+<figcaption>Fibroblasts stained with DAPI for the nucleus (blue) and phalloidin for actin (red), on a flat surface (A) and a patterned one (B). Rathod et al. [4].</figcaption>
+</figure>
 <p>Then dermal fibroblasts are seeded onto 1 × 1 cm graft sections at 50,000 cells/cm² and grown for 14 days. Sections are stained with DAPI for nuclei and phalloidin for the cytoskeleton, and nuclei per mm² are counted in ImageJ across at least five fields per section.</p>
 </section>
 <section>
@@ -308,6 +324,13 @@
 <li><i>Ambiguous.</i> A significant but small drop, under 20% in collagen or elastin. The change goes to further testing, like cyclic fatigue testing or SEM imaging, before a decision.</li>
 <li><i>Unacceptable.</i> More than a 20% drop in collagen or elastin, or a graft that fails the DNA threshold. The change is rejected.</li>
 </ul>
+</section>
+<section class="refs">
+<h2>References</h2>
+<p>[1] Generalized stress-strain curve for biological tissues [figure]. ResearchGate. <a href="https://www.researchgate.net/figure/n-a-generalized-stress-strain-curve-for-biological-tissues-there-are-a-few-important_fig4_281609432" rel="noopener" target="_blank">https://www.researchgate.net/figure/n-a-generalized-stress-strain-curve-for-biological-tissues-there-are-a-few-important_fig4_281609432</a></p>
+<p>[2] FineTest. Human COLI (Collagen Type I) ELISA Kit, EH7533. <a href="https://www.fn-test.com/product/eh7533/" rel="noopener" target="_blank">https://www.fn-test.com/product/eh7533/</a></p>
+<p>[3] FineTest. Human ELN (Elastin) ELISA Kit, EH1505. <a href="https://www.fn-test.com/product/eh1505/" rel="noopener" target="_blank">https://www.fn-test.com/product/eh1505/</a></p>
+<p>[4] Rathod ML, et al. Engineered ridge and micropillar array detectors to quantify the directional migration of fibroblasts. RSC Adv. 2017;7:51436. Open access. <a href="https://pubs.rsc.org/ra/article/7/81/51436/581677/Engineered-ridge-and-micropillar-array-detectors" rel="noopener" target="_blank">https://pubs.rsc.org/ra/article/7/81/51436/581677/Engineered-ridge-and-micropillar-array-detectors</a></p>
 </section>
 </article>
 </div>
