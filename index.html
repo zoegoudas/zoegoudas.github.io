@@ -304,16 +304,19 @@
   .mode-toggle:hover { color: var(--ink); border-color: var(--iris); }
   .mode-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   html[data-theme="dark"] .mode-toggle .moon, html:not([data-theme="dark"]) .mode-toggle .sun { display: none; }
-  @media (max-width: 900px) {
-    .mode-toggle { position: fixed; right: 14px; bottom: 14px; z-index: 20; width: 42px; height: 42px; margin: 0; padding: 0; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
-    .mode-toggle .ml { display: none; }
-  }
+  .wrap { position: relative; }
+  .corner { position: absolute; z-index: 3; top: 44px; left: calc(100% - 224px); width: 200px; }
+  .corner .mode-toggle { margin: 0; }
+  .corner .vine-name { margin: 10px 0 0 2px; font-size: 13px; line-height: 1.35; color: var(--muted); }
+  .corner .vine-name:empty { display: none; }
+  footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  footer .mode-toggle { margin: 0; }
+  @media (min-width: 901px) { footer .mode-toggle { display: none; } }
+  @media (max-width: 900px) { .corner { display: none; } }
+  .about-top p.grow { color: var(--muted); }
   html:not([data-theme="dark"]) .hero-art-wrap { mix-blend-mode: darken; }
   html[data-theme="dark"] .hero-art { filter: invert(.95) hue-rotate(180deg) saturate(1.3); }
   html[data-theme="dark"] .hero-art-wrap { mix-blend-mode: lighten; }
-  footer .vine-name { margin-left: 10px; font-size: 13px; color: var(--muted); }
-  footer .vine-name:empty { display: none; }
-  @media (max-width: 760px) { footer .vine-name { display: none; } }
   main { position: relative; z-index: 0; }
   .vine { display: none; }
   @media (min-width: 761px) {
@@ -341,6 +344,7 @@
 </head>
 <body>
 <div class="wrap">
+<div class="corner"><button aria-label="Switch to dark mode" class="mode-toggle top" type="button"><svg aria-hidden="true" class="moon" viewbox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg><svg aria-hidden="true" class="sun" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg><span class="ml">Dark mode</span></button><p class="vine-name"></p></div>
 <div class="layout">
 <nav aria-label="On this page" class="toc">
 <span aria-hidden="true" class="track"></span><span aria-hidden="true" class="fill"></span>
@@ -365,7 +369,6 @@
 <li><a class="top-l" href="#ems">Emergency Medical Services</a></li>
 <li><a class="top-l" href="#contact">Contact</a></li>
 </ol>
-<button aria-label="Switch to dark mode" class="mode-toggle" type="button"><svg aria-hidden="true" class="moon" viewbox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg><svg aria-hidden="true" class="sun" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg><span class="ml">Dark mode</span></button>
 </nav>
 <main>
 <svg aria-hidden="true" class="vine" focusable="false"></svg>
@@ -379,6 +382,7 @@
 <p>I’m a senior in the Honors College at Rutgers University, majoring in biomedical engineering with a minor in mathematics. I’m interested in tissue engineering, biomaterials, medical devices, biosensors, wearable health tech, drug delivery, and neural engineering.</p>
 <p>I’m looking for R&amp;D internships and co-ops for spring or summer 2027. After I graduate in May 2027, I plan to earn a master’s degree in biomedical engineering.</p>
 <p>Outside of school, I work and volunteer as an EMT, play guitar, grow plants, hike, snowboard, and do calisthenics.</p>
+<p class="grow">Help me add more experience and grow the flowers!!</p>
 </div>
 </div>
 </section>
@@ -481,7 +485,7 @@
 <a href="https://zoegoudas.dev/Zoe_Goudas_Resume.pdf"><svg aria-hidden="true" class="ci" viewbox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v4h4M9 12h6M9 15h6M9 18h4"></path></svg><span>Resume</span></a>
 </p>
 </section>
-<footer>Zoe Goudas<span class="vine-name"></span></footer>
+<footer><span>Zoe Goudas</span><button aria-label="Switch to dark mode" class="mode-toggle foot" type="button"><svg aria-hidden="true" class="moon" viewbox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg><svg aria-hidden="true" class="sun" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg><span class="ml">Dark mode</span></button></footer>
 </main>
 </div>
 </div>
@@ -578,12 +582,13 @@
 </script>
 <script>
 (function () {
-  var root = document.documentElement, btn = document.querySelector(".mode-toggle");
+  var root = document.documentElement, btns = [].slice.call(document.querySelectorAll(".mode-toggle"));
   function label() {
     var dark = root.getAttribute("data-theme") === "dark";
-    if (!btn) return;
-    btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-    btn.querySelector(".ml").textContent = dark ? "Light mode" : "Dark mode";
+    btns.forEach(function (btn) {
+      btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      btn.querySelector(".ml").textContent = dark ? "Light mode" : "Dark mode";
+    });
   }
   function apply(t, save) {
     root.setAttribute("data-theme", t);
@@ -591,7 +596,7 @@
     label();
     document.dispatchEvent(new CustomEvent("themechange", { detail: t }));
   }
-  if (btn) btn.addEventListener("click", function () { apply(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true); });
+  btns.forEach(function (btn) { btn.addEventListener("click", function () { apply(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true); }); });
   var mq = window.matchMedia("(prefers-color-scheme: dark)");
   function onDevice(e) { var saved; try { saved = localStorage.getItem("theme"); } catch (er) {} if (saved !== "light" && saved !== "dark") apply(e.matches ? "dark" : "light", false); }
   if (mq.addEventListener) mq.addEventListener("change", onDevice); else if (mq.addListener) mq.addListener(onDevice);
@@ -655,8 +660,8 @@
     var v = VARIETIES[picked];
     for (var k in BASE) C[k] = JSON.parse(JSON.stringify(BASE[k]));
     for (k in v[1]) C[k] = v[1][k];
-    var cap = document.querySelector("footer .vine-name");
-    if (cap) cap.textContent = "Today's vine: " + v[0];
+    var cap = document.querySelector(".corner .vine-name");
+    if (cap) cap.textContent = v[0].charAt(0).toUpperCase() + v[0].slice(1);
   }
   pickVariety();
   var LEAF, LEAF_DARK, LEAF_LIGHT, VEIN, VEIN_LIGHT, SEPAL, BUDPINK, FLOWERS;
