@@ -226,6 +226,19 @@
   .pbody tr:last-child td { border-bottom: 0; }
   .pbody .refs p { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0 0 8px; overflow-wrap: anywhere; }
   .pbody .refs a { color: var(--muted); }
+  .pbody ul.mats { margin: 0 0 14px; padding: 0; list-style: none; }
+  .pbody ul.mats li { margin: 0 0 7px; line-height: 1.6; font-size: 16px; }
+  .pbody ul.mats b { font-weight: 600; }
+  .outcomes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0 4px; }
+  .outcomes > div { border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; }
+  .outcomes h4 { margin: 0; padding: 7px 11px; font-family: "Figtree", system-ui, sans-serif; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: #fff; font-weight: 600; }
+  .pbody .outcomes p { margin: 0; padding: 11px; font-size: 14px; line-height: 1.5; }
+  .outcomes .ok { background: #F1F7F3; } .outcomes .ok h4 { background: #2E7D4F; }
+  .outcomes .mid { background: #FBF6EA; } .outcomes .mid h4 { background: #A1750F; }
+  .outcomes .bad { background: #FBF0F1; } .outcomes .bad h4 { background: #B0303A; }
+  @media (max-width: 700px) { .outcomes { grid-template-columns: 1fr; } }
+  .pbody h3 { font-family: "Fraunces", serif; font-weight: 400; font-size: 21px; margin: 26px 0 8px; }
+  .pbody h3:first-child { margin-top: 0; }
   .docs { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
   .doc { display: block; border: 1px solid var(--rule); border-radius: 6px; background: var(--sheet); color: var(--ink); text-decoration: none; overflow: hidden; transition: border-color .15s; }
   .doc:hover { border-color: var(--iris); }
@@ -276,61 +289,211 @@
 <article class="pbody">
 <section>
 <h2>Background</h2>
-<p>Our hypothetical company's acellular dermal allograft, used in breast reconstruction and hernia repair, is on backorder. The company wants to change its tissue processing parameters to make more of it.</p>
-<p>The risk is that a processing change could affect how well cells are removed and damage the extracellular matrix (ECM) that gives the graft its strength and flexibility. Our job was to write the studies senior management would need to see before approving the change.</p>
+<p>My team and I worked with a hypothetical company that makes an acellular allograft for breast reconstruction and hernia repair. The allograft is on backorder, and the company wants to change its manufacturing process in order to increase production.</p>
+<p>Modifying the established manufacturing process introduces risks to cell removal efficiency and the structural integrity of the extracellular matrix (ECM), which determines the graft's strength, support, and flexibility. The current process is part of the specification already filed with regulators, so the modified one has to be proven equivalent, not just feasible. We developed the validation protocol that evaluates the modified process for senior management to review before approving the change.</p>
 </section>
 <section>
-<h2>Study Design</h2>
-<p>We designed three studies covering mechanical, biochemical, and histological testing. Each one compares grafts made with the standard process (n = 10) to grafts made with the modified process (n = 10).</p>
-<p>All three use tissue from matched donors, randomized assignment to groups, and coded samples so the analyst doesn't know which process a sample went through. Each sample is measured in triplicate, and the studies are powered at 80% with α = 0.05.</p>
+<h2>Study design</h2>
+<p>Each study compares a control group of 10 standard process grafts against an experimental group of 10 modified grafts. Each study uses a randomized, blinded, and controlled design to ensure objective and reproducible results. Tissue samples are obtained from matched donors, randomly assigned to test groups, and coded to blind the analysts to the processing condition. Controls are established independently for each assay, and all samples are stored at −80 °C until analysis. Statistical testing is conducted with a significance level of α = 0.05 and 80% power. Groups are compared with a two-tailed Welch's t-test, which does not assume equal variances and holds up against the mild departures from normality expected at this sample size. Results are reported as mean ± SD.</p>
+</section>
+<section>
+<h2>Safety</h2>
+<p>All work follows BSL-2 practice, since the allografts and the dermal fibroblasts are human-derived and are treated as potentially infectious. Personnel wear a lab coat, nitrile gloves and safety glasses, handle cell culture in a Class II biosafety cabinet using aseptic technique, and discard tissue, culture waste, scalpels and cryostat blades into biohazard and sharps containers.</p>
+<p>Paraformaldehyde fixation, the pepsin–acetic acid digestion and the boiling oxalic acid extraction are carried out in a fume hood, as is the sulfuric acid stop solution; oxalic acid is corrosive and is handled hot. Ethidium bromide is a mutagen, so gels, running buffer and tips go into a dedicated ethidium bromide waste stream, and the transilluminator is used behind a UV-blocking shield. Cryopreserved stocks and −80 °C samples are handled with cryogenic gloves.</p>
+</section>
 
-</section>
 <section>
-<h2>Mechanical Testing</h2>
-<p>Graft samples are cut into standard dog-bone shapes following ASTM soft-tissue tensile testing recommendations, hydrated in PBS for 30 minutes, and pulled to failure on an Instron with a 100 N load cell at 10 mm/min.</p>
+<h2>Mechanical testing: uniaxial tensile test</h2>
+<h3>Objective</h3>
+<p>Determine whether the modified tissue processing parameters affect the allograft's mechanical properties. Evaluate ultimate tensile strength, Young's modulus, and flexibility (elongation at failure) via uniaxial tensile testing.</p>
+<h3>Rationale</h3>
+<p>The dermal matrix must retain sufficient mechanical strength and flexibility to function properly during implantation and healing. A change in processing can damage collagen fiber organization, shift stiffness or elasticity, and lower resistance to tearing.</p>
+<h3>Materials</h3>
+<div class="tbl">
+<table>
+<thead>
+<tr><th>Group</th><th>Items</th></tr>
+</thead>
+<tbody>
+<tr><td>Tissue</td><td>Control allografts (n = 10), experimental allografts (n = 10), patient-derived dermal samples</td></tr>
+<tr><td>Equipment</td><td>Instron universal testing machine with a 100 N load cell, tissue grips, digital calipers, PBS bath</td></tr>
+<tr><td>Consumables</td><td>Sterile scalpels, forceps, cutting templates, specimen labels</td></tr>
+<tr><td>Software</td><td>Instron Bluehill, ImageJ, Excel</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Methods</h3>
+<p>Cut the allograft specimens to standardized dimensions according to ASTM soft-tissue tensile testing recommendations. Measure the thickness and width with digital calipers to calculate the cross-sectional area. Hydrate the samples in PBS for 30 minutes. Photograph each from a fixed angle and distance. Secure the sample in the Instron grips, ensuring no slippage or preload damage. Apply uniaxial tensile force at a constant crosshead speed of 10 mm/min until failure, with the Bluehill software recording force (N), displacement (mm), and the resulting stress-strain curve. After failure, photograph the specimen from the original position. Visually inspect and record tearing, delamination, fiber disruption, and uneven deformation. Analyze the same properties in ImageJ. Calculate and record ultimate tensile strength (MPa), Young's modulus (MPa), and flexibility as elongation at failure (%) from the stress-strain curve.</p>
 <figure class="wide">
-<a href="allograft-tensile-setup.jpg" rel="noopener" target="_blank"><img alt="A tensile test: a photo of a specimen clamped in a testing machine, a labeled diagram of the fixed and movable heads, grips and clip-on strain gauge, and a dog-bone test specimen with its dimensions" loading="lazy" src="allograft-tensile-setup.jpg"/></a>
-<figcaption>How a tensile test works. Grips hold each end of a dog-bone specimen, one head pulls at a constant rate, and the machine records force while a gauge tracks stretch across the narrow middle. The specimen shown is a standard size for rigid materials. Graft samples are much smaller.</figcaption>
+<a href="allograft-tensile-setup.png" rel="noopener" target="_blank"><img alt="Uniaxial tensile test rig: a threaded specimen held between upper and lower heads with a spherical bearing, beside a diagram of the specimen showing initial and final gauge length and cross-sectional area under an applied force" loading="lazy" src="allograft-tensile-setup.png"/></a>
+<figcaption>Uniaxial tensile test. Threaded grips hold the specimen, the upper head pulls at a constant rate, and the machine records force against gauge length (Lᵢ to Lₓ) and cross-section (Aᵢ to Aₓ). ScienceDirect, Tensile Testing.</figcaption>
 </figure>
-<figure class="wrap">
-<a href="allograft-stress-strain.jpg" rel="noopener" target="_blank"><img alt="Generalized stress-strain curve for biological tissue, showing the toe region, linear region, proportional limit, elastic limit, yield point, ultimate stress and rupture point" loading="lazy" src="allograft-stress-strain.jpg"/></a>
-<figcaption>A typical stress-strain curve for soft tissue. Ultimate tensile strength is the peak, Young's modulus is the slope of the linear region, and elongation at break is the strain at rupture [1].</figcaption>
-</figure>
-<p>The test records ultimate tensile strength, Young's modulus and elongation at break. Each sample is photographed before and after to check for tearing, delamination, and fiber disruption. The two groups are compared with a two-sample t-test.</p>
-</section>
-<section>
-<h2>Biochemical Testing</h2>
-<p>Collagen type I and elastin are measured with ELISA kits and normalized to total protein from a BCA assay. Technical replicates must have a coefficient of variation under 15%.</p>
 <figure class="wide">
-<a href="allograft-elisa.jpg" rel="noopener" target="_blank"><img alt="Five steps of a sandwich ELISA: capture antibody on the plate binds the target protein, a biotin-labeled detection antibody binds it, streptavidin-HRP attaches to the biotin, and TMB substrate turns blue, then yellow when stopped, read at 450 nm" loading="lazy" src="allograft-elisa.jpg"/></a>
-<figcaption>How a sandwich ELISA kit measures collagen I or elastin. The color change at the end scales with how much protein is in the sample. Image: FineTest [2, 3].</figcaption>
+<a href="allograft-stress-strain.png" rel="noopener" target="_blank"><img alt="Four panels of tensile analysis of human skin: stress against strain, a linear fit to its upper region, stress against time showing relaxation, and a linear fit to the relaxation tail" loading="lazy" src="allograft-stress-strain.png"/></a>
+<figcaption>Tensile analysis of human skin. <b>A</b>, stress against strain. <b>B</b>, the linear fit gives Young's modulus in MPa. <b>C</b>, stress against time. <b>D</b>, the fit gives the relaxation rate. Figure 5, via ResearchGate.</figcaption>
 </figure>
-<p>The statistics plan checks normality first (Shapiro-Wilk), switches to Welch's t-test or a Mann-Whitney U test when the assumptions fail, and applies a Bonferroni correction across the three measures.</p>
+<h3>Analysis</h3>
+<p>Calculate the mean and standard deviation (SD) for the control and experimental groups across three mechanical variables: ultimate tensile strength (MPa), Young's modulus (MPa), and flexibility/elongation at failure (%). Calculate the percent difference between the control and experimental group for each variable. Perform a two-tailed Welch's t-test for each variable. Record all calculations and exact p-values, and present the data as graphs showing the mean ± SD, explicitly displaying all individual data points and p-value significance markers on the figures.</p>
+<h3>Expected result</h3>
+<p>The modified parameters should not reduce mechanical performance against the approved process (p &gt; 0.05).</p>
+<div class="outcomes">
+<div class="ok"><h4>✓ Acceptable</h4><p>No significant difference between groups (p &gt; 0.05). Strength and elongation stay inside the product specification, and failure patterns match standard processed grafts.</p></div>
+<div class="mid"><h4>! Ambiguous</h4><p>A significant but modest reduction, 15–25%, with no extreme structural failure. Cyclic fatigue testing and SEM imaging of collagen architecture before a final decision.</p></div>
+<div class="bad"><h4>✗ Unacceptable</h4><p>A significant drop in strength, elasticity or flexibility (p &lt; 0.05). Brittle behaviour or early failure, or evidence of ECM damage and delamination.</p></div>
+</div>
 </section>
+
 <section>
-<h2>Histology</h2>
-<p>First, a PicoGreen DNA assay confirms both grafts are fully decellularized, meaning less than 50 ng of double-stranded DNA per mg of dry tissue.</p>
+<h2>Biochemical testing: ELISA</h2>
+<h3>Objective</h3>
+<p>Determine whether the modified tissue processing parameters affect the biochemical composition of the extracellular matrix (ECM). Use ELISA to evaluate collagen type I and elastin content.</p>
+<h3>Rationale</h3>
+<p>ELISA (Enzyme-Linked Immunosorbent Assay) enables specific, sensitive, and quantitative antibody-based detection in tissue lysate. Any processing change that degrades these proteins could compromise mechanical performance, regulatory compliance and clinical safety.</p>
+<h3>Materials</h3>
+<div class="tbl">
+<table>
+<thead>
+<tr><th>Group</th><th>Items</th></tr>
+</thead>
+<tbody>
+<tr><td>Tissue</td><td>Control allografts (n = 10), experimental allografts (n = 10), matched donor pairs</td></tr>
+<tr><td>Kits</td><td>Abcam ab285250 (Human Collagen Type I), Abcam ab239433 (Human Elastin SimpleStep), BCA Total Protein Assay</td></tr>
+<tr><td>Reagents</td><td>Assay reagents: PBS with protease inhibitors, wash buffer, TMB substrate, sulfuric acid stop solution, 96-well plates<br/>Extraction reagents: pepsin, 0.5 M acetic acid, 0.25 M oxalic acid, neutralization buffer (e.g. 1 M NaOH or Tris-HCl, pH 7.4)</td></tr>
+<tr><td>Equipment</td><td>Assay equipment: microplate reader (450 nm, 600 nm reference), tissue homogenizer, microcentrifuge (up to 10,000 × g), plate washer, 37 °C incubator<br/>Extraction equipment: magnetic stir plate, 4 °C refrigerator or cold room, boiling water bath or heating block (capable of 100 °C)</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Methods</h3>
+<p>To ensure perfectly matched analyte ratios from the exact same piece of tissue, a sequential extraction method is utilized. The standardized allograft specimen is first digested in pepsin-solubilized collagen buffer (0.1 mg/mL pepsin in 0.5 M acetic acid) at 4 °C for 24 hours with continuous stirring. Following centrifugation at 10,000 × g for 10 minutes at 4 °C, the supernatant is collected as the primary stock for quantifying total protein via a BCA assay and analyzing collagen with the Abcam Human Collagen Type I ELISA. To extract elastin, the remaining insoluble tissue pellet is boiled in 0.25 M oxalic acid at 100 °C for 1 hour. This oxalic extraction is repeated three times, and the pooled supernatants are neutralized to a pH of 7.0–7.4 for analysis using the Abcam Human Elastin SimpleStep ELISA. For assay execution, 8-point recombinant standard curves are run on their respective plates, and absorbance is read at 450 nm, utilizing a 600 nm reference for the elastin assay. Finally, sample concentrations are interpolated and normalized to the initial total protein quantification (ng analyte / µg total protein), maintaining a coefficient of variation (CV) of less than 15% between technical replicates to ensure analytical accuracy.</p>
+<figure class="wide">
+<a href="allograft-elisa-sandwich.png" rel="noopener" target="_blank"><img alt="Five-step sandwich ELISA diagram: a well coated with capture antibody and blocking buffer, the antigen bound by that antibody, a biotin-labelled detection antibody on top, streptavidin-HRPO bound to the biotin, and TMB substrate converted into a coloured product" loading="lazy" src="allograft-elisa-sandwich.png"/></a>
+<figcaption>Sandwich ELISA, the format of the collagen kit. ab285250 ships pre-coated and blocked, so it starts at step 2. Leinco Technologies.</figcaption>
+</figure>
+<figure class="wide">
+<a href="allograft-elisa-simplestep.png" rel="noopener" target="_blank"><img alt="Three-step SimpleStep ELISA diagram: sample and antibody cocktail added together, a wash and TMB substrate, then stop solution and reading, across 90 minutes" loading="lazy" src="allograft-elisa-simplestep.png"/></a>
+<figcaption>SimpleStep ELISA, the format of the elastin kit. Sample and antibody cocktail go in together: one incubation, one wash, read at 450 nm after 90 minutes. Abcam, ab239433.</figcaption>
+</figure>
+<h3>Analysis</h3>
+<p>Two variables are compared: collagen type I (ng/µg protein) and elastin (ng/µg protein), each normalized to total protein from the BCA assay.</p>
+<p>Calculate the mean and standard deviation for the control and experimental groups, and calculate the percent difference between the groups for each variable. Perform a two-tailed Welch's t-test for each variable. Apply a Bonferroni correction to the p-values to account for the two comparisons. Record all calculations and p-values, present the data as graphs showing the mean ± SD. Display all individual data points and p-value significance markers on the figures.</p>
+<h3>Expected result</h3>
+<p>The modified parameters should not alter collagen or elastin content (p &gt; 0.05).</p>
+<div class="outcomes">
+<div class="ok"><h4>✓ Acceptable</h4><p>No significant difference in collagen or elastin (p &gt; 0.05). Values within ±15% of the control mean.</p></div>
+<div class="mid"><h4>! Ambiguous</h4><p>A significant but small difference, under 20%, in one measure. Senior management and the regulatory team review it, with mechanical data to inform the decision.</p></div>
+<div class="bad"><h4>✗ Unacceptable</h4><p>A significant reduction in collagen or elastin (p &lt; 0.05, more than 20%). The change is rejected and R&amp;D investigates parameters that preserve the ECM.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Decellularization testing: PicoGreen, gel electrophoresis &amp; DAPI</h2>
+<h3>Objective</h3>
+<p>Determine whether the modified tissue processing parameters affect how completely donor cells and DNA are removed from the allograft. PicoGreen quantifies residual dsDNA, gel electrophoresis gives fragment length, and DAPI staining shows whether any nuclei remain.</p>
+<h3>Rationale</h3>
+<p>The allograft must be free of donor cells and residual DNA, since cellular remnants trigger immune rejection, chronic inflammation and fibrotic encapsulation after implantation. A change in processing can leave intact nuclei and long DNA fragments behind in the matrix.</p>
+<h3>Materials</h3>
+<div class="tbl">
+<table>
+<thead>
+<tr><th>Group</th><th>Items</th></tr>
+</thead>
+<tbody>
+<tr><td>Tissue</td><td>Control and experimental allografts (n = 10 per group), unprocessed donor dermis as a positive control</td></tr>
+<tr><td>Kits</td><td>Invitrogen Quant-iT PicoGreen dsDNA Assay Kit (PicoGreen reagent, 20× TE buffer, lambda DNA standard)</td></tr>
+<tr><td>Extraction reagents</td><td>Proteinase K, digestion buffer (100 mM Tris-HCl pH 8.0, 5 mM EDTA, 0.2% SDS, 200 mM NaCl), phenol:chloroform:isoamyl alcohol (25:24:1), 3 M sodium acetate, 100% and 70% ethanol</td></tr>
+<tr><td>Gel reagents</td><td>Agarose, 1× TAE buffer, ethidium bromide (0.5 µg/mL), 6× loading dye, 100 bp DNA ladder</td></tr>
+<tr><td>Histology reagents</td><td>OCT compound, 4% paraformaldehyde, PBS, DAPI, anti-fade mounting medium, slides and coverslips</td></tr>
+<tr><td>Equipment</td><td>Lyophilizer, analytical balance, 50 °C shaking water bath, microcentrifuge (up to 10,000 × g), fluorescence microplate reader (480/520 nm) with black 96-well plates, horizontal gel electrophoresis system and power supply, UV gel imager, cryostat, fluorescence microscope with DAPI filter set and digital camera</td></tr>
+<tr><td>Software</td><td>ImageJ, Excel</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Methods</h3>
+<p>Lyophilize tissue from each graft and the native dermis control for 24 hours, then weigh about 25 mg of dry tissue per sample. Mince and digest each sample in 1 mL digestion buffer with 0.1 mg/mL proteinase K at 50 °C for 24 hours with agitation. Extract DNA with an equal volume of phenol:chloroform:isoamyl alcohol, centrifuge at 10,000 × g for 10 minutes, and collect the aqueous phase. Precipitate the DNA with 0.1 volume of 3 M sodium acetate and 2 volumes of cold 100% ethanol at −20 °C overnight. Centrifuge at 10,000 × g for 10 minutes at 4 °C, wash the pellet in 70% ethanol, air dry, and resuspend in 100 µL TE buffer. Split each extract for the PicoGreen assay and gel electrophoresis. Prepare a lambda DNA standard curve from 0 to 1,000 ng/mL in TE buffer and dilute samples so readings fall within it. Mix 100 µL of each standard or sample with 100 µL PicoGreen working reagent (1:200 in TE) in a black 96-well plate, in triplicate. Incubate for 5 minutes at room temperature protected from light, and read fluorescence at 480 nm excitation and 520 nm emission. Interpolate concentrations from the standard curve, keep the CV under 15% between technical replicates, and report ng dsDNA per mg dry weight.</p>
+<p>Cast a 2% agarose gel in 1× TAE buffer with ethidium bromide (0.5 µg/mL). Mix DNA extract from an equal starting dry weight of each sample with 6× loading dye, and load it alongside a 100 bp ladder and the native dermis extract. Run at 100 V for about 45 minutes, until the dye front has travelled three quarters of the gel. Image under UV transillumination with fixed exposure settings. Record the largest visible fragment in each lane against the ladder; lanes with no band, or a smear only below 200 bp, meet the fragment length criterion.</p>
+<p>Embed tissue from each graft and the native dermis control in OCT compound, snap-freeze, and cut three 10 µm cross-sections per sample on a cryostat. Fix in 4% paraformaldehyde for 15 minutes, rinse in PBS, and stain with DAPI (1 µg/mL in PBS) for 10 minutes in the dark. Rinse three times in PBS and mount with anti-fade medium. Image at 20× with the DAPI filter across at least five random fields per section, keeping exposure fixed for all samples. Threshold the DAPI channel in ImageJ, count nuclei per mm², and record whether any intact nuclei remain.</p>
+<figure class="wide">
+<a href="allograft-decell-panels.png" rel="noopener" target="_blank"><img alt="Three panels: DAPI images across native tissue, submucosa and decellularized matrix; a bar chart of DNA concentration in nanograms per milligram; and an agarose gel in which the native lane carries high molecular weight DNA while the decellularized lanes show nothing above the 200 base pair marker" loading="lazy" src="allograft-decell-panels.png"/></a>
+<figcaption><b>A</b>, DAPI across native tissue, submucosa and decellularized matrix. <b>B</b>, DNA concentration in ng/mg. <b>C</b>, agarose gel against a ladder; the decellularized lanes show nothing above 200 bp. Three-group study; H&amp;E and phospholipid panels are cropped. Figure 5, via ResearchGate.</figcaption>
+</figure>
+<h3>Analysis</h3>
+<p>Report residual dsDNA as mean ± SD (ng/mg dry weight) for each group and check every graft against the 50 ng/mg threshold. Compare dsDNA between groups with a two-tailed Welch's t-test. On the gel, record the largest visible fragment in each lane against the ladder, using an ImageJ lane profile, and count the grafts in each group with fragments above 200 bp. For DAPI, average nuclei/mm² across fields per sample, report each group as mean ± SD, and record each graft as pass or fail for visible nuclei. A graft is decellularized only if it meets all three criteria; report the number of passing grafts in each group. Present the data as graphs showing the mean ± SD with all individual data points and p-value significance markers. ImageJ for quantification, Excel for statistics.</p>
+<h3>Expected result</h3>
+<p>The modified parameters should not increase residual DNA (p &gt; 0.05), and every graft in both groups should meet all three decellularization criteria.</p>
+<div class="outcomes">
+<div class="ok"><h4>✓ Acceptable</h4><p>Every experimental graft meets all three criteria: &lt; 50 ng dsDNA/mg dry weight, fragments &lt; 200 bp and no visible nuclei. No significant increase in dsDNA over the control group (p &gt; 0.05).</p></div>
+<div class="mid"><h4>! Ambiguous</h4><p>Every experimental graft meets the criteria, but residual dsDNA is significantly higher than the control group (p &lt; 0.05). Additional grafts are tested and H&amp;E staining is added before a final decision.</p></div>
+<div class="bad"><h4>✗ Unacceptable</h4><p>Any experimental graft fails a criterion: ≥ 50 ng dsDNA/mg dry weight, fragments ≥ 200 bp, or visible nuclei. The change is rejected and R&amp;D adjusts the process to restore cell removal.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Functional testing: in vitro repopulation</h2>
+<h3>Objective</h3>
+<p>Determine whether the modified tissue processing parameters affect the allograft's ability to support dermal cell attachment, infiltration and growth in vitro. Evaluate cell density with DAPI staining and cell morphology with phalloidin staining after 14 days of culture.</p>
+<h3>Rationale</h3>
+<p>After implantation, the acellular matrix must serve as a scaffold that host cells attach to, infiltrate and grow on. A change in processing can disrupt the ECM architecture and binding site availability, leading to poor integration and graft failure. The other three studies evaluate the allograft's properties and confirm it meets regulatory standards. Finally, this assay determines whether the modified process still produces a scaffold that performs its intended function.</p>
+<h3>Materials</h3>
+<div class="tbl">
+<table>
+<thead>
+<tr><th>Group</th><th>Items</th></tr>
+</thead>
+<tbody>
+<tr><td>Tissue and cells</td><td>Control and experimental allografts (n = 10 per group), patient-derived dermal fibroblasts at passage 5 or lower, cryopreserved stocks from a single donor lot</td></tr>
+<tr><td>Culture</td><td>DMEM with 10% FBS and 1% penicillin-streptomycin, PBS, 6-well plates, sterile forceps and scalpel</td></tr>
+<tr><td>Stains</td><td>4% paraformaldehyde, Triton X-100, DAPI, Phalloidin–Alexa Fluor 488, anti-fade mounting medium, slides and coverslips</td></tr>
+<tr><td>Equipment</td><td>Biosafety cabinet, 37 °C 5% CO₂ incubator, cryostat, fluorescence microscope with DAPI and FITC filter sets and digital camera</td></tr>
+<tr><td>Software</td><td>ImageJ, Excel</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Methods</h3>
+<p>Cut the grafts into 1 × 1 cm sections, place them dermis side up in 6-well plates, and seed 50,000 fibroblasts/cm². Incubate for 14 days at 37 °C and 5% CO₂, changing medium every 48 hours. Rinse in PBS, fix in 4% paraformaldehyde for 24 hours, cut thin cross-sections on a cryostat and mount them. Permeabilize with Triton X-100, stain with DAPI and Phalloidin–Alexa Fluor 488, mount with anti-fade medium and cure overnight. Image at 10× and 20× across at least five fields per section, threshold the DAPI channel in ImageJ and count nuclei per mm². Use the DAPI counts from the unseeded grafts in the decellularization study as the background.</p>
 <figure class="wrap">
-<a href="allograft-fibroblast-stain.jpg" rel="noopener" target="_blank"><img alt="Confocal images of two fibroblasts with nuclei stained blue by DAPI and actin stained red by rhodamine phalloidin, one spread on flat PDMS and one stretched along a micropatterned surface" loading="lazy" src="allograft-fibroblast-stain.jpg"/></a>
-<figcaption>Fibroblasts stained with DAPI for the nucleus (blue) and phalloidin for actin (red), on a flat surface (A) and a patterned one (B). Rathod et al. [4].</figcaption>
+<a href="allograft-fibroblast-stain.png" rel="noopener" target="_blank"><img alt="Dense layer of spindle-shaped human dermal fibroblasts with actin cytoskeleton stained green and nuclei stained blue" loading="lazy" src="allograft-fibroblast-stain.png"/></a>
+<figcaption>Dermal fibroblasts. DAPI for nuclei (blue), phalloidin–Alexa Fluor 488 for actin (green). electrospintech.com.</figcaption>
 </figure>
-<p>Then dermal fibroblasts are seeded onto 1 × 1 cm graft sections at 50,000 cells/cm² and grown for 14 days. Sections are stained with DAPI for nuclei and phalloidin for the cytoskeleton, and nuclei per mm² are counted in ImageJ across at least five fields per section.</p>
+<h3>Analysis</h3>
+<p>Average nuclei/mm² across fields per sample and subtract the unseeded background. Calculate the mean and standard deviation of cell density for the control and experimental groups, and calculate the percent difference between the groups. Perform a two-tailed Welch's t-test. Record all calculations and exact p-values, and present the data as graphs showing the mean ± SD with all individual data points and p-value significance markers. ImageJ for quantification, Excel for statistics.</p>
+<h3>Expected result</h3>
+<p>The modified parameters should not reduce repopulation density (p &gt; 0.05).</p>
+<div class="outcomes">
+<div class="ok"><h4>✓ Acceptable</h4><p>No significant difference in cell density between groups (p &gt; 0.05). Cells are spread and attached with normal fibroblast morphology. The scaffold supports equivalent repopulation.</p></div>
+<div class="mid"><h4>! Ambiguous</h4><p>A significant but modest reduction, under 25%, in the experimental group. Longer culture and SEM imaging before a final decision.</p></div>
+<div class="bad"><h4>✗ Unacceptable</h4><p>A significant reduction in cell density (p &lt; 0.05, 25% or more), or rounded, detached cells. Scaffold function is likely compromised.</p></div>
+</div>
 </section>
+
 <section>
-<h2>Decision Criteria</h2>
-<p>Each study defines in advance what counts as an acceptable, ambiguous or unacceptable result.</p>
+<h2>Closing remarks</h2>
+<p>If every assay passes, these studies show that the modified process can increase allograft production without compromising quality.</p>
 <ul class="crit">
-<li><i>Acceptable.</i> No significant difference between the groups, so the change can go ahead.</li>
-<li><i>Ambiguous.</i> A significant but small drop, under 20% in collagen or elastin. The change goes to further testing, like cyclic fatigue testing or SEM imaging, before a decision.</li>
-<li><i>Unacceptable.</i> More than a 20% drop in collagen or elastin, or a graft that fails the DNA threshold. The change is rejected.</li>
+<li>Preserving ECM integrity, function and biocompatibility is the priority</li>
+<li>Mechanical, biochemical, decellularization and functional testing give quantitative and qualitative measures against industry standards</li>
+<li>Further studies, or revised versions of these approaches, may be pursued to confirm quality</li>
 </ul>
 </section>
+
 <section class="refs">
 <h2>References</h2>
-<p>[1] Generalized stress-strain curve for biological tissues [figure]. ResearchGate. <a href="https://www.researchgate.net/figure/n-a-generalized-stress-strain-curve-for-biological-tissues-there-are-a-few-important_fig4_281609432" rel="noopener" target="_blank">https://www.researchgate.net/figure/n-a-generalized-stress-strain-curve-for-biological-tissues-there-are-a-few-important_fig4_281609432</a></p>
-<p>[2] FineTest. Human COLI (Collagen Type I) ELISA Kit, EH7533. <a href="https://www.fn-test.com/product/eh7533/" rel="noopener" target="_blank">https://www.fn-test.com/product/eh7533/</a></p>
-<p>[3] FineTest. Human ELN (Elastin) ELISA Kit, EH1505. <a href="https://www.fn-test.com/product/eh1505/" rel="noopener" target="_blank">https://www.fn-test.com/product/eh1505/</a></p>
-<p>[4] Rathod ML, et al. Engineered ridge and micropillar array detectors to quantify the directional migration of fibroblasts. RSC Adv. 2017;7:51436. Open access. <a href="https://pubs.rsc.org/ra/article/7/81/51436/581677/Engineered-ridge-and-micropillar-array-detectors" rel="noopener" target="_blank">https://pubs.rsc.org/ra/article/7/81/51436/581677/Engineered-ridge-and-micropillar-array-detectors</a></p>
+<ol>
+<li>Tensile testing. ScienceDirect Topics, Engineering. <a href="https://www.sciencedirect.com/topics/engineering/tensile-testing" rel="noopener" target="_blank">sciencedirect.com</a></li>
+<li>Biomechanical Characterization of Human Soft Tissues Using Indentation and Tensile Testing, Figure 5, via ResearchGate. <a href="https://www.researchgate.net/figure/Example-of-tensile-analysis-of-human-skin-A-Stress-versus-strain-analysis-B-The-m_fig5_311620134" rel="noopener" target="_blank">researchgate.net</a></li>
+<li>Abcam. Human Collagen Type I ELISA Kit, ab285250. <a href="https://www.abcam.com/ab285250" rel="noopener" target="_blank">abcam.com/ab285250</a></li>
+<li>Abcam. Human Elastin SimpleStep ELISA Kit, ab239433. <a href="https://www.abcam.com/ab239433" rel="noopener" target="_blank">abcam.com/ab239433</a></li>
+<li>electrospintech.com. Skin in vivo — dermal fibroblast staining image. <a href="https://electrospintech.com/skininvivo.html" rel="noopener" target="_blank">electrospintech.com</a></li>
+<li>Leinco Technologies. Sandwich ELISA protocol. <a href="https://www.leinco.com/sandwich-elisa-protocol/" rel="noopener" target="_blank">leinco.com</a></li>
+<li>Decellularization efficacy, Figure 5, via ResearchGate. <a href="https://www.researchgate.net/figure/Decellularization-efficacy-A-The-presence-of-nuclei-in-the-decellularized-tissue-was_fig5_283294361" rel="noopener" target="_blank">researchgate.net</a></li>
+<li>Ban E, Kim A. PicoGreen assay for nucleic acid quantification. Anal Biochem. 2024;692:115577. <a href="https://doi.org/10.1016/j.ab.2024.115577" rel="noopener" target="_blank">doi.org/10.1016/j.ab.2024.115577</a></li>
+<li>Crapo PM, Gilbert TW, Badylak SF. An overview of tissue and whole organ decellularization processes. Biomaterials. 2011;32(12):3233–3243. <a href="https://doi.org/10.1016/j.biomaterials.2011.01.057" rel="noopener" target="_blank">doi.org/10.1016/j.biomaterials.2011.01.057</a></li>
+<li>Carruthers CA, Dearth CL, Reing JE, et al. Histologic characterization of acellular dermal matrices in a porcine model of tissue expander breast reconstruction. Tissue Eng Part A. 2015;21(1-2):35–44. <a href="https://doi.org/10.1089/ten.tea.2014.0095" rel="noopener" target="_blank">doi.org/10.1089/ten.tea.2014.0095</a></li>
+<li>Gilbert TW, Freund JM, Badylak SF. Quantification of DNA in biologic scaffold materials. J Surg Res. 2009;152(1):135–139. <a href="https://doi.org/10.1016/j.jss.2008.02.013" rel="noopener" target="_blank">doi.org/10.1016/j.jss.2008.02.013</a></li>
+<li>Reing JE, Brown BN, Daly KA, et al. The effects of processing methods upon mechanical and biologic properties of porcine dermal extracellular matrix scaffolds. Biomaterials. 2010;31(33):8626–8633. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2956268" rel="noopener" target="_blank">pmc.ncbi.nlm.nih.gov/articles/PMC2956268</a></li>
+<li>Moore MA, Samsell B, Wallis G, et al. Decellularization of human dermis using non-denaturing anionic detergent and endonuclease: a review. Cell Tissue Bank. 2015;16(2):249–259. <a href="https://doi.org/10.1007/s10561-014-9467-4" rel="noopener" target="_blank">doi.org/10.1007/s10561-014-9467-4</a></li>
+<li>Stern I, Barrera V, Randles M, Rooney P. Advances in preparation of acellular human dermis for tissue banking and transplantation. Cell Tissue Bank. 2025;26(1):3. <a href="https://doi.org/10.1007/s10561-024-10153-0" rel="noopener" target="_blank">doi.org/10.1007/s10561-024-10153-0</a></li>
+<li>Schmitz TC, Dede Eren A, Spierings J, et al. Solid-phase silica-based extraction leads to underestimation of residual DNA in decellularized tissues. Xenotransplantation. 2021;28(1):e12643. <a href="https://doi.org/10.1111/xen.12643" rel="noopener" target="_blank">doi.org/10.1111/xen.12643</a></li>
+</ol>
 </section>
 </article>
 </div>
