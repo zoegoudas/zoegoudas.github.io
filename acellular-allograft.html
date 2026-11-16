@@ -212,7 +212,7 @@
   .pbody figure { margin: 24px 0 0; }
   .pbody figure a { display: block; }
   .pbody figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
-  .pbody figure.wrap { float: right; width: 45%; margin: 6px 0 14px 28px; }
+  .pbody figure.wrap { float: right; clear: right; width: 45%; margin: 6px 0 14px 28px; }
   .pbody figure.wide { width: 80%; margin: 20px auto 22px; }
   @media (max-width: 640px) {
     .pbody figure.wrap { float: none; width: 100%; margin: 4px 0 18px; }
@@ -228,7 +228,7 @@
     .pbody .pair { display: block; }
     .pbody .pair figure { margin: 0 0 18px; }
     .pbody figure.mid { width: 100%; }
-    .pbody figure.wrap.sm { width: 100%; }
+    .pbody figure.wrap.sm { width: 100%; margin: 4px 0 18px; }
   }
   .pbody .tbl { overflow-x: auto; margin: 6px 0 18px; }
   .pbody table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; background: var(--sheet); border: 1px solid var(--rule); }
@@ -307,29 +307,33 @@
 <h2>Background</h2>
 <h3>Extracellular matrix (ECM)</h3>
 <p>The extracellular matrix (ECM) is a three-dimensional network of macromolecules that surrounds cells, gives tissues structural support, and regulates cell behavior (Frantz et al., 2010). The ECM remodels its composition and architecture to adjust biomechanical, biochemical, protective, and organizational properties in different tissue types. For example, skin must stretch and recoil as the body moves while resisting tears, so its dermal ECM combines a loosely woven network of type I and III collagen with elastic fibers, which lets it deform in many directions and return to its original shape. Bone must instead stay rigid to support the body and protect internal organs, so its ECM is built from type I collagen fibrils mineralized with hydroxyapatite crystals.</p>
-<figure class="wrap">
-<a href="allograft-ecm-components.png" rel="noopener" target="_blank"><img alt="Diagram of the extracellular matrix: collagen fibers, elastin fibers, fibronectin, laminin and proteoglycans above the plasma membrane; integrins and ion channels within the membrane; microfilaments in the cytoplasm below" loading="lazy" src="allograft-ecm-components.png"/></a>
-<figcaption>Major ECM components: collagens, laminins, fibronectin and proteoglycans, connected by linker proteins such as nidogen and perlecan. Proteoglycans organize collagen fibrils into larger fiber networks. Dzobo and Dandara, 2023 (CC BY 4.0), reproduced in Jin et al., 2025, Figure 2.</figcaption>
-</figure>
 <p>The ECM is primarily composed of fibrous proteins (collagens, elastin, fibronectin, and laminins) and non-fibrillar components (proteoglycans (PGs) and hyaluronan).</p>
+<figure class="wrap sm">
+<a href="images/collagen-structure.webp" rel="noopener" target="_blank"><img alt="Collagen hierarchy in five labelled stages: (A) three intertwined alpha-chains forming a triple helix; (B) rows of staggered triple helices with alternating gap and overlap regions; (C) a striated fibril; (D) a fiber made of fibrils, shown in cross-section; (E) a fiber bundle made of fibers" loading="lazy" src="images/collagen-structure.webp"/></a>
+<figcaption>Schematic view of the hierarchical collagen structure. (A) Triple helix of collagen α‐chains [α1]2[α2]. (B) Staggered alignment of triple helices leads to regions with less (gap) and more (overlap) density, resulting in the characteristic periodic striation of collagen fibrils. (C) Fibril. (D) Fiber. (E) Fiber bundle. Via ResearchGate.</figcaption>
+</figure>
 <p>The fibrous proteins hold the matrix together and connect it to cells. Collagen has a hierarchical structure: polypeptide chains intertwine into triple helices, which assemble into microfibrils, fibrils, and fibers held together by covalent crosslinks. This structure lets collagen withstand high tensile loads with little deformation. Elastin forms an insoluble, crosslinked network of disordered coils that acts as a molecular spring, stretching under load and recoiling when the load is removed. In tissue, the two proteins share load in sequence.  Elastin bears it at low strain while crimped collagen fibers straighten, and at higher strain the collagen engages to stiffen the tissue and prevent overextension (Frantz et al., 2010). Adhesive glycoproteins such as fibronectin and laminin link this fibrous network to integrin receptors on the cell surface, anchoring cells and enabling mechanotransduction (Frantz et al., 2010; Jin et al., 2025).</p>
+<figure class="wrap">
+<a href="images/allograft-ecm-components.png" rel="noopener" target="_blank"><img alt="Diagram of the extracellular matrix: collagen fibers, elastin fibers, fibronectin, laminin and proteoglycans above the plasma membrane; integrins and ion channels within the membrane; microfilaments in the cytoplasm below" loading="lazy" src="images/allograft-ecm-components.png"/></a>
+<figcaption>Major ECM components. Collagen and elastin fibers, fibronectin, laminin and proteoglycans fill the extracellular space, and integrins in the plasma membrane link the matrix to microfilaments in the cytoplasm. Dzobo and Dandara, 2023 (CC BY 4.0), reproduced in Jin et al., 2025, Figure 2.</figcaption>
+</figure>
 <p>Proteoglycans (PGs) feature a core protein covalently attached to glycosaminoglycan (GAG) chains. They are classified by their specific core protein, localization, and GAG composition into three families (small leucine-rich, modular, and cell-surface proteoglycans) that each perform different functions in regulating receptor activation, cell adhesion, and inflammatory signaling. The hydrophilic GAG chains store water, which allows the tissue to resist compression and lubricates neighboring fibers. The GAG chains also bind growth factors such as TGF-β, VEGF, and FGF and release them gradually during repair. Hyaluronan is a GAG with no protein core. Together, PGs and hyaluronan form a hydrogel in the interstitial space and provide tissues with specific buffering, hydration, binding, and force-resistant properties (Frantz et al., 2010).</p>
 <p>In skin, the dermal ECM is dense and fibrous. Collagen, mostly types I and III, makes up 70–80% of it, with smaller amounts of elastin, fibronectin, and GAGs (Jin et al., 2025; Shah et al., 2024). The strength, stiffness, and elasticity of a dermal allograft therefore depend on how well manufacturing and decellularization preserve this native structure.</p>
 <h3>Acellular dermal matrix (ADM)</h3>
 <p>An ADM is a biological graft used to substitute skin in cosmetic and reconstructive surgeries (Mohammadyari et al., 2023). The full thickness donor tissue is decellularized (cells, DNA, and antigens are removed) to prevent immune rejection in the recipient. The remaining components of the ECM serve as a scaffold that allows the recipient's cells to infiltrate, revascularize, and remodel the matrix into living tissue.</p>
 <figure class="wide">
-<a href="allograft-adm-donor-skin.jpg" rel="noopener" target="_blank"><img alt="Three photos: brown full-thickness donor skin patches in a petri dish, the same patches white after decellularization, and a translucent glycerol-preserved dermal graft held with forceps" loading="lazy" src="allograft-adm-donor-skin.jpg"/></a>
+<a href="images/allograft-adm-donor-skin.jpg" rel="noopener" target="_blank"><img alt="Three photos: brown full-thickness donor skin patches in a petri dish, the same patches white after decellularization, and a translucent glycerol-preserved dermal graft held with forceps" loading="lazy" src="images/allograft-adm-donor-skin.jpg"/></a>
 <figcaption><b>a</b>, full-thickness donor skin cut into patches. <b>b</b>, dermis after decellularization. <b>c</b>, glycerol-preserved graft. Shah et al., 2024, Figure 2.</figcaption>
 </figure>
 <p>ADMs can be derived from human, porcine, or bovine sources for use in a wide range of clinical applications. The process used to prepare human ADM for clinical use is outlined by the schematic below. Xenogenic ADMs require more rigorous processing to remove animal antigens. (Petrie et al., 2022).</p>
 <figure class="wide">
-<a href="allograft-adm-prep.png" rel="noopener" target="_blank"><img alt="Flowchart of human ADM preparation: trypsin/EDTA treatment, mechanical removal of the epidermis, hypotonic lysis of dermal cells, decontamination, histological quality control, packaging, cryopreservation or storage, and clinical application" loading="lazy" src="allograft-adm-prep.png"/></a>
+<a href="images/allograft-adm-prep.png" rel="noopener" target="_blank"><img alt="Flowchart of human ADM preparation: trypsin/EDTA treatment, mechanical removal of the epidermis, hypotonic lysis of dermal cells, decontamination, histological quality control, packaging, cryopreservation or storage, and clinical application" loading="lazy" src="images/allograft-adm-prep.png"/></a>
 <figcaption>Schematic representation of ADM preparation for use in clinical applications. Petrie et al., 2022, Figure 1 (CC BY-NC 4.0).</figcaption>
 </figure>
 <h3>Decellularization</h3>
 <p>Decellularization uses physical, chemical, and enzymatic methods, and multi-step protocols matched to the tissue's type and thickness give the best balance between cell removal and matrix preservation (Jin et al., 2025).</p>
 <figure class="mid">
-<a href="allograft-decell-methods.jpg" rel="noopener" target="_blank"><img alt="Decellularization methods grouped as physical (freeze-thaw, mechanical oscillation, electroporation, sonication, supercritical fluid), chemical (acids and bases, ionic and non-ionic detergents, zwitterionic detergents, hypo- and hypertonic solutions) and enzymatic (collagenase, dispase, trypsin, nuclease, thermolysin)" loading="lazy" src="allograft-decell-methods.jpg"/></a>
+<a href="images/allograft-decell-methods.jpg" rel="noopener" target="_blank"><img alt="Decellularization methods grouped as physical (freeze-thaw, mechanical oscillation, electroporation, sonication, supercritical fluid), chemical (acids and bases, ionic and non-ionic detergents, zwitterionic detergents, hypo- and hypertonic solutions) and enzymatic (collagenase, dispase, trypsin, nuclease, thermolysin)" loading="lazy" src="images/allograft-decell-methods.jpg"/></a>
 <figcaption>Physical, chemical and enzymatic decellularization methods. Jin et al., 2025, Figure 4 (CC BY 4.0).</figcaption>
 </figure>
 <p>SDS removes cells thoroughly but denatures collagen, depletes GAGs and growth factors, and leaves cytotoxic residue, whereas the milder non-ionic Triton X-100 preserves the matrix at the cost of clearing antigenic material less completely, so protocols often pair the two (McInnes et al., 2022). Bases at pH 10–12 and strong acids degrade collagen and weaken the scaffold (Jin et al., 2025). Because any change to the process shifts the balance between cell removal and matrix preservation, the four studies below evaluate where the modified process lands.</p>
@@ -346,7 +350,7 @@
 <p>ADM is the preferred option for abdominal wall reconstruction in contaminated fields because it integrates with the surrounding tissue and revascularizes, whereas polypropylene mesh, though strong and inexpensive, can erode into the bowel, form adhesions, and become infected, so surgeons avoid it intraperitoneally. Recurrence data after ADM repair are limited and conflicting (Mohammadyari et al., 2023).</p>
 <p>Porcine and bovine ADMs appear to outperform human ADM in hernia repair, where human ADM resists infection about as well but recurs more often, and its higher elastin content is thought to let it stretch over time into laxity and bulging (Petrie et al., 2022). For a human allograft used in hernia repair, a process change that alters elastin content is therefore a clinical risk as well as a compositional one.</p>
 <figure class="wide">
-<a href="allograft-clinical-use.jpg" rel="noopener" target="_blank"><img alt="Two surgical diagrams: an ADM sheet sutured across the rectus abdominis to repair a ventral hernia, and an ADM sling at the lower pole of a breast tissue expander beneath the pectoralis major" loading="lazy" src="allograft-clinical-use.jpg"/></a>
+<a href="images/allograft-clinical-use.jpg" rel="noopener" target="_blank"><img alt="Two surgical diagrams: an ADM sheet sutured across the rectus abdominis to repair a ventral hernia, and an ADM sling at the lower pole of a breast tissue expander beneath the pectoralis major" loading="lazy" src="images/allograft-clinical-use.jpg"/></a>
 <figcaption>ADM reinforcing a ventral hernia repair (left) and supporting the lower pole of a tissue expander in breast reconstruction (right). Cropped from Mohammadyari et al., 2023, Figure 1 (CC BY 4.0).</figcaption>
 </figure>
 <h3>Regulation</h3>
@@ -387,11 +391,11 @@
 <p>Rehydrate each graft in PBS following the product's instructions for use, treating both groups identically. Measure sheet thickness with a digital drop micrometer at five points, one near each corner and one at the center. Mark one reference direction on each graft and punch all specimens along it as ASTM D638 Type V dog-bones (about 1 × 6 cm, narrowing to a 4 mm center section) using a steel-rule die and bench-top press (Adelman et al., 2014). Skin's tensile properties depend on fiber direction, so every specimen in both groups is cut the same way (Ní Annaidh et al., 2012). Measure the width and thickness of each specimen's center section to calculate the cross-sectional area. Photograph each from a fixed angle and distance. Secure the sample in pneumatic grips, ensuring no slippage or preload damage. Apply uniaxial tensile force at a constant crosshead speed of 10 mm/min until failure, with the Bluehill software recording force (N), displacement (mm), and the resulting stress-strain curve. After failure, photograph the specimen from the original position and record whether it broke in the center section or at a grip. Visually inspect and record tearing, delamination, fiber disruption, and uneven deformation. Analyze the same properties in ImageJ. From the stress-strain curve, calculate ultimate tensile strength (MPa) as maximum load over the center section's cross-sectional area, Young's modulus (MPa) as the slope of the linear region, and flexibility as elongation at failure (%).</p>
 <div class="pair">
 <figure class="pairfig">
-<a href="allograft-tensile-setup.png" rel="noopener" target="_blank"><img alt="Uniaxial tensile test rig: a threaded specimen held between upper and lower heads with a spherical bearing, beside a diagram of the specimen showing initial and final gauge length and cross-sectional area under an applied force" loading="lazy" src="allograft-tensile-setup.png"/></a>
+<a href="images/allograft-tensile-setup.png" rel="noopener" target="_blank"><img alt="Uniaxial tensile test rig: a threaded specimen held between upper and lower heads with a spherical bearing, beside a diagram of the specimen showing initial and final gauge length and cross-sectional area under an applied force" loading="lazy" src="images/allograft-tensile-setup.png"/></a>
 <figcaption>Uniaxial tensile test. Threaded grips hold the specimen, the upper head pulls at a constant rate, and the machine records force against gauge length (Lᵢ to Lₓ) and cross-section (Aᵢ to Aₓ). ScienceDirect, Tensile Testing.</figcaption>
 </figure>
 <figure class="pairfig">
-<a href="allograft-stress-strain.png" rel="noopener" target="_blank"><img alt="Four panels of tensile analysis of human skin: stress against strain, a linear fit to its upper region, stress against time showing relaxation, and a linear fit to the relaxation tail" loading="lazy" src="allograft-stress-strain.png"/></a>
+<a href="images/allograft-stress-strain.png" rel="noopener" target="_blank"><img alt="Four panels of tensile analysis of human skin: stress against strain, a linear fit to its upper region, stress against time showing relaxation, and a linear fit to the relaxation tail" loading="lazy" src="images/allograft-stress-strain.png"/></a>
 <figcaption>Tensile analysis of human skin. <b>A</b>, stress against strain. <b>B</b>, the linear fit gives Young's modulus in MPa. <b>C</b>, stress against time. <b>D</b>, the fit gives the relaxation rate. Figure 5, via ResearchGate.</figcaption>
 </figure>
 </div>
@@ -429,21 +433,21 @@
 <p>Collagen and elastin are pulled out of the same specimen one after the other, so both numbers describe the same piece of tissue. The specimen is first digested in Pepsin-Solubilized Collagen Buffer (0.1 mg/mL pepsin in 0.5 M acetic acid) at 4°C for 24 hours with continuous stirring, then spun at 10,000 × g for 10 minutes at 4°C. The supernatant holds the collagen and is used for both the BCA total protein assay and the Abcam Human Collagen Type I ELISA. Elastin stays behind in the pellet, which is boiled in 0.25 M oxalic acid at 100°C for 1 hour; the boil is repeated three times and the pooled supernatants are neutralized to a pH of 7.0–7.4 for the Abcam Human Elastin SimpleStep ELISA. Each plate runs its own 8-point recombinant standard curve and is read at 450 nm, with a 600 nm reference for the elastin assay. Concentrations are read off those curves and normalized to total protein (ng per µg total protein), with CV under 15% between replicates.</p>
 <div class="pair">
 <figure class="pairfig">
-<a href="allograft-elisa-sandwich.png" rel="noopener" target="_blank"><img alt="Five-step sandwich ELISA diagram: a well coated with capture antibody and blocking buffer, the antigen bound by that antibody, a biotin-labelled detection antibody on top, streptavidin-HRPO bound to the biotin, and TMB substrate converted into a coloured product" loading="lazy" src="allograft-elisa-sandwich.png"/></a>
+<a href="images/allograft-elisa-sandwich.png" rel="noopener" target="_blank"><img alt="Five-step sandwich ELISA diagram: a well coated with capture antibody and blocking buffer, the antigen bound by that antibody, a biotin-labelled detection antibody on top, streptavidin-HRPO bound to the biotin, and TMB substrate converted into a coloured product" loading="lazy" src="images/allograft-elisa-sandwich.png"/></a>
 <figcaption>Sandwich ELISA, the format of the collagen kit. Antibody coating the well catches collagen out of the sample, a second antibody binds on top of it, and an enzyme carried by that antibody turns the substrate colour. Leinco Technologies.</figcaption>
 </figure>
 <figure class="pairfig">
-<a href="allograft-elisa-simplestep.png" rel="noopener" target="_blank"><img alt="Three-step SimpleStep ELISA diagram: sample and antibody cocktail added together, a wash and TMB substrate, then stop solution and reading, across 90 minutes" loading="lazy" src="allograft-elisa-simplestep.png"/></a>
+<a href="images/allograft-elisa-simplestep.png" rel="noopener" target="_blank"><img alt="Three-step SimpleStep ELISA diagram: sample and antibody cocktail added together, a wash and TMB substrate, then stop solution and reading, across 90 minutes" loading="lazy" src="images/allograft-elisa-simplestep.png"/></a>
 <figcaption>SimpleStep ELISA, the format of the elastin kit. The same sandwich, built in one step: sample and both antibodies go in together, so there is one incubation and one wash. Abcam, ab239433.</figcaption>
 </figure>
 </div>
 <div class="pair">
 <figure class="pairfig">
-<a href="allograft-collagen-curve.png" rel="noopener" target="_blank"><img alt="Collagen type I standard curve: optical density at 450 nm against concentration from 0 to 20 ng per mL, rising and flattening above about 10 ng per mL" loading="lazy" src="allograft-collagen-curve.png"/></a>
+<a href="images/allograft-collagen-curve.png" rel="noopener" target="_blank"><img alt="Collagen type I standard curve: optical density at 450 nm against concentration from 0 to 20 ng per mL, rising and flattening above about 10 ng per mL" loading="lazy" src="images/allograft-collagen-curve.png"/></a>
 <figcaption>Collagen type I standard curve, 0.313–20 ng/mL. Demonstration data; a fresh curve runs with every plate. Abcam, ab285250.</figcaption>
 </figure>
 <figure class="pairfig">
-<a href="allograft-elastin-curve.png" rel="noopener" target="_blank"><img alt="Elastin standard curve on logarithmic axes: optical density at 450 nm against human elastin concentration from 0.19 to 12 ng per mL" loading="lazy" src="allograft-elastin-curve.png"/></a>
+<a href="images/allograft-elastin-curve.png" rel="noopener" target="_blank"><img alt="Elastin standard curve on logarithmic axes: optical density at 450 nm against human elastin concentration from 0.19 to 12 ng per mL" loading="lazy" src="images/allograft-elastin-curve.png"/></a>
 <figcaption>Elastin standard curve, log axes, 0.19–12 ng/mL. Abcam, ab239433.</figcaption>
 </figure>
 </div>
@@ -489,7 +493,7 @@
 <p>Report residual dsDNA as mean ± SD (ng/mg dry weight) for each group and check every graft against the 50 ng/mg threshold. Compare dsDNA between groups with a two-tailed Welch's t-test. On the gel, record the largest visible fragment in each lane against the ladder, using an ImageJ lane profile, and count the grafts in each group with fragments above 200 bp. For DAPI, average nuclei/mm² across fields per sample, report each group as mean ± SD, and record each graft as pass or fail for visible nuclei. A graft is decellularized only if it meets all three criteria; report the number of passing grafts in each group. Present the data as graphs showing the mean ± SD with all individual data points and p-value significance markers. ImageJ for quantification, Excel for statistics.</p>
 <h3>Expected result</h3>
 <figure class="wrap">
-<a href="allograft-decell-panels.png" rel="noopener" target="_blank"><img alt="Three panels: DAPI images across native tissue, submucosa and decellularized matrix; a bar chart of DNA concentration in nanograms per milligram; and an agarose gel in which the native lane carries high molecular weight DNA while the decellularized lanes show nothing above the 200 base pair marker" loading="lazy" src="allograft-decell-panels.png"/></a>
+<a href="images/allograft-decell-panels.png" rel="noopener" target="_blank"><img alt="Three panels: DAPI images across native tissue, submucosa and decellularized matrix; a bar chart of DNA concentration in nanograms per milligram; and an agarose gel in which the native lane carries high molecular weight DNA while the decellularized lanes show nothing above the 200 base pair marker" loading="lazy" src="images/allograft-decell-panels.png"/></a>
 <figcaption><b>A</b>, DAPI across native, submucosa and decellularized tissue. <b>B</b>, DNA concentration in ng/mg. <b>C</b>, agarose gel; decellularized lanes show nothing above 200 bp. Figure 5, via ResearchGate.</figcaption>
 </figure>
 <p>The modified parameters should not increase residual DNA (p &gt; 0.05), and every graft in both groups should meet all three decellularization criteria.</p>
@@ -523,7 +527,7 @@
 <h3>Methods</h3>
 <p>Cut the grafts into 1 × 1 cm sections, place them dermis side up in 6-well plates, and seed 50,000 fibroblasts/cm². Incubate for 14 days at 37 °C and 5% CO₂, changing medium every 48 hours. Rinse in PBS, fix in 4% paraformaldehyde for 24 hours, cut thin cross-sections on a cryostat and mount them. Permeabilize with Triton X-100, stain with DAPI and Phalloidin–Alexa Fluor 488, mount with anti-fade medium and cure overnight. Image at 10× and 20× across at least five fields per section, threshold the DAPI channel in ImageJ and count nuclei per mm². Use the DAPI counts from the unseeded grafts in the decellularization study as the background.</p>
 <figure class="wrap">
-<a href="allograft-fibroblast-stain.png" rel="noopener" target="_blank"><img alt="Dense layer of spindle-shaped human dermal fibroblasts with actin cytoskeleton stained green and nuclei stained blue" loading="lazy" src="allograft-fibroblast-stain.png"/></a>
+<a href="images/allograft-fibroblast-stain.png" rel="noopener" target="_blank"><img alt="Dense layer of spindle-shaped human dermal fibroblasts with actin cytoskeleton stained green and nuclei stained blue" loading="lazy" src="images/allograft-fibroblast-stain.png"/></a>
 <figcaption>Dermal fibroblasts. DAPI for nuclei (blue), phalloidin–Alexa Fluor 488 for actin (green). electrospintech.com.</figcaption>
 </figure>
 <h3>Analysis</h3>
@@ -550,8 +554,8 @@
 <ol>
 <li>Tensile testing. ScienceDirect Topics, Engineering. <a href="https://www.sciencedirect.com/topics/engineering/tensile-testing" rel="noopener" target="_blank">sciencedirect.com</a></li>
 <li>Biomechanical Characterization of Human Soft Tissues Using Indentation and Tensile Testing, Figure 5, via ResearchGate. <a href="https://www.researchgate.net/figure/Example-of-tensile-analysis-of-human-skin-A-Stress-versus-strain-analysis-B-The-m_fig5_311620134" rel="noopener" target="_blank">researchgate.net</a></li>
-<li>Abcam. Human Collagen Type I ELISA Kit, ab285250. <a href="https://www.abcam.com/ab285250" rel="noopener" target="_blank">abcam.com/ab285250</a></li>
-<li>Abcam. Human Elastin SimpleStep ELISA Kit, ab239433. <a href="https://www.abcam.com/ab239433" rel="noopener" target="_blank">abcam.com/ab239433</a></li>
+<li>Abcam. Human Collagen Type I ELISA Kit, ab285250. <a href="https://www.abcam.com/en-us/products/elisa-kits/human-collagen-type-i-elisa-kit-ab285250" rel="noopener" target="_blank">abcam.com/ab285250</a></li>
+<li>Abcam. Human Elastin SimpleStep ELISA Kit, ab239433. <a href="https://www.abcam.com/en-us/products/elisa-kits/human-elastin-elisa-kit-ab239433" rel="noopener" target="_blank">abcam.com/ab239433</a></li>
 <li>electrospintech.com. Skin in vivo — dermal fibroblast staining image. <a href="https://electrospintech.com/skininvivo.html" rel="noopener" target="_blank">electrospintech.com</a></li>
 <li>Leinco Technologies. Sandwich ELISA protocol. <a href="https://www.leinco.com/sandwich-elisa-protocol/" rel="noopener" target="_blank">leinco</a><a href="https://www.leinco.com/sandwich-elisa-protocol/" rel="noopener" target="_blank">.com</a></li>
 <li>Decellularization efficacy, Figure 5, via ResearchGate. <a href="https://www.researchgate.net/figure/Decellularization-efficacy-A-The-presence-of-nuclei-in-the-decellularized-tissue-was_fig5_283294361" rel="noopener" target="_blank">researchgate.net</a></li>
@@ -567,6 +571,7 @@
 <li>Ní Annaidh A, Bruyère K, Destrade M, Gilchrist MD, Otténio M. Characterization of the anisotropic mechanical properties of excised human skin. J Mech Behav Biomed Mater. 2012;5(1):139–148. <a href="https://doi.org/10.1016/j.jmbbm.2011.08.016" rel="noopener" target="_blank">doi.org/10.1016/j.jmbbm.2011.08.016</a></li>
 <li>Jin C, Zhang X, Jin Y, Chien PN, Heo CY. Acellular extracellular matrix scaffolds in regenerative medicine: advances in decellularization and clinical applications. J Funct Biomater. 2025;16(10):383. <a href="https://doi.org/10.3390/jfb16100383" rel="noopener" target="_blank">doi.org/10.3390/jfb16100383</a></li>
 <li>Dzobo K, Dandara C. The extracellular matrix: its composition, function, remodeling, and role in tumorigenesis. Biomimetics. 2023;8(2):146. <a href="https://doi.org/10.3390/biomimetics8020146" rel="noopener" target="_blank">doi.org/10.3390/biomimetics8020146</a></li>
+<li>Exploration of Collagen as Binder for Aqueous Zinc Batteries and Symmetric Carbon Supercapacitors, hierarchical collagen structure figure, via ResearchGate. <a href="https://www.researchgate.net/publication/404007912_Exploration_of_Collagen_as_Binder_for_Aqueous_Zinc_Batteries_and_Symmetric_Carbon_Supercapacitors" rel="noopener" target="_blank">researchgate.net</a></li>
 <li>McInnes AD, Moser MAJ, Chen X. Preparation and use of decellularized extracellular matrix for tissue engineering. J Funct Biomater. 2022;13(4):240. <a href="https://doi.org/10.3390/jfb13040240" rel="noopener" target="_blank">doi.org/10.3390/jfb13040240</a></li>
 <li>Mohammadyari F, Parvin S, Khorvash M, et al. Acellular dermal matrix in reconstructive surgery: applications, benefits, and cost. Front Transplant. 2023;2:1133806. <a href="https://doi.org/10.3389/frtra.2023.1133806" rel="noopener" target="_blank">doi.org/10.3389/frtra.2023.1133806</a></li>
 <li>Shah D, Rathod M, Tiwari A, et al. A histological and biomechanical analysis of human acellular dermis (HAD) created using a novel processing and preservation technique. Indian J Orthop. 2024;58(7):922–931. <a href="https://doi.org/10.1007/s43465-024-01181-9" rel="noopener" target="_blank">doi.org/10.1007/s43465-024-01181-9</a></li>
