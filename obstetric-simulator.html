@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+<script>(function () { var t; try { t = localStorage.getItem("theme"); } catch (e) {} if (t !== "light" && t !== "dark") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; document.documentElement.setAttribute("data-theme", t); })();</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0N696S6YXR"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -28,6 +29,19 @@
     --petal-deep: #CFC6EC;
     --stem: #3F6B4E;
     --rule: #D8D3E6;
+    --pollen: #E2B53E;
+  }
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #16131F;
+    --sheet: #211E2E;
+    --ink: #F1EEFA;
+    --muted: #ADA7C2;
+    --iris: #BCAEF2;
+    --petal: #332D4C;
+    --petal-deep: #443C68;
+    --stem: #7FC29A;
+    --rule: #332E45;
     --pollen: #E2B53E;
   }
   * { box-sizing: border-box; }
@@ -260,6 +274,15 @@
   @media (max-width: 900px) {
     .docs { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
+
+  .mode-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; background: var(--sheet); color: var(--muted); font: 500 13px/1 "Figtree", system-ui, sans-serif; cursor: pointer; transition: color .15s, border-color .15s; }
+  .mode-toggle:hover { color: var(--ink); border-color: var(--iris); }
+  .mode-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  html[data-theme="dark"] .mode-toggle .moon, html:not([data-theme="dark"]) .mode-toggle .sun { display: none; }
+  .pfoot { gap: 28px; align-items: center; }
+  html[data-theme="dark"] .pbody th { background: #2C2740; }
+  html[data-theme="dark"] .pdate .status { background: #24382C; }
+  html[data-theme="dark"] .pbody figure img, html[data-theme="dark"] .pbody figure svg, html[data-theme="dark"] .doc img { background: #fff; }
 </style>
 </head>
 <body>
@@ -396,7 +419,29 @@
 <a class="next" href="speech-feedback-device.html"><span><small>Next project</small>Speech Feedback Wearable for Deaf Learners</span><svg aria-hidden="true" class="arr" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
 </nav>
 </main>
-<footer class="pfoot"><a href="index.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/></svg>Home</a></footer>
+<footer class="pfoot"><a href="index.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/></svg>Home</a><button aria-label="Switch colour mode" class="mode-toggle" type="button"><svg aria-hidden="true" class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg aria-hidden="true" class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg><span class="ml">Dark mode</span></button></footer>
 </div>
+<script>
+(function () {
+  var r = document.documentElement;
+  function lbl() { var d = r.getAttribute("data-theme") === "dark"; [].forEach.call(document.querySelectorAll(".mode-toggle .ml"), function (s) { s.textContent = d ? "Light mode" : "Dark mode"; }); }
+  lbl();
+  [].forEach.call(document.querySelectorAll(".mode-toggle"), function (b) {
+    b.addEventListener("click", function () {
+      var t = r.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      r.setAttribute("data-theme", t);
+      try { localStorage.setItem("theme", t); } catch (e) {}
+      lbl();
+    });
+  });
+  try {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.addEventListener("change", function (e) {
+      var s = null; try { s = localStorage.getItem("theme"); } catch (x) {}
+      if (s !== "light" && s !== "dark") { r.setAttribute("data-theme", e.matches ? "dark" : "light"); lbl(); }
+    });
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>

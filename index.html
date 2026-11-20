@@ -33,15 +33,15 @@
   }
   html[data-theme="dark"] {
     color-scheme: dark;
-    --paper: #1E1B2E;
-    --sheet: #282439;
-    --ink: #EEEAF8;
-    --muted: #B3ADC8;
-    --iris: #B8A9F0;
-    --petal: #3A3356;
-    --petal-deep: #4A4170;
+    --paper: #16131F;
+    --sheet: #211E2E;
+    --ink: #F1EEFA;
+    --muted: #ADA7C2;
+    --iris: #BCAEF2;
+    --petal: #332D4C;
+    --petal-deep: #443C68;
     --stem: #7FC29A;
-    --rule: #3B3654;
+    --rule: #332E45;
     --pollen: #E2B53E;
   }
   * { box-sizing: border-box; }
@@ -319,11 +319,12 @@
   html[data-theme="dark"] .hero-art-wrap { mix-blend-mode: lighten; }
   main { position: relative; z-index: 0; }
   .vine { display: none; }
-  @media (min-width: 761px) {
-    .hero-art-wrap { display: none; }
+  .hero-art-wrap { display: none; }
+  @media (min-width: 0px) {
     .vine { display: block; position: absolute; top: 0; left: 0; width: 100%; overflow: visible; pointer-events: none; z-index: -1; }
     .vine .stem { fill: none; stroke: var(--vine-stem, #6F9C86); stroke-width: var(--vine-w, 4px); stroke-linecap: round; stroke-linejoin: round; transition: stroke-dashoffset .9s ease-out; }
     .vine .stem.thin { stroke: var(--vine-thin, #86B19C); stroke-width: calc(var(--vine-w, 4px) * 0.65); }
+    .vine .stem.curl { stroke-width: calc(var(--vine-w, 4px) * 0.45); }
     .vine .shoot { fill: none; stroke: var(--vine-stem, #6F9C86); stroke-width: calc(var(--vine-w, 4px) * 0.7); stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease-out; }
     .vine .pop.on .shoot { stroke-dashoffset: 0; }
     .vine .pop.shootg { transform: none; }
@@ -437,10 +438,13 @@
 </section>
 <section id="research">
 <h2>Research</h2>
-<article class="entry" id="max-planck-institute">
+<article class="sheet card" id="max-planck-institute">
+<a class="card-link" href="max-planck.html">
 <h4>Max Planck Institute of Colloids and Interfaces</h4>
-<span class="date">Jun – Aug 2023</span>
 <span class="meta">Jun – Aug 2023 · Potsdam, Germany · Summer Research Intern</span>
+<span class="date">Jun – Aug 2023</span>
+<span class="go">View project</span>
+</a>
 </article>
 <article class="sheet card" id="sound-frequency-and-radish-seed-germination">
 <a class="card-link" href="radish-germination.html">
@@ -740,11 +744,100 @@
   }
 
 
+  /* phone: a short vine in the band beside the name, in place of the painting */
+  function buildHeroVine() {
+    var nameEl = document.querySelector(".hero.art .name");
+    if (!nameEl) return;
+    var m = main.getBoundingClientRect();
+    function box(el) { var r = el.getBoundingClientRect(); return { l: r.left - m.left, r: r.right - m.left, t: r.top - m.top, b: r.bottom - m.top }; }
+    var W = m.width, nb = box(nameEl);
+    var R = W + 16, Lx = W * 0.54, B = R - Lx;
+    var top = -18, bot = nb.b + 22, H = bot - top;
+    if (H < 90 || B < 90) return;
+    var S = Math.max(0.42, Math.min(0.72, H / 320));
+
+    var back = mk("g", {}, svg), mid = mk("g", {}, svg), front = mk("g", {}, svg);
+    var deco = [];
+
+    function stemFrom(points, cls, layer) {
+      var el = mk("path", { d: smooth(points), "class": cls }, layer);
+      var total = el.getTotalLength(), samples = [];
+      for (var q = 0; q <= total; q += 4) samples.push({ s: q, y: el.getPointAtLength(q).y });
+      el.style.strokeDasharray = total + " " + total;
+      el.style.strokeDashoffset = total;
+      return {
+        el: el, total: total,
+        sAtY: function (y) { for (var i = 0; i < samples.length; i++) if (samples[i].y >= y) return samples[i].s; return total; },
+        at: function (q) {
+          var p = el.getPointAtLength(q), a = el.getPointAtLength(Math.max(0, q - 2)), b = el.getPointAtLength(Math.min(total, q + 2));
+          return { x: p.x, y: p.y, a: Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI };
+        }
+      };
+    }
+    function pieceOn(st, layer, q, deg, draw) {
+      var p = st.at(q);
+      var outer = mk("g", { transform: "translate(" + f(p.x) + "," + f(p.y) + ") rotate(" + f(deg) + ")" }, layer);
+      var g = mk("g", { "class": "pop" }, outer);
+      draw(g, p);
+      deco.push({ y: p.y, g: g });
+      return g;
+    }
+    function leafOn(st, layer, q, deg, sc, light) {
+      var stalk = 4 + rnd(q * 2.7) * 7;
+      pieceOn(st, layer, q, deg, function (g) {
+        mk("line", { x1: 0, y1: 0, x2: stalk + 1, y2: 0, "class": "twig" }, g);
+        leaf(mk("g", { transform: "translate(" + f(stalk) + ",0) scale(" + f(sc * S * C.leafSize) + ")" }, g), light);
+      });
+    }
+
+    var hx = [0.84, 0.3, 0.72, 0.28, 0.55], pts = [], pts2 = [];
+    for (var k = 0; k < hx.length; k++) {
+      pts.push({ x: Lx + B * hx[k], y: top + k * H / (hx.length - 1) });
+      pts2.push({ x: Lx + B * (1.12 - hx[k] * 0.85), y: top + 10 + k * H / (hx.length - 1) });
+    }
+    var stem = stemFrom(pts, "stem", mid), thin = stemFrom(pts2, "stem thin", back);
+    svg.setAttribute("height", Math.ceil(bot + 30));
+    svg.style.height = Math.ceil(bot + 30) + "px";
+    svg.style.setProperty("--vine-w", (C.stemWidth * (0.6 + 0.4 * S)) + "px");
+
+    [[stem, mid, 1], [thin, back, -1]].forEach(function (cfg, j) {
+      var st = cfg[0], layer = cfg[1], side = cfg[2], n = j * 7;
+      for (var q = 8; q < st.total - 6; ) {
+        var p = st.at(q);
+        leafOn(st, layer, q, p.a + side * (42 + rnd(n) * 55), (0.78 + rnd(n + 40) * 0.4), j === 1 && n % 3 !== 0);
+        side = -side; n++;
+        q += (16 + rnd(n + 9) * 8) / C.leafDensity;
+      }
+    });
+
+    [[0.14, -28, "bloom", 36], [0.52, 196, "bloom", 40], [0.82, -34, "bud", 26]].forEach(function (cfg, i) {
+      var q = stem.sAtY(top + cfg[0] * H), r = cfg[3] * S * C.flowerSize, kind = cfg[2];
+      pieceOn(stem, front, q, cfg[1], function (g) {
+        var d = (kind === "bud" ? 9 : 14) * S + 4;
+        mk("line", { x1: 0, y1: 0, x2: d, y2: 0, "class": "twig" }, g);
+        var head = mk("g", { transform: "translate(" + f(d) + ",0)" + (kind === "bud" ? "" : " rotate(" + f(-cfg[1]) + ")") }, g);
+        if (kind === "bud") bud(head, r * 2.2, flowerColor(cfg[0]));
+        else bloom(head, r, flowerColor(cfg[0]), rnd(i) * 1.2);
+      });
+    });
+
+    var tip = stem.at(stem.total);
+    var outer = mk("g", { transform: "translate(" + f(tip.x + 4) + "," + f(tip.y - 8) + ") rotate(58)" }, mid);
+    var tg = mk("g", { "class": "pop" }, outer);
+    mk("line", { x1: 0, y1: 0, x2: 7, y2: 0, "class": "twig" }, tg);
+    leaf(mk("g", { transform: "translate(6,0) scale(" + f(0.74 * S * C.leafSize) + ")" }, tg), true);
+    deco.push({ y: tip.y, g: tg });
+    var curl = tendril(stem, Math.max(9, Math.min(17, B * 0.1)), mid);
+
+    state = { stems: [stem, thin, curl], deco: deco, tipY: -1 };
+  }
+
   function build() {
     readColors();
     while (svg.firstChild) svg.removeChild(svg.firstChild);
     state = null; flowerFor = [];
-    if (window.innerWidth <= 760 || !cards.length) return;
+    if (window.innerWidth <= 760) { buildHeroVine(); return; }
+    if (!cards.length) return;
     var m = main.getBoundingClientRect(), W = m.width;
     function box(el) { var r = el.getBoundingClientRect(); return { l: r.left - m.left, r: r.right - m.left, t: r.top - m.top, b: r.bottom - m.top }; }
     var L = 0;
@@ -782,8 +875,9 @@
       }
       return { startY: E.y, maxY: maxY, c: C };
     }
-    svg.setAttribute("height", Math.ceil(lastB + 140));
-    svg.style.height = Math.ceil(lastB + 140) + "px";
+    var vineH = Math.ceil(lastB + 190);
+    svg.setAttribute("height", vineH);
+    svg.style.height = vineH + "px";
 
     function makeStem(points, cls, layer) {
       var el = mk("path", { d: smooth(points), "class": cls }, layer);
@@ -982,8 +1076,8 @@
     var side2 = spray(stem, stem.sAtY(endY - 8), [[-30, 10], [-60, 16]], back);
     hangingLeaf(side2.x, side2.y, 98, 0.9, side2.y0 + 20);
     var tip = stem.at(stem.total);
-    hangingLeaf(tip.x, tip.y, 96, 1.05, tip.y);
-    hangingLeaf(tip.x + 4, tip.y - 6, 55, 0.85, tip.y, true);
+    hangingLeaf(tip.x + 5, tip.y - 10, 58, 0.8, tip.y, true);
+    var curl = tendril(stem, Math.max(16, Math.min(26, B * 0.11)), front);
     [thin, third].forEach(function (st) {
       var tp2 = st.at(st.total);
       hangingLeaf(tp2.x, tp2.y, 90 + (tp2.a - 90) * 0.3, 0.75, tp2.y, true);
@@ -993,7 +1087,29 @@
     later.forEach(function (draw) { draw(); });
     flowerFor = flowerFor.map(function (slot) { return slot.g; });
 
-    state = { stems: [stem, thin, third], deco: deco, tipY: -1 };
+    state = { stems: [stem, thin, third, curl], deco: deco, tipY: -1 };
+  }
+
+  /* a thin tendril that curls off the end of a stem */
+  function tendril(st, R, layer) {
+    var e = st.at(st.total), e0 = st.at(Math.max(0, st.total - 8));
+    var a0 = Math.atan2(e.y - e0.y, e.x - e0.x);
+    var cx = e.x + Math.cos(a0 + Math.PI / 2) * R, cy = e.y + Math.sin(a0 + Math.PI / 2) * R;
+    var th0 = Math.atan2(e.y - cy, e.x - cx), q = [];
+    for (var u = 0; u <= 1.001; u += 0.045) {
+      var th = th0 - u * Math.PI * 2.7, r = R * (1 - 0.62 * u);
+      q.push({ x: cx + Math.cos(th) * r, y: cy + Math.sin(th) * r });
+    }
+    var el = mk("path", { d: smooth(q), "class": "stem thin curl" }, layer);
+    var total = el.getTotalLength(), samples = [];
+    for (var v = 0; v <= total; v += 4) samples.push({ s: v, y: el.getPointAtLength(v).y });
+    el.style.strokeDasharray = total + " " + total;
+    el.style.strokeDashoffset = total;
+    return {
+      el: el, total: total,
+      sAtY: function (y) { return total * Math.max(0, Math.min(1, (y - (e.y - 6)) / 46)); },
+      at: function (v) { var p = el.getPointAtLength(v); return { x: p.x, y: p.y, a: 0 }; }
+    };
   }
 
   function grow(instant) {
